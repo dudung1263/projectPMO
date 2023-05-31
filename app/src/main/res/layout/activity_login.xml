@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".login">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:background="@drawable/img_2"
+        android:id="@+id/imgheader">
+    </ImageView>
+    <ImageView
+        android:id="@+id/imgfont"
+        android:layout_marginTop="135dp"
+        android:layout_marginStart="55dp"
+        android:layout_marginEnd="50dp"
+        android:layout_width="148dp"
+        android:layout_height="40dp"
+        android:background="@drawable/img_4">
+    </ImageView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:layout_below="@id/imgfont"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/email"
+            android:layout_width="380dp"
+            android:layout_height="55dp"
+            android:autofillHints="emailAddress"
+            android:background="@drawable/shapehitam"
+            android:drawablePadding="15dp"
+            android:hint="Email"
+            android:inputType="textEmailAddress"
+            android:padding="10dp"
+            android:textSize="20dp"
+            android:drawableStart="@drawable/email"
+            android:textColor="@color/black"
+            android:textColorHint="@color/black"
+            android:layout_marginTop="57dp">
+        </EditText>
+        <EditText
+            android:id="@+id/password"
+            android:layout_width="380dp"
+            android:layout_height="55dp"
+            android:autofillHints="password"
+            android:background="@drawable/shapehitam"
+            android:drawablePadding="15dp"
+            android:hint="Password"
+            android:textSize="20dp"
+            android:drawableStart="@drawable/paswd"
+            android:inputType="textPassword"
+            android:padding="10dp"
+            android:textColor="@color/black"
+            android:textColorHint="@color/black"
+            android:layout_marginTop="16dp">
+        </EditText>
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnlogin"
+            android:layout_width="380dp"
+            android:layout_height="55dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="16dp"
+            android:onClick="login"
+            android:background="@drawable/img_5"
+            android:text="Login"
+            android:textSize="24dp"
+            android:textColor="@color/white"
+            android:textStyle="bold">
+        </androidx.appcompat.widget.AppCompatButton>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_horizontal">
+            <TextView
+                android:text="Belum Punya Akun ?"
+                android:textColor="@color/black"
+                android:layout_marginTop="16dp"
+                android:layout_width="170dp"
+                android:layout_height="wrap_content"
+                android:textSize="18dp"
+                android:textStyle="bold">
+            </TextView>
+            <TextView
+                android:layout_width="110dp"
+                android:layout_height="30dp"
+                android:onClick="daftarakun"
+                android:text="Daftar Akun"
+                android:padding="5dp"
+                android:textColor="#1C8747"
+                android:layout_marginTop="16dp"
+                android:textSize="18dp"
+                android:textStyle="bold">
+            </TextView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center">
+            <TextView
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="lupapasword"
+                android:text="Anda Lupa Password ?"
+                android:padding="5dp"
+                android:textColor="#1C8747"
+                android:textSize="18dp"
+                android:textStyle="italic|bold">
+            </TextView>
+
+        </LinearLayout>
+
+
+
+
+
+
+
+    </LinearLayout>
+
+</RelativeLayout>

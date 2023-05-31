@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "51555399882",
+    "project_id": "e-amil",
+    "storage_bucket": "e-amil.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:51555399882:android:b7ae62d45de3ff00715c33",
+        "android_client_info": {
+          "package_name": "e.amil.e_amil"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAUlzuXfABRjnVeXpWe5YZj2LFCFuPLPws"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
