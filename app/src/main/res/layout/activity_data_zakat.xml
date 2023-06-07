@@ -23,20 +23,31 @@
                 android:layout_gravity="center_vertical"
                 android:textAllCaps="false"
                 android:background="@drawable/back"
-                android:layout_marginEnd="1pt">
+                android:layout_marginEnd="4pt">
 
             </androidx.appcompat.widget.AppCompatButton>
             <TextView
                 android:layout_width="300dp"
                 android:layout_height="40dp"
                 android:text="Masukan Data Zakat"
-                android:textColor="@color/black"
+                android:background="@drawable/img_5"
+                android:textColor="@color/white"
                 android:textStyle="bold"
                 android:textSize="18dp"
                 android:gravity="center"
                 android:layout_gravity="center_vertical">
 
             </TextView>
+            <ImageView
+                android:id="@+id/info_zakat"
+                android:onClick="back_zakat"
+                android:layout_width="30dp"
+                android:layout_marginStart="10dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center_vertical"
+                android:textAllCaps="false"
+                android:background="@drawable/info"
+                android:layout_marginEnd="1dp"></ImageView>
 
         </LinearLayout>
         <LinearLayout
@@ -169,6 +180,19 @@
                         </EditText>
 
                     </LinearLayout>
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/simpanzakat"
+                        android:layout_width="170dp"
+                        android:layout_height="50dp"
+                        android:layout_gravity="center"
+                        android:text="Simpan Data"
+                        android:textColor="@color/white"
+                        android:textStyle="bold"
+                        android:textSize="16dp"
+                        android:background="@drawable/img_5">
+
+                    </androidx.appcompat.widget.AppCompatButton>
 
 
                 </LinearLayout>
