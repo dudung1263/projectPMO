@@ -2,25 +2,49 @@ package e.amil.e_amil;
 
 import static e.amil.e_amil.login.auth;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.view.GravityCompat;
-import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.fragment.app.Fragment;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseUser;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().hide();
+        }
+
+        loadFragment(new home());
+        BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigation);
+        bottomNavigationView.setItemIconTintList(null);
+        bottomNavigationView.setOnNavigationItemSelectedListener(this);
     }
+
+    private boolean loadFragment(Fragment fragment) {
+        if (fragment != null){
+            getSupportFragmentManager().beginTransaction()
+                    .replace(R.id.container_layout, fragment)
+                    .commit();
+            return true;
+        }
+        return false;
+    }
+
+
+
 
     public void onBackPressed(){
         new AlertDialog.Builder(this)
@@ -46,5 +70,22 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(MainActivity.this, login.class);
         auth.signOut();
         startActivity(intent);
+    }
+
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+        Fragment fragment = null;
+        switch (item.getItemId()){
+            case R.id.menu_home:
+                fragment = new home();
+                break;
+            case R.id.menu_data:
+                fragment = new dokumen();
+                break;
+            case R.id.menu_Tentang:
+                fragment = new profile();
+                break;
+        }
+        return loadFragment(fragment);
     }
 }
