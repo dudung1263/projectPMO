@@ -5,7 +5,7 @@
     <item
         android:id="@+id/menu_home"
         android:title="Home"
-        android:icon="@drawable/home">
+        android:icon="@drawable/home_selector">
     </item>
     <item
         android:id="@+id/menu_data"
@@ -14,7 +14,7 @@
     </item>
     <item
         android:id="@+id/menu_Tentang"
-        android:title="About"
-        android:icon="@drawable/about">
+        android:title="Tentang"
+        android:icon="@drawable/profil_selector">
     </item>
 </menu>
