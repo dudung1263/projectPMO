@@ -172,6 +172,7 @@
                             android:textColor="@color/black">
                         </TextView>
                         <EditText
+                            android:id="@+id/keterangan_zakat"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:hint="Masukan Keterangan"
