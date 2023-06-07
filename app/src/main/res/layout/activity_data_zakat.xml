@@ -16,8 +16,9 @@
             android:orientation="horizontal">
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/bakc_zakat"
+                android:onClick="back_zakat"
                 android:layout_width="30dp"
-                android:layout_marginStart="5dp"
+                android:layout_marginStart="15dp"
                 android:layout_height="30dp"
                 android:layout_gravity="center_vertical"
                 android:textAllCaps="false"

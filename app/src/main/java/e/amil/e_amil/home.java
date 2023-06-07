@@ -31,6 +31,8 @@ public class home extends Fragment implements View.OnClickListener {
         args.putString(ARG_PARAM2, param2);
         fragment.setArguments(args);
         return fragment;
+
+
     }
 
     @Override
@@ -40,11 +42,13 @@ public class home extends Fragment implements View.OnClickListener {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
 
         view = inflater.inflate(R.layout.fragment_home, container, false);
         btnzakat = view.findViewById(R.id.datazakat);
@@ -74,6 +78,8 @@ public class home extends Fragment implements View.OnClickListener {
         }
 
     }
+
     @Override
     public void onDestroyView(){super.onDestroyView();}
+
 }
