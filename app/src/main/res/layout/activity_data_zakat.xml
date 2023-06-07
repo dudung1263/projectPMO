@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".data_zakat">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:id="@+id/linear1"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="horizontal">
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/bakc_zakat"
+                android:layout_width="30dp"
+                android:layout_marginStart="5dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center_vertical"
+                android:textAllCaps="false"
+                android:background="@drawable/back"
+                android:layout_marginEnd="1pt">
+
+            </androidx.appcompat.widget.AppCompatButton>
+            <TextView
+                android:layout_width="300dp"
+                android:layout_height="40dp"
+                android:text="Masukan Data Zakat"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:textSize="18dp"
+                android:gravity="center"
+                android:layout_gravity="center_vertical">
+
+            </TextView>
+
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/linear2"
+            android:layout_below="@+id/linear1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginLeft="10dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_margin="5dp">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Jenis Zakat"
+                            android:padding="5dp"
+                            android:textColor="@color/black">
+                        </TextView>
+                        <EditText
+                            android:id="@+id/jenis_zakat"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="Masukan Jenis Zakat"
+                            android:inputType="text"
+                            android:textColor="@color/black">
+                        </EditText>
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_margin="5dp">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Jumlah Zakat"
+                            android:padding="5dp"
+                            android:textColor="@color/black">
+                        </TextView>
+                        <EditText
+                            android:id="@+id/jumlah_zakat"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="Masukan Jumlah Zakat"
+                            android:inputType="text"
+                            android:textColor="@color/black">
+                        </EditText>
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_margin="5dp">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Tanggal Penerima"
+                            android:padding="5dp"
+                            android:textColor="@color/black">
+                        </TextView>
+                        <EditText
+                            android:id="@+id/tanggal_zakat"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="Masukan Tanggal"
+                            android:inputType="text"
+                            android:textColor="@color/black">
+                        </EditText>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_margin="5dp">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Muzaki ( Pemberi )"
+                            android:padding="5dp"
+                            android:textColor="@color/black">
+                        </TextView>
+                        <EditText
+                            android:id="@+id/muzaki_zakat"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="Masukan Nama Muzaki"
+                            android:inputType="text"
+                            android:textColor="@color/black">
+                        </EditText>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_margin="5dp">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Keterangan"
+                            android:padding="5dp"
+                            android:textColor="@color/black">
+                        </TextView>
+                        <EditText
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="Masukan Keterangan"
+                            android:inputType="text"
+                            android:textColor="@color/black">
+                        </EditText>
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+            </ScrollView>
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
