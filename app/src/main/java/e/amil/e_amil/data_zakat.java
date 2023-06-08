@@ -3,10 +3,9 @@ package e.amil.e_amil;
 
 import static android.text.TextUtils.isEmpty;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.annotation.SuppressLint;
 import android.app.DatePickerDialog;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
@@ -15,11 +14,20 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
+import com.google.firebase.storage.UploadTask;
 
+import java.net.URL;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
@@ -36,11 +44,15 @@ public class data_zakat extends AppCompatActivity {
     SimpleDateFormat simpleDateFormat;
     DatePickerDialog datePickerDialog;
 
-    DatabaseReference databaseReference;
+    DatabaseReference database = FirebaseDatabase.getInstance().getReference();
 
     StorageReference storageReference;
 
-    public Uri url;
+
+
+    public Uri uri;
+
+
     @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate( final Bundle savedInstanceState) {
@@ -83,7 +95,6 @@ public class data_zakat extends AppCompatActivity {
         });
 
          storageReference = FirebaseStorage.getInstance().getReference();
-        databaseReference = FirebaseDatabase.getInstance().getReference();
 
         simpan_data.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -94,23 +105,43 @@ public class data_zakat extends AppCompatActivity {
                 getketerangan = keterangan_zakat.getText().toString();
                 gettanggal = tanggal_zakat.getText().toString();
 
-                checkUser();
-
-            }
-
-            private void checkUser() {
-                if (isEmpty(getjenis) || isEmpty(getjumlah) || isEmpty(getmuzaki) || isEmpty(gettanggal)
-                       || isEmpty(getketerangan) || url == null) {
-                    Toast.makeText(data_zakat.this, "Data Tidak Boleh Kososng", Toast.LENGTH_SHORT).show();
+                if(getjenis.isEmpty()){
+                    jenis_zakat.setError("Isikan jenis zakat");
+                }else if (getjumlah.isEmpty()) {
+                    jumlah_zakat.setError("Jumlah zakat");
+                } else if (getmuzaki.isEmpty()) {
+                    muzaki_zakat.setError("Masukan muzaki");
+                } else if (gettanggal.isEmpty()) {
+                    tanggal_zakat.setError("Tanggal Kosong");
+                } else if(getketerangan.isEmpty()) {
+                    keterangan_zakat.setError("jika perlu diisi");
+                } else {
+                    database.child("Admin").child("user").push().
+                            setValue(new data_amil (getketerangan,getmuzaki,gettanggal,getjumlah,getjenis))
+                            .addOnSuccessListener(new OnSuccessListener<Void>() {
+                                @Override
+                                public void onSuccess(Void unused) {
+                                    Toast.makeText(data_zakat.this,"Data berhasil di simpan",Toast
+                                            .LENGTH_SHORT).show();
+                                    startActivity(new Intent(data_zakat.this,MainActivity.class));
+                                    finish();
+                                }
+                            }).addOnFailureListener(new OnFailureListener() {
+                                @Override
+                                public void onFailure(@NonNull Exception e) {
+                                    Toast.makeText(data_zakat.this,"Data gagal di simpan",Toast
+                                            .LENGTH_SHORT).show();
+                                }
+                            });
                 }
-            }
-        });
-        bakc_zakat.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View viwe) {
-                onBackPressed();
-            }
-        });
-    }
 
+            }
 
-}
+            });
+                bakc_zakat.setOnClickListener(new View.OnClickListener() {
+                        public void onClick(View viwe) {
+                            onBackPressed();
+                        }
+                });
+
+    }}
