@@ -66,10 +66,13 @@
                         android:textSize="30dp"
                         android:textColor="@color/white">
                     </androidx.appcompat.widget.AppCompatButton>
+
                     <androidx.appcompat.widget.AppCompatButton
                         android:id="@+id/datainfaq"
+                        android:onClick="datainfaq"
                         android:layout_width="match_parent"
                         android:layout_height="70dp"
+                        android:layout_gravity="center"
                         android:layout_marginStart="10dp"
                         android:layout_marginEnd="10dp"
                         android:layout_marginTop="15dp"
@@ -84,8 +87,10 @@
                         android:textSize="30dp"
                         android:textColor="@color/white">
                     </androidx.appcompat.widget.AppCompatButton>
+
                     <androidx.appcompat.widget.AppCompatButton
                         android:id="@+id/datasodakoh"
+                        android:onClick="datasodakoh"
                         android:layout_width="match_parent"
                         android:layout_height="70dp"
                         android:layout_marginStart="10dp"

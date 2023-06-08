@@ -4,15 +4,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class data_sodakoh extends AppCompatActivity {
+public class coba extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_data_sodakoh);
-
-        if (getSupportActionBar() != null) {
-            getSupportActionBar().hide();
-        }
+        setContentView(R.layout.activity_coba);
     }
 }
