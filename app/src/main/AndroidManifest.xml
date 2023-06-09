@@ -23,9 +23,6 @@
             android:name=".data_infaqq"
             android:exported="false" />
         <activity
-            android:name=".coba"
-            android:exported="false" />
-        <activity
             android:name=".data_zakat"
             android:exported="false" />
         <activity

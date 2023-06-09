@@ -1,5 +1,8 @@
 package e.amil.e_amil;
 
+import static e.amil.e_amil.login.auth;
+
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -7,6 +10,9 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+
+import com.google.firebase.auth.FirebaseUser;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -23,6 +29,8 @@ public class profile extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+
+    private Button logout;
 
     public profile() {
         // Required empty public constructor
@@ -60,5 +68,16 @@ public class profile extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_profile, container, false);
+    }
+
+    public void onClick(View v) {
+        FirebaseUser user = auth.getCurrentUser();
+        auth.signOut();
+        switch (v.getId()) {
+            case R.id.logout:
+                getActivity().startActivity(new Intent(getActivity(), login.class));
+                break;
+
+        }
     }
 }
