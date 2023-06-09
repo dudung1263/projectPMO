@@ -5,10 +5,115 @@
     android:layout_height="match_parent"
     tools:context=".dokumen">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:background="@color/white"
+        android:orientation="vertical">
+        <LinearLayout
+            android:id="@+id/img10"
+            android:layout_width="match_parent"
+            android:layout_height="260dp"
+            android:background="@drawable/img_9">
+            <TextView
+                android:id="@+id/text1"
+                android:layout_width="320dp"
+                android:layout_height="70dp"
+                android:layout_marginTop="40dp"
+                android:text="LAPORAN DATA"
+                android:layout_marginStart="0dp"
+                android:fontFamily="sans-serif-black"
+                android:textStyle="bold"
+                android:textSize="38dp"
+                android:textColor="@color/white"
+                android:padding="10dp"
+                android:background="@drawable/img_10">
+            </TextView>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="200dp"
+            android:orientation="vertical">
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:id="@+id/lindatadokumen"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_vertical"
+                    android:orientation="vertical">
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/datazakat_dokumen"
+                        android:onClick="datazakat"
+                        android:layout_width="match_parent"
+                        android:layout_height="70dp"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:text="Data Zakat"
+                        android:padding="10dp"
+                        android:paddingStart="0dp"
+                        android:paddingEnd="25dp"
+                        android:drawableStart="@mipmap/zakat"
+                        android:drawablePadding="0dp"
+                        android:background="@drawable/shap1"
+                        android:fontFamily="sans-serif-black"
+                        android:textStyle="bold"
+                        android:textSize="30dp"
+                        android:textColor="@color/white">
+                    </androidx.appcompat.widget.AppCompatButton>
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/datainfaq_dokumen"
+                        android:onClick="datainfaq"
+                        android:layout_width="match_parent"
+                        android:layout_height="70dp"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginTop="15dp"
+                        android:text="Data Infaq"
+                        android:padding="10dp"
+                        android:paddingStart="0dp"
+                        android:paddingEnd="25dp"
+                        android:drawableStart="@mipmap/infaq"
+                        android:background="@drawable/shap2"
+                        android:fontFamily="sans-serif-black"
+                        android:textStyle="bold"
+                        android:textSize="30dp"
+                        android:textColor="@color/white">
+                    </androidx.appcompat.widget.AppCompatButton>
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/datasodakoh_dokumen"
+                        android:onClick="datasodakoh"
+                        android:layout_width="match_parent"
+                        android:layout_height="70dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginTop="15dp"
+                        android:padding="10dp"
+                        android:paddingStart="0dp"
+                        android:paddingEnd="25dp"
+                        android:drawableStart="@mipmap/sodaqoh"
+                        android:drawablePadding="0dp"
+                        android:text="Data Sodaqoh"
+                        android:background="@drawable/shap3"
+                        android:fontFamily="sans-serif-black"
+                        android:textStyle="bold"
+                        android:textSize="30dp"
+                        android:textColor="@color/white">
+                    </androidx.appcompat.widget.AppCompatButton>
+
+
+                </LinearLayout>
+            </ScrollView>
+        </LinearLayout>
+    </RelativeLayout>
 
 </FrameLayout>
