@@ -126,10 +126,4 @@ public class data_sodakoh extends AppCompatActivity {
             }
         }
 
-
-    public String get() {
-    }
-
-    public void setKey(String key) {
-    }
 }

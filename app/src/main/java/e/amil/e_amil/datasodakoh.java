@@ -9,6 +9,16 @@ public class datasodakoh {
     private String muzaki_sodakoh;
     private String keterangan_sodakoh;
 
+    public datasodakoh() {
+    }
+
+    public datasodakoh(String jenis_sodakoh, String jumlah_sodakoh, String tanggal_sodakoh, String muzaki_sodakoh, String keterangan_sodakoh) {
+        this.jenis_sodakoh = jenis_sodakoh;
+        this.jumlah_sodakoh = jumlah_sodakoh;
+        this.tanggal_sodakoh = tanggal_sodakoh;
+        this.muzaki_sodakoh = muzaki_sodakoh;
+        this.keterangan_sodakoh = keterangan_sodakoh;
+    }
 
     public String getJenis_sodakoh() {
         return jenis_sodakoh;
@@ -49,16 +59,4 @@ public class datasodakoh {
     public void setKeterangan_sodakoh(String keterangan_sodakoh) {
         this.keterangan_sodakoh = keterangan_sodakoh;
     }
-
-
-    public datasodakoh(String jenis_sodakoh, String jumlah_sodakoh, String tanggal_sodakoh, String muzaki_sodakoh, String keterangan_sodakoh, String trim) {
-        this.jenis_sodakoh = jenis_sodakoh;
-        this.jumlah_sodakoh = jumlah_sodakoh;
-        this.tanggal_sodakoh = tanggal_sodakoh;
-        this.muzaki_sodakoh = muzaki_sodakoh;
-        this.keterangan_sodakoh = keterangan_sodakoh;
-
-    }
-
-
 }
