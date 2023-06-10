@@ -114,7 +114,7 @@
 
                     <com.denzcoskun.imageslider.ImageSlider
                         android:id="@+id/imageslider"
-                        android:layout_width="300dp"
+                        android:layout_width="350dp"
                         android:layout_height="220dp"
                         android:layout_gravity="center"
                         android:layout_marginTop="10dp"
