@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".home">
 
     <RelativeLayout
@@ -110,7 +111,22 @@
                     </androidx.appcompat.widget.AppCompatButton>
 
 
+
+                    <com.denzcoskun.imageslider.ImageSlider
+                        android:id="@+id/imageslider"
+                        android:layout_width="300dp"
+                        android:layout_height="220dp"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="10dp"
+                       app:iss_corner_radius="10"
+                        tools:ignore="MissingClass">
+
+                    </com.denzcoskun.imageslider.ImageSlider>
+
                 </LinearLayout>
+
+
+
             </ScrollView>
         </LinearLayout>
     </RelativeLayout>

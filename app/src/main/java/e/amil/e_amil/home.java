@@ -10,6 +10,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
+import com.denzcoskun.imageslider.ImageSlider;
+import com.denzcoskun.imageslider.constants.ScaleTypes;
+import com.denzcoskun.imageslider.models.SlideModel;
+
+import java.util.ArrayList;
+
 public class home extends Fragment implements View.OnClickListener {
 
     Button btnzakat, btninfaq, btnsodakoh;
@@ -18,6 +24,9 @@ public class home extends Fragment implements View.OnClickListener {
     private static final String ARG_PARAM2 = "param2";
     private String mParam1;
     private String mParam2;
+
+    private ImageSlider imageslider;
+
 
     public home() {
     }
@@ -42,6 +51,18 @@ public class home extends Fragment implements View.OnClickListener {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+
+
+
+
+        ImageSlider imageSlider = view.findViewById(R.id.imageslider);
+        ArrayList<SlideModel> slideModels = new ArrayList<>();
+
+        slideModels.add(new SlideModel(R.drawable.img_1, ScaleTypes.FIT));
+        slideModels.add(new SlideModel(R.drawable.img_2, ScaleTypes.FIT));
+        imageSlider.setImageList(slideModels, ScaleTypes.FIT);
+
+
 
     }
 
@@ -83,5 +104,10 @@ public class home extends Fragment implements View.OnClickListener {
 
     @Override
     public void onDestroyView(){super.onDestroyView();}
+
+
+
+
+
 
 }
