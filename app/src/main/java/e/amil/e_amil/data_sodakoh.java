@@ -104,7 +104,7 @@ public class data_sodakoh extends AppCompatActivity {
                             public void onSuccess(Uri uri) {
                                 DatabaseReference getReference = null;
                                 getReference.child("Admin").child("Mahasiswa").push()
-                                        .setValue(new data_sodakoh(getjenis_sodakoh, getjumlah_sodakoh, getketerangan_sodakoh, getmuzaki_sodakoh, gettanggal_sodakoh,uri.toString().trim()))
+                                        .setValue(new datasodakoh(getjenis_sodakoh, getjumlah_sodakoh, getketerangan_sodakoh, getmuzaki_sodakoh, gettanggal_sodakoh,uri.toString().trim()))
                                         .addOnCompleteListener(new OnCompleteListener<Void>() {
                                             @Override
                                             public void onComplete(@NonNull Task<Void> task) {
@@ -122,23 +122,14 @@ public class data_sodakoh extends AppCompatActivity {
                             }
                         });
                     }
-                }).addOnFailureListener(new OnFailureListener() {
-                    @Override
-                    public void onFailure(@NonNull Exception e) {
-                        progressBar.setVisibility(View.GONE);
-                        Toast.makeText(crud.this, "Uploading Gagal", Toast.LENGTH_SHORT).show();
-                    }
-                }).addOnProgressListener(new OnProgressListener<UploadTask.TaskSnapshot>(){
-                    @Override
-                    public void onProgress(@NonNull UploadTask.TaskSnapshot snapshot){
-                        progressBar.setVisibility(View.VISIBLE);
-                        double progress = (100.0 * snapshot.getBytesTransferred())/snapshot.getTotalByteCount();
-                        progressBar.setProgress((int)progress);
-                    }
                 });
             }
         }
 
 
+    public String get() {
+    }
+
+    public void setKey(String key) {
     }
 }
