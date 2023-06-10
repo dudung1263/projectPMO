@@ -11,7 +11,7 @@
         android:id="@+id/topinputzakat"
         android:layout_width="match_parent"
         android:layout_height="100dp"
-        android:background="@drawable/img_13">
+        android:background="@drawable/kembalizakat">
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/kembalisodakoh"
@@ -21,6 +21,7 @@
             android:gravity="center"
             android:layout_gravity="center"
             >
+
 
         </androidx.appcompat.widget.AppCompatButton>
 
