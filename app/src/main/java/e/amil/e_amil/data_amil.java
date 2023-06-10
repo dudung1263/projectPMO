@@ -2,52 +2,90 @@ package e.amil.e_amil;
 
 public class data_amil {
 
-    private String jenis_zakat;
-    private String jumlah_zakat;
-    private String tanggal_zakat;
-    private String keterangan_zakat;
+    private String rjeniszakat;
+    private String jumlahzakat;
+    private String tglzakat;
+    private String muzakizakat;
+    private String penyaluranzakat;
+    private String ketzakat;
 
-    public data_amil(String getketerangan, String getmuzaki, String gettanggal, String getjumlah, String getjenis) {
+    private String gambar;
+    private String key;
 
+    public String getRjeniszakat() {
+        return rjeniszakat;
     }
 
-    public data_amil(String jenis_zakat, String jumlah_zakat, String tanggal_zakat, String keterangan_zakat) {
-        this.jenis_zakat = jenis_zakat;
-        this.jumlah_zakat = jumlah_zakat;
-        this.tanggal_zakat = tanggal_zakat;
-        this.keterangan_zakat = keterangan_zakat;
+    public void setRjeniszakat(String rjeniszakat) {
+        this.rjeniszakat = rjeniszakat;
     }
 
-    public String getJenis_zakat() {
-        return jenis_zakat;
+    public String getGambar() {
+        return gambar;
     }
 
-    public void setJenis_zakat(String jenis_zakat) {
-        this.jenis_zakat = jenis_zakat;
+    public void setGambar(String gambar) {
+        this.gambar = gambar;
     }
 
-    public String getJumlah_zakat() {
-        return jumlah_zakat;
+    public data_amil() {
     }
 
-    public void setJumlah_zakat(String jumlah_zakat) {
-        this.jumlah_zakat = jumlah_zakat;
+    public data_amil(String rjeniszakat, String jumlahzakat, String tglzakat, String muzakizakat, String penyaluranzakat, String ketzakat, String gambar) {
+        this.rjeniszakat = rjeniszakat;
+        this.jumlahzakat = jumlahzakat;
+        this.tglzakat = tglzakat;
+        this.muzakizakat = muzakizakat;
+        this.penyaluranzakat = penyaluranzakat;
+        this.ketzakat = ketzakat;
+        this.gambar = gambar;
     }
 
-    public String getTanggal_zakat() {
-        return tanggal_zakat;
+    public String getJumlahzakat() {
+        return jumlahzakat;
     }
 
-    public void setTanggal_zakat(String tanggal_zakat) {
-        this.tanggal_zakat = tanggal_zakat;
+    public void setJumlahzakat(String jumlahzakat) {
+        this.jumlahzakat = jumlahzakat;
     }
 
-    public String getKeterangan_zakat() {
-        return keterangan_zakat;
+    public String getTglzakat() {
+        return tglzakat;
     }
 
-    public void setKeterangan_zakat(String keterangan_zakat) {
-        this.keterangan_zakat = keterangan_zakat;
+    public void setTglzakat(String tglzakat) {
+        this.tglzakat = tglzakat;
+    }
+
+    public String getMuzakizakat() {
+        return muzakizakat;
+    }
+
+    public void setMuzakizakat(String muzakizakat) {
+        this.muzakizakat = muzakizakat;
+    }
+
+    public String getPenyaluranzakat() {
+        return penyaluranzakat;
+    }
+
+    public void setPenyaluranzakat(String penyaluranzakat) {
+        this.penyaluranzakat = penyaluranzakat;
+    }
+
+    public String getKetzakat() {
+        return ketzakat;
+    }
+
+    public void setKetzakat(String ketzakat) {
+        this.ketzakat = ketzakat;
+    }
+
+    public String getKey() {
+        return key;
+    }
+
+    public void setKey(String key) {
+        this.key = key;
     }
 }
-

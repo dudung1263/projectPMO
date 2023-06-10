@@ -14,9 +14,6 @@
         android:theme="@style/Theme.EAmil"
         tools:targetApi="31">
         <activity
-            android:name=".listdata_sodakoh"
-            android:exported="false" />
-        <activity
             android:name=".MainActivity_user"
             android:exported="false" />
         <activity

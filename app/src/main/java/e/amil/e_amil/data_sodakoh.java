@@ -2,9 +2,6 @@ package e.amil.e_amil;
 
 import static android.text.TextUtils.isEmpty;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.annotation.SuppressLint;
 import android.app.DatePickerDialog;
 import android.content.Intent;
@@ -12,21 +9,30 @@ import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
 import android.net.Uri;
 import android.os.Bundle;
-import android.text.TextUtils;
+import android.provider.MediaStore;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.ProgressBar;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
-import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.OnProgressListener;
+import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 
 import java.io.ByteArrayOutputStream;
@@ -34,96 +40,209 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.UUID;
 
+import e.amil.e_amil.MainActivity;
+import e.amil.e_amil.R;
+import e.amil.e_amil.data_amil;
+
 public class data_sodakoh extends AppCompatActivity {
 
+    RadioGroup rg;
 
-    private EditText jenis_sodakoh, jumlah_sodakoh, tanggal_sodakoh, muzaki_sodakoh, keterangan_sodakoh;
-    private String getjenis_sodakoh, getjumlah_sodakoh, gettanggal_sodakoh, getmuzaki_sodakoh, getketerangan_sodakoh;
-    private Button simpan_datasodakoh;
+    RadioButton rb;
 
-    SimpleDateFormat simpleDateFormat;
+    private ProgressBar progressodakoh;
+
+    private EditText jumlahsodakoh, tglsodakoh, muzakisodakoh, penyaluransodakoh, ketsodakoh;
+
     DatePickerDialog datePickerDialog;
 
-    DatabaseReference database = FirebaseDatabase.getInstance().getReference();
+    SimpleDateFormat simpleDateFormat;
 
-    public  Uri uri;
+    private ImageView image_sodakoh;
 
-    @SuppressLint("MissingInflatedID")
+    private Button simpan_sodakoh, getfotosodakoh, kembalisodakoh;
+
+    private String getrjenissodakoh, getJumlahsodakoh, getTglsodakoh, getMuzakisodakoh, getPenyaluransodakoh, getKeterangansodakoh;
+
+    public Uri url;
+    public Bitmap bitmap;
+    DatabaseReference dbF;
+    StorageReference dbS;
+
+    private static final int REQUEST_CODE_CAMERA = 1;
+    private static final int REQUEST_CODE_GALLERY = 2;
+
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_data_sodakoh);
 
-        if (getSupportActionBar() != null) {
-            getSupportActionBar().hide();
-        }
+        jumlahsodakoh = findViewById(R.id.jumlahsodakoh);
+        tglsodakoh = findViewById(R.id.tglsodakoh);
+        muzakisodakoh = findViewById(R.id.muzakisodakoh);
+        penyaluransodakoh = findViewById(R.id.penyaluransodakoh);
+        ketsodakoh = findViewById(R.id.keterangansodakoh);
 
+        rg = findViewById(R.id.rjenissodakoh);
 
-        jenis_sodakoh = findViewById(R.id.jenis_sodakoh);
+        image_sodakoh = findViewById(R.id.image_sodakoh);
 
-        jumlah_sodakoh = findViewById(R.id.jumlah_sodakoh);
+        simpan_sodakoh = findViewById(R.id.simpan_sodaqoh);
+        kembalisodakoh = findViewById(R.id.kembalisodakoh);
+        getfotosodakoh = findViewById(R.id.getfotosodakoh);
 
-        tanggal_sodakoh =findViewById(R.id.tanggal_sodakoh);
-        keterangan_sodakoh =findViewById(R.id.keterangan_sodakoh);
-        tanggal_sodakoh =findViewById(R.id.tanggal_sodakoh);
-        muzaki_sodakoh =findViewById(R.id.muzaki_sodakoh);
+        progressodakoh = findViewById(R.id.progresszakat);
+        progressodakoh.setVisibility(View.GONE);
 
-        simpleDateFormat = new SimpleDateFormat("dd MMM yyyy");
-
-        tanggal_sodakoh.setOnClickListener(new View.OnClickListener() {
+        simpleDateFormat = new SimpleDateFormat("dd MM yyyy");
+        tglsodakoh.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {showDateDialog();}
-
-            private void showDateDialog() {
-                Calendar calendar = Calendar.getInstance();
-
-                datePickerDialog = new DatePickerDialog(data_sodakoh.this, new DatePickerDialog.OnDateSetListener() {
-                    @Override
-                    public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
-                        Calendar newCalendar = Calendar.getInstance();
-                        newCalendar.set(year, month, dayOfMonth);
-                        tanggal_sodakoh.setText(simpleDateFormat.format(newCalendar.getTime()));
-                    }
-                }, calendar.get(Calendar.YEAR), calendar.get(Calendar.MONTH), calendar.get(Calendar.DAY_OF_MONTH));
-                datePickerDialog.show();
+            public void onClick(View v) {
+                showDateDialog();
             }
         });
 
-        private void checkUser(){
-            if(isEmpty(getjenis_sodakoh)||isEmpty(getjumlah_sodakoh)||isEmpty(getketerangan_sodakoh)||isEmpty(getmuzaki_sodakoh)||
-                    TextUtils.isEmpty(gettanggal_sodakoh)|| uri==null) {
+        dbS = FirebaseStorage.getInstance().getReference();
 
-                Toast.makeText(data_sodakoh.this, "Data tidak boleh kosong", Toast.LENGTH_SHORT).show();
-            }
-            Task<UploadTask.TaskSnapshot> uploadTask = null;
-            uploadTask.addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
-                    @Override
-                    public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-                        taskSnapshot.getStorage().getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
-                            @Override
-                            public void onSuccess(Uri uri) {
-                                DatabaseReference getReference = null;
-                                getReference.child("Admin").child("Mahasiswa").push()
-                                        .setValue(new datasodakoh(getjenis_sodakoh, getjumlah_sodakoh, getketerangan_sodakoh, getmuzaki_sodakoh, gettanggal_sodakoh,uri.toString().trim()))
-                                        .addOnCompleteListener(new OnCompleteListener<Void>() {
-                                            @Override
-                                            public void onComplete(@NonNull Task<Void> task) {
-                                                jenis_sodakoh.setText("");
-                                                jumlah_sodakoh.setText("");
-                                                tanggal_sodakoh.setText("");
-                                                keterangan_sodakoh.setText("");
-                                                muzaki_sodakoh.setText("");
+        dbF = FirebaseDatabase.getInstance().getReference();
 
-                                                Toast.makeText(data_sodakoh.this, "Data Berhasil Tersimpan", Toast.LENGTH_SHORT).show();
-                                                Intent intent = new Intent(data_sodakoh.this, listdata_sodakoh.class);
-                                                finish();
-                                            }
-                                        });
-                            }
-                        });
-                    }
-                });
+        simpan_sodakoh.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (rb == null){
+                    getrjenissodakoh = null;
+                }else {
+                    getrjenissodakoh = rb.getText().toString();
+                }
+                getJumlahsodakoh = jumlahsodakoh.getText().toString();
+                getTglsodakoh = tglsodakoh.getText().toString();
+                getMuzakisodakoh = muzakisodakoh.getText().toString();
+                getPenyaluransodakoh = penyaluransodakoh.getText().toString();
+                getKeterangansodakoh = ketsodakoh.getText().toString();
+
+                checkUser();
             }
+        });
+
+        kembalisodakoh.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onBackPressed();
+            }
+        });
+
+        getfotosodakoh.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getimage();
+            }
+        });
+    }
+    private void showDateDialog(){
+        Calendar calendar = Calendar.getInstance();
+
+        datePickerDialog= new DatePickerDialog(this, new DatePickerDialog.OnDateSetListener() {
+            @Override
+            public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
+                Calendar newCalendar = Calendar.getInstance();
+                newCalendar.set(year, month, dayOfMonth);
+                tglsodakoh.setText(simpleDateFormat.format(newCalendar.getTime()));
+            }
+        }, calendar.get(Calendar.YEAR), calendar.get(Calendar.MONTH), calendar.get(Calendar.DAY_OF_MONTH));
+        datePickerDialog.show();
+    }
+
+    private void getimage(){
+        Intent imageIntentGallery = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+        startActivityForResult(imageIntentGallery, 2);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data){
+        super.onActivityResult(requestCode, resultCode, data);
+
+        switch (requestCode){
+            case REQUEST_CODE_CAMERA:
+                if (resultCode == RESULT_OK){
+                    image_sodakoh.setVisibility(View.VISIBLE);
+                    Bitmap bitmap = (Bitmap) data.getExtras().get("data");
+                    image_sodakoh.setImageBitmap(bitmap);
+                }
+                break;
+
+            case REQUEST_CODE_GALLERY:
+                if (resultCode == RESULT_OK){
+                    image_sodakoh.setVisibility(View.VISIBLE);
+                    url = data.getData();
+                    image_sodakoh.setImageURI(url);
+                }
+                break;
         }
+    }
+    private void checkUser(){
+        if (isEmpty(getrjenissodakoh) || isEmpty(getJumlahsodakoh) ||
+                isEmpty(getTglsodakoh) || isEmpty(getMuzakisodakoh) || isEmpty(getPenyaluransodakoh) ||
+                isEmpty(getKeterangansodakoh) || url == null){
 
+            Toast.makeText(this, "Data Tidak Boleh Ada Yang Kosong", Toast.LENGTH_SHORT).show();
+        }else {
+            image_sodakoh.setDrawingCacheEnabled(true);
+            image_sodakoh.buildDrawingCache();
+            Bitmap bitmap = ((BitmapDrawable) image_sodakoh.getDrawable()).getBitmap();
+            ByteArrayOutputStream stream = new ByteArrayOutputStream();
+
+            bitmap.compress(Bitmap.CompressFormat.JPEG, 100, stream);
+            byte[] bytes = stream.toByteArray();
+
+            String namaFile = UUID.randomUUID() + ".jpg";
+            final String pathImage = "gambar/" + namaFile;
+            UploadTask uploadTask = dbS.child(pathImage).putBytes(bytes);
+            uploadTask.addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+                @Override
+                public void onSuccess(UploadTask.TaskSnapshot tasksnapshot) {
+                    tasksnapshot.getStorage().getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+                        @Override
+                        public void onSuccess(Uri uri) {
+                            dbF.child("Admin").child("Zakat").push()
+                                    .setValue(new data_amilsodakoh(getrjenissodakoh, getJumlahsodakoh, getTglsodakoh, getMuzakisodakoh, getPenyaluransodakoh, getKeterangansodakoh, uri.toString().trim()))
+                                    .addOnCompleteListener(new OnCompleteListener<Void>() {
+                                        @Override
+                                        public void onComplete(@NonNull Task<Void> task) {
+
+                                            jumlahsodakoh.setText("");
+                                            tglsodakoh.setText("");
+                                            muzakisodakoh.setText("");
+                                            penyaluransodakoh.setText("");
+                                            ketsodakoh.setText("");
+
+                                            Toast.makeText(data_sodakoh.this, "Data Berhasil Disimpan", Toast.LENGTH_SHORT).show();
+                                            progressodakoh.setVisibility(View.GONE);
+                                            startActivity(new Intent(data_sodakoh.this, MainActivity.class));
+                                            finish();
+                                        }
+                                    });
+                        }
+                    });
+                }
+            }).addOnFailureListener(new OnFailureListener() {
+                @Override
+                public void onFailure(@NonNull Exception e) {
+                    Toast.makeText(data_sodakoh.this, "Upload Gagal", Toast.LENGTH_SHORT).show();
+                }
+            }).addOnProgressListener(new OnProgressListener<UploadTask.TaskSnapshot>() {
+                @Override
+                public void onProgress(@NonNull UploadTask.TaskSnapshot snapshot) {
+                    progressodakoh.setVisibility(View.VISIBLE);
+                    double progress = (100.0 * snapshot.getBytesTransferred()) / snapshot.getTotalByteCount();
+                    progressodakoh.setProgress((int) progress);
+                }
+            });
+
+        }
+    }
+    public void rbclick(View view){
+        int radiobuttonid = rg.getCheckedRadioButtonId();
+        rb = (RadioButton) findViewById(radiobuttonid);
+    }
 }

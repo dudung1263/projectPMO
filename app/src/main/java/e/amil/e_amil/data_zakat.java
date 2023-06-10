@@ -1,20 +1,26 @@
 package e.amil.e_amil;
 
-
 import static android.text.TextUtils.isEmpty;
 
-import android.annotation.SuppressLint;
 import android.app.DatePickerDialog;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.drawable.BitmapDrawable;
 import android.net.Uri;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.ProgressBar;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -23,121 +29,218 @@ import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.OnProgressListener;
+import com.google.firebase.storage.StorageReference;
+import com.google.firebase.storage.UploadTask;
 
-
-import java.net.URL;
+import java.io.ByteArrayOutputStream;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.UUID;
 
+import e.amil.e_amil.MainActivity;
+import e.amil.e_amil.R;
+import e.amil.e_amil.data_amil;
 
 public class data_zakat extends AppCompatActivity {
 
+    RadioGroup rg;
 
-    private Button bakc_zakat, simpan_data ;
+    RadioButton rb;
 
-    private EditText jenis_zakat, jumlah_zakat, tanggal_zakat, muzaki_zakat, keterangan_zakat;
+    private ProgressBar progreszakat;
 
-    private String getjenis, getjumlah, gettanggal, getmuzaki, getketerangan;
+    private EditText jumlahzakat, tglzakat, muzakizakat, penyaluranzakat, ketzakat;
 
-    SimpleDateFormat simpleDateFormat;
     DatePickerDialog datePickerDialog;
 
-    DatabaseReference database = FirebaseDatabase.getInstance().getReference();
+    SimpleDateFormat simpleDateFormat;
 
+    private ImageView image_zakat;
 
+    private Button simpan_zakat, getfotozakat, kembalizakat;
 
+    private String getrjeniszakat, getJumlahzakat, getTglzakat, getMuzakizakat, getPenyaluran, getKeterangan;
 
-    public Uri uri;
+    public Uri url;
+    public Bitmap bitmap;
+    DatabaseReference dbF;
+    StorageReference dbS;
 
+    private static final int REQUEST_CODE_CAMERA = 1;
+    private static final int REQUEST_CODE_GALLERY = 2;
 
-    @SuppressLint("MissingInflatedId")
     @Override
-    protected void onCreate( final Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_data_zakat);
-        if (getSupportActionBar() != null) {
-            getSupportActionBar().hide();
-        }
-        //deklarasi button
-        bakc_zakat = findViewById(R.id.bakc_zakat);
 
-        simpan_data = findViewById(R.id.simpanzakat);
+        jumlahzakat = findViewById(R.id.jumlahzakat);
+        tglzakat = findViewById(R.id.tglzakat);
+        muzakizakat = findViewById(R.id.muzakizakat);
+        penyaluranzakat = findViewById(R.id.penyaluranzakat);
+        ketzakat = findViewById(R.id.keteranganzakat);
 
-        jenis_zakat =findViewById(R.id.jenis_zakat);
-        jumlah_zakat =findViewById(R.id.jumlah_zakat);
-        tanggal_zakat =findViewById(R.id.tanggal_zakat);
-        muzaki_zakat =findViewById(R.id.muzaki_zakat);
-        keterangan_zakat =findViewById(R.id.keterangan_zakat);
+        rg = findViewById(R.id.rjeniszakat);
 
-        simpleDateFormat = new SimpleDateFormat("dd MMM yyyy");
-        tanggal_zakat.setOnClickListener(new View.OnClickListener() {
+        image_zakat = findViewById(R.id.image_zakat);
+
+        simpan_zakat = findViewById(R.id.simpan_zakat);
+        kembalizakat = findViewById(R.id.kembalizakat);
+        getfotozakat = findViewById(R.id.getfotozakat);
+
+        progreszakat = findViewById(R.id.progresszakat);
+        progreszakat.setVisibility(View.GONE);
+
+        simpleDateFormat = new SimpleDateFormat("dd MM yyyy");
+        tglzakat.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 showDateDialog();
             }
+        });
 
-            private void showDateDialog() {
-                Calendar calendar = Calendar.getInstance();
+        dbS = FirebaseStorage.getInstance().getReference();
 
-                datePickerDialog = new DatePickerDialog(data_zakat.this, new DatePickerDialog.OnDateSetListener() {
-                    @Override
-                    public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
-                        Calendar newCalendar = Calendar.getInstance();
-                        newCalendar.set(year, month, dayOfMonth);
-                        tanggal_zakat.setText(simpleDateFormat.format(newCalendar.getTime()));
-                    }
-                }, calendar.get(Calendar.YEAR), calendar.get(Calendar.MONTH), calendar.get(Calendar.DAY_OF_MONTH));
-                datePickerDialog.show();
+        dbF = FirebaseDatabase.getInstance().getReference();
+
+        simpan_zakat.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (rb == null){
+                    getrjeniszakat = null;
+                }else {
+                    getrjeniszakat = rb.getText().toString();
+                }
+                getJumlahzakat = jumlahzakat.getText().toString();
+                getTglzakat = tglzakat.getText().toString();
+                getMuzakizakat = muzakizakat.getText().toString();
+                getPenyaluran = penyaluranzakat.getText().toString();
+                getKeterangan = ketzakat.getText().toString();
+
+                checkUser();
             }
         });
 
+        kembalizakat.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onBackPressed();
+            }
+        });
 
-        simpan_data.setOnClickListener(new View.OnClickListener() {
+        getfotozakat.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                getjenis = jenis_zakat.getText().toString();
-                getjumlah = jumlah_zakat.getText().toString();
-                getmuzaki = muzaki_zakat.getText().toString();
-                getketerangan = keterangan_zakat.getText().toString();
-                gettanggal = tanggal_zakat.getText().toString();
-
-                if(getjenis.isEmpty()){
-                    jenis_zakat.setError("Isikan jenis zakat");
-                }else if (getjumlah.isEmpty()) {
-                    jumlah_zakat.setError("Jumlah zakat");
-                } else if (getmuzaki.isEmpty()) {
-                    muzaki_zakat.setError("Masukan muzaki");
-                } else if (gettanggal.isEmpty()) {
-                    tanggal_zakat.setError("Tanggal Kosong");
-                } else if(getketerangan.isEmpty()) {
-                    keterangan_zakat.setError("jika perlu diisi");
-                } else {
-                    database.child("Admin").child("user").push().
-                            setValue(new data_amil (getketerangan,getmuzaki,gettanggal,getjumlah,getjenis))
-                            .addOnSuccessListener(new OnSuccessListener<Void>() {
-                                @Override
-                                public void onSuccess(Void unused) {
-                                    Toast.makeText(data_zakat.this,"Data berhasil di simpan",Toast
-                                            .LENGTH_SHORT).show();
-                                    startActivity(new Intent(data_zakat.this,MainActivity.class));
-                                    finish();
-                                }
-                            }).addOnFailureListener(new OnFailureListener() {
-                                @Override
-                                public void onFailure(@NonNull Exception e) {
-                                    Toast.makeText(data_zakat.this,"Data gagal di simpan",Toast
-                                            .LENGTH_SHORT).show();
-                                }
-                            });
-                }
-
+                getimage();
             }
+        });
+    }
+    private void showDateDialog(){
+        Calendar calendar = Calendar.getInstance();
 
-            });
-                bakc_zakat.setOnClickListener(new View.OnClickListener() {
-                        public void onClick(View viwe) {
-                            onBackPressed();
+        datePickerDialog= new DatePickerDialog(this, new DatePickerDialog.OnDateSetListener() {
+            @Override
+            public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
+                Calendar newCalendar = Calendar.getInstance();
+                newCalendar.set(year, month, dayOfMonth);
+                tglzakat.setText(simpleDateFormat.format(newCalendar.getTime()));
+            }
+        }, calendar.get(Calendar.YEAR), calendar.get(Calendar.MONTH), calendar.get(Calendar.DAY_OF_MONTH));
+        datePickerDialog.show();
+    }
+
+    private void getimage(){
+        Intent imageIntentGallery = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+        startActivityForResult(imageIntentGallery, 2);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data){
+        super.onActivityResult(requestCode, resultCode, data);
+
+        switch (requestCode){
+            case REQUEST_CODE_CAMERA:
+                if (resultCode == RESULT_OK){
+                    image_zakat.setVisibility(View.VISIBLE);
+                    Bitmap bitmap = (Bitmap) data.getExtras().get("data");
+                    image_zakat.setImageBitmap(bitmap);
+                }
+                break;
+
+            case REQUEST_CODE_GALLERY:
+                if (resultCode == RESULT_OK){
+                    image_zakat.setVisibility(View.VISIBLE);
+                    url = data.getData();
+                    image_zakat.setImageURI(url);
+                }
+                break;
+        }
+    }
+    private void checkUser(){
+        if (isEmpty(getrjeniszakat) || isEmpty(getJumlahzakat) ||
+                isEmpty(getTglzakat) || isEmpty(getMuzakizakat) || isEmpty(getPenyaluran) ||
+                isEmpty(getKeterangan) || url == null){
+
+            Toast.makeText(this, "Data Tidak Boleh Ada Yang Kosong", Toast.LENGTH_SHORT).show();
+        }else {
+            image_zakat.setDrawingCacheEnabled(true);
+            image_zakat.buildDrawingCache();
+            Bitmap bitmap = ((BitmapDrawable) image_zakat.getDrawable()).getBitmap();
+            ByteArrayOutputStream stream = new ByteArrayOutputStream();
+
+            bitmap.compress(Bitmap.CompressFormat.JPEG, 100, stream);
+            byte[] bytes = stream.toByteArray();
+
+            String namaFile = UUID.randomUUID() + ".jpg";
+            final String pathImage = "gambar/" + namaFile;
+            UploadTask uploadTask = dbS.child(pathImage).putBytes(bytes);
+            uploadTask.addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+                @Override
+                public void onSuccess(UploadTask.TaskSnapshot tasksnapshot) {
+                    tasksnapshot.getStorage().getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+                        @Override
+                        public void onSuccess(Uri uri) {
+                            dbF.child("Admin").child("Zakat").push()
+                                    .setValue(new data_amil(getrjeniszakat, getJumlahzakat, getTglzakat, getMuzakizakat, getPenyaluran, getKeterangan, uri.toString().trim()))
+                                    .addOnCompleteListener(new OnCompleteListener<Void>() {
+                                        @Override
+                                        public void onComplete(@NonNull Task<Void> task) {
+
+                                            jumlahzakat.setText("");
+                                            tglzakat.setText("");
+                                            muzakizakat.setText("");
+                                            penyaluranzakat.setText("");
+                                            ketzakat.setText("");
+
+                                            Toast.makeText(data_zakat.this, "Data Berhasil Disimpan", Toast.LENGTH_SHORT).show();
+                                            progreszakat.setVisibility(View.GONE);
+                                            startActivity(new Intent(data_zakat.this, MainActivity.class));
+                                            finish();
+                                        }
+                                    });
                         }
-                });
+                    });
+                }
+            }).addOnFailureListener(new OnFailureListener() {
+                @Override
+                public void onFailure(@NonNull Exception e) {
+                    Toast.makeText(data_zakat.this, "Upload Gagal", Toast.LENGTH_SHORT).show();
+                }
+            }).addOnProgressListener(new OnProgressListener<UploadTask.TaskSnapshot>() {
+                @Override
+                public void onProgress(@NonNull UploadTask.TaskSnapshot snapshot) {
+                    progreszakat.setVisibility(View.VISIBLE);
+                    double progress = (100.0 * snapshot.getBytesTransferred()) / snapshot.getTotalByteCount();
+                    progreszakat.setProgress((int) progress);
+                }
+            });
 
-    }}
+        }
+    }
+    public void rbclick(View view){
+        int radiobuttonid = rg.getCheckedRadioButtonId();
+        rb = (RadioButton) findViewById(radiobuttonid);
+    }
+}
