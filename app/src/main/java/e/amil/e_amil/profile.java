@@ -11,6 +11,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.TextView;
 
 import com.google.firebase.auth.FirebaseUser;
 
@@ -19,7 +20,7 @@ import com.google.firebase.auth.FirebaseUser;
  * Use the {@link profile#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class profile extends Fragment {
+public class profile extends Fragment implements View.OnClickListener {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -30,7 +31,9 @@ public class profile extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    private Button logout;
+    View view;
+
+    private TextView profil, help, about, fedback, keluar;
 
     public profile() {
         // Required empty public constructor
@@ -66,9 +69,52 @@ public class profile extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_profile, container, false);
+
+
+        view = inflater.inflate(R.layout.fragment_profile, container, false);
+        profil = view.findViewById(R.id.profil);
+        help = view.findViewById(R.id.help);
+        about = view.findViewById(R.id.about);
+        fedback = view.findViewById(R.id.fedback);
+        keluar = view.findViewById(R.id.logout);
+
+        profil.setOnClickListener(this);
+        help.setOnClickListener(this);
+        about.setOnClickListener(this);
+        fedback.setOnClickListener(this);
+        keluar.setOnClickListener(this);
+        return view;
     }
 
 
+
+    FirebaseUser user = auth.getCurrentUser();
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.profil:
+                getActivity().startActivity(new Intent(getActivity(), profil_profil.class));
+                break;
+
+            case R.id.help:
+                getActivity().startActivity(new Intent(getActivity(), help_profil.class));
+                break;
+
+            case R.id.fedback:
+                getActivity().startActivity(new Intent(getActivity(), fedback_profil.class));
+                break;
+
+            case R.id.about:
+                getActivity().startActivity(new Intent(getActivity(), about_profil.class));
+                break;
+            case R.id.logout:
+                getActivity().startActivity(new Intent(getActivity(), login.class));
+                auth.signOut();
+                break;
+
+        }
+
+    }
 }
+
+
+

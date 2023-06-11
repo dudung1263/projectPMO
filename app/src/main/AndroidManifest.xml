@@ -14,6 +14,18 @@
         android:theme="@style/Theme.EAmil"
         tools:targetApi="31">
         <activity
+            android:name=".about_profil"
+            android:exported="false" />
+        <activity
+            android:name=".fedback_profil"
+            android:exported="false" />
+        <activity
+            android:name=".help_profil"
+            android:exported="false" />
+        <activity
+            android:name=".profil_profil"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity_user"
             android:exported="false" />
         <activity

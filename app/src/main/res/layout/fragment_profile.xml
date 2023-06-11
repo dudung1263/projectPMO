@@ -47,7 +47,9 @@
                 android:layout_height="150dp"
                 android:layout_gravity="center"
                 android:layout_marginTop="10dp"
-                android:src="@drawable/ikonamil"></de.hdodenhof.circleimageview.CircleImageView>
+                android:src="@drawable/ikonamil">
+
+            </de.hdodenhof.circleimageview.CircleImageView>
 
             <TextView
                 android:id="@+id/namaprofil"
@@ -57,7 +59,10 @@
                 android:layout_marginTop="10dp"
                 android:text="Nama Kamu "
                 android:textSize="20dp"
-                android:textStyle="bold"></TextView>
+                android:textStyle="bold"
+                android:layout_marginBottom="10dp">
+
+            </TextView>
 
         </LinearLayout>
 
@@ -79,6 +84,7 @@
                 android:layout_margin="5dp">
 
                 <TextView
+                    android:id="@+id/profil"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Profil"
@@ -96,6 +102,7 @@
                 android:gravity="center"
                 android:layout_margin="5dp">
                 <TextView
+                    android:id="@+id/help"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Help Center"
@@ -113,6 +120,7 @@
                 android:gravity="center"
                 android:layout_margin="5dp">
                 <TextView
+                    android:id="@+id/fedback"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Feedback"
@@ -130,6 +138,7 @@
                 android:gravity="center"
                 android:layout_margin="5dp">
                 <TextView
+                    android:id="@+id/about"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="About us"
@@ -148,6 +157,7 @@
                 android:gravity="center"
                 android:layout_margin="5dp">
                 <TextView
+                    android:id="@+id/logout"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Logout"

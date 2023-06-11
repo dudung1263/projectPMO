@@ -42,11 +42,7 @@ public class home extends Fragment implements View.OnClickListener {
         return fragment;
 
 
-
-
     }
-
-
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -57,15 +53,11 @@ public class home extends Fragment implements View.OnClickListener {
         }
 
 
-
-
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-
-
 
 
         view = inflater.inflate(R.layout.fragment_home, container, false);
