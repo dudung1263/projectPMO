@@ -42,7 +42,11 @@ public class home extends Fragment implements View.OnClickListener {
         return fragment;
 
 
+
+
     }
+
+
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -55,15 +59,6 @@ public class home extends Fragment implements View.OnClickListener {
 
 
 
-        ImageSlider imageSlider = view.findViewById(R.id.imageslider);
-        ArrayList<SlideModel> slideModels = new ArrayList<>();
-
-        slideModels.add(new SlideModel(R.drawable.img_1, ScaleTypes.FIT));
-        slideModels.add(new SlideModel(R.drawable.img_2, ScaleTypes.FIT));
-        imageSlider.setImageList(slideModels, ScaleTypes.FIT);
-
-
-
     }
 
     @Override
@@ -71,10 +66,12 @@ public class home extends Fragment implements View.OnClickListener {
                              Bundle savedInstanceState) {
 
 
+
+
         view = inflater.inflate(R.layout.fragment_home, container, false);
-        btnzakat = view.findViewById(R.id.datazakat);
-        btninfaq = view.findViewById(R.id.datainfaq);
-        btnsodakoh = view.findViewById(R.id.datasodakoh);
+        btnzakat = view.findViewById(R.id.datazakat_home);
+        btninfaq = view.findViewById(R.id.datainfaq_home);
+        btnsodakoh = view.findViewById(R.id.datasodakoh_home);
 
         btnzakat.setOnClickListener(this);
         btninfaq.setOnClickListener(this);
@@ -86,15 +83,15 @@ public class home extends Fragment implements View.OnClickListener {
     @Override
     public void onClick(View v) {
         switch (v.getId()){
-            case R.id.datazakat:
-                getActivity().startActivity(new Intent(getActivity(), data_amil.class));
+            case R.id.datazakat_home:
+                getActivity().startActivity(new Intent(getActivity(), data_zakat.class));
                 break;
 
-            case R.id.datainfaq:
+            case R.id.datainfaq_home:
                 getActivity().startActivity(new Intent(getActivity(), data_infaqq.class));
                 break;
 
-            case R.id.datasodakoh:
+            case R.id.datasodakoh_home:
                 getActivity().startActivity(new Intent(getActivity(), data_sodakoh.class));
                 break;
 

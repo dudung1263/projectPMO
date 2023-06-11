@@ -70,14 +70,5 @@ public class profile extends Fragment {
         return inflater.inflate(R.layout.fragment_profile, container, false);
     }
 
-    public void onClick(View v) {
-        FirebaseUser user = auth.getCurrentUser();
-        auth.signOut();
-        switch (v.getId()) {
-            case R.id.logout:
-                getActivity().startActivity(new Intent(getActivity(), login.class));
-                break;
 
-        }
-    }
 }

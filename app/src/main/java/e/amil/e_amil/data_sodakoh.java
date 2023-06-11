@@ -88,11 +88,11 @@ public class data_sodakoh extends AppCompatActivity {
 
         image_sodakoh = findViewById(R.id.image_sodakoh);
 
-        simpan_sodakoh = findViewById(R.id.simpan_sodaqoh);
+        simpan_sodakoh = findViewById(R.id.simpan_sodakoh);
         kembalisodakoh = findViewById(R.id.kembalisodakoh);
         getfotosodakoh = findViewById(R.id.getfotosodakoh);
 
-        progressodakoh = findViewById(R.id.progresszakat);
+        progressodakoh = findViewById(R.id.progressodakoh);
         progressodakoh.setVisibility(View.GONE);
 
         simpleDateFormat = new SimpleDateFormat("dd MM yyyy");

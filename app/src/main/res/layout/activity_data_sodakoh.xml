@@ -5,10 +5,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".data_zakat">
+    tools:context=".data_sodakoh">
 
     <LinearLayout
-        android:id="@+id/topinputzakat"
+        android:id="@+id/topinputsodakoh"
         android:layout_width="match_parent"
         android:layout_height="100dp"
         android:background="@drawable/img_13">
@@ -19,8 +19,7 @@
             android:layout_height="50dp"
             android:background="@drawable/kembalizakat"
             android:gravity="center"
-            android:layout_gravity="center"
-            >
+            android:layout_gravity="center">
 
 
         </androidx.appcompat.widget.AppCompatButton>
@@ -39,10 +38,10 @@
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/list"
+        android:id="@+id/listsodakoh"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/topinputzakat"
+        android:layout_below="@id/topinputsodakoh"
         android:layout_marginTop="10dp"
         android:background="#001AFF00"
         android:orientation="vertical">
@@ -323,7 +322,7 @@
 
             <androidx.appcompat.widget.AppCompatButton
                 android:layout_marginTop="20dp"
-                android:id="@+id/simpan_sodaqoh"
+                android:id="@+id/simpan_sodakoh"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:layout_marginLeft="100dp"
@@ -337,7 +336,7 @@
             </androidx.appcompat.widget.AppCompatButton>
 
             <ProgressBar
-                android:id="@+id/progresszakat"
+                android:id="@+id/progressodakoh"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:layout_gravity="center">

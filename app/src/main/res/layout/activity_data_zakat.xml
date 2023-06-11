@@ -38,7 +38,7 @@
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/list"
+        android:id="@+id/listzakat"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@id/topinputzakat"
@@ -298,7 +298,9 @@
                         android:background="@drawable/shape3"
                         android:text="Pilih Gambar"
                         android:textAllCaps="false"
-                        android:textSize="15dp"></androidx.appcompat.widget.AppCompatButton>
+                        android:textSize="15dp">
+
+                    </androidx.appcompat.widget.AppCompatButton>
                 </LinearLayout>
 
             </LinearLayout>
