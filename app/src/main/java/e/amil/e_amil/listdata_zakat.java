@@ -86,10 +86,10 @@ public class listdata_zakat extends AppCompatActivity {
         reference.child("Admin").child("Zakat")
                 .addValueEventListener(new ValueEventListener() {
                     @Override
-                    public void onDataChange(@NonNull DataSnapshot dataSnapsot) {
+                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                         dataAmil = new ArrayList<>();
                         dataAmil.clear();
-                        for (DataSnapshot snapshot : dataSnapsot.getChildren()){
+                        for (DataSnapshot snapshot : dataSnapshot.getChildren()){
                             data_amil amil = snapshot.getValue(data_amil.class);
 
                             amil.setKey(snapshot.getKey());

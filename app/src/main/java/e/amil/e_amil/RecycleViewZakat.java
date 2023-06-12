@@ -152,7 +152,7 @@ public class RecycleViewZakat extends RecyclerView.Adapter<RecycleViewZakat.View
                                     @Override
                                     public void onClick(DialogInterface dialogInterface, int i) {
                                         //Menjalankan Fungsi hapus disini
-                                        database.child("Admin").child("Zakat").child(data_amil.getKey()).removeValue().addOnSuccessListener(new OnSuccessListener<Void>() {
+                                        database.child("Admin").child("Zakat").child(dataAmil.getKey()).removeValue().addOnSuccessListener(new OnSuccessListener<Void>() {
                                             @Override
                                             public void onSuccess(Void unused) {
                                                 Toast.makeText(context, "Berhasil Menghapus Data", Toast.LENGTH_SHORT).show();
@@ -206,6 +206,7 @@ public class RecycleViewZakat extends RecyclerView.Adapter<RecycleViewZakat.View
             PenyaluranZakat = itemView.findViewById(R.id.penyaluranzakat_ds);
             KetZakat = itemView.findViewById(R.id.ketzakat_ds);
             Gambarzakat = itemView.findViewById(R.id.gambarzakat_ds);
+            ListItemZakat = itemView.findViewById(R.id.list_item_zakat);
 
         }
     }
