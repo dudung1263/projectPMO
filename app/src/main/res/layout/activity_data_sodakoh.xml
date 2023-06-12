@@ -27,7 +27,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="Input Data Zakat"
+            android:text="Input Data Sodaqoh"
             android:gravity="center"
             android:textSize="35dp"
             android:textColor="@color/white"
@@ -69,7 +69,7 @@
                     <TextView
                         android:layout_width="100dp"
                         android:layout_height="wrap_content"
-                        android:text="Jenis sodakoh"
+                        android:text="Jenis Sodaqoh"
                         android:textColor="@color/black"
                         android:textSize="15dp"
                         android:textStyle="bold"/>
@@ -120,7 +120,7 @@
                     <TextView
                         android:layout_width="100dp"
                         android:layout_height="wrap_content"
-                        android:text="Jumlah sodakoh"
+                        android:text="Jml Sodaqoh"
                         android:textColor="@color/black"
                         android:textSize="15dp"
                         android:textStyle="bold">
@@ -132,7 +132,7 @@
                         android:layout_width="240dp"
                         android:layout_height="30dp"
                         android:background="@drawable/shape3"
-                        android:hint="Jumlah sodakoh"
+                        android:hint="Jumlah Sodaqoh"
                         android:paddingLeft="5dp"
                         android:ems="10"
                         android:textColor="@color/black">
@@ -164,7 +164,7 @@
                         android:layout_width="240dp"
                         android:layout_height="30dp"
                         android:background="@drawable/shape3"
-                        android:hint="Tgl Terima Zakat"
+                        android:hint="Tgl Terima Sodaqoh"
                         android:paddingLeft="5dp"
                         android:ems="10"
                         android:textColor="@color/black">
@@ -196,7 +196,7 @@
                         android:layout_width="240dp"
                         android:layout_height="30dp"
                         android:background="@drawable/shape3"
-                        android:hint="Pemberi Zakat"
+                        android:hint="Pemberi Sodaqoh"
                         android:paddingLeft="5dp"
                         android:ems="10"
                         android:textColor="@color/black">
@@ -228,7 +228,7 @@
                         android:layout_width="240dp"
                         android:layout_height="30dp"
                         android:background="@drawable/shape3"
-                        android:hint="Penyaluran Zakat"
+                        android:hint="Penyaluran Sodaqoh"
                         android:paddingLeft="5dp"
                         android:inputType="textMultiLine"
                         android:ems="10"
