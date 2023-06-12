@@ -1,5 +1,6 @@
 package e.amil.e_amil;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -7,13 +8,14 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 /**
  * A simple {@link Fragment} subclass.
  * Use the {@link dokumen#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class dokumen extends Fragment {
+public class dokumen extends Fragment implements View.OnClickListener {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -24,19 +26,15 @@ public class dokumen extends Fragment {
     private String mParam1;
     private String mParam2;
 
+    Button Btndatazakat_data;
+
+    View view;
+
     public dokumen() {
         // Required empty public constructor
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment dokumen.
-     */
-    // TODO: Rename and change types and number of parameters
+
     public static dokumen newInstance(String param1, String param2) {
         dokumen fragment = new dokumen();
         Bundle args = new Bundle();
@@ -59,6 +57,28 @@ public class dokumen extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_dokumen, container, false);
+        view = inflater.inflate(R.layout.fragment_dokumen, container, false);
+        Btndatazakat_data = view.findViewById(R.id.datazakat_dokumen);
+
+
+        Btndatazakat_data.setOnClickListener(this);
+
+        return view;
+
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.datazakat_dokumen:
+                getActivity().startActivity(new Intent(getActivity(), listdata_zakat.class));
+                break;
+
+        }
+    }
+
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
     }
 }

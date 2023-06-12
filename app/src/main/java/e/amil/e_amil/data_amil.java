@@ -10,7 +10,7 @@ public class data_amil {
     private String ketzakat;
 
     private String gambar;
-    private String key;
+    private static String key;
 
     public String getRjeniszakat() {
         return rjeniszakat;
@@ -81,7 +81,7 @@ public class data_amil {
         this.ketzakat = ketzakat;
     }
 
-    public String getKey() {
+    public static String getKey() {
         return key;
     }
 
