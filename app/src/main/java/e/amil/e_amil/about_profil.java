@@ -15,13 +15,18 @@ public class about_profil extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_about_profil);
+
         kembali = findViewById(R.id.kembaliabout);
+
+        kembali.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(about_profil.this, MainActivity.class));
+            }
+        });
+
         if (getSupportActionBar() != null) {
             getSupportActionBar().hide();
         }
-    }
-    public void kembaliabout (View view){
-        Intent intent = new Intent(about_profil.this, MainActivity.class);
-        startActivity(intent);
     }
 }
