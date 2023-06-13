@@ -3,8 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".dokumen">
-
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -18,10 +18,10 @@
             android:background="@drawable/img_9">
             <TextView
                 android:id="@+id/text1"
-                android:layout_width="320dp"
+                android:layout_width="280dp"
                 android:layout_height="70dp"
                 android:layout_marginTop="40dp"
-                android:text="LAPORAN DATA"
+                android:text="KELOLA DATA"
                 android:layout_marginStart="0dp"
                 android:fontFamily="sans-serif-black"
                 android:textStyle="bold"
@@ -41,7 +41,7 @@
                 android:layout_height="wrap_content">
 
                 <LinearLayout
-                    android:id="@+id/lindatadokumen"
+                    android:id="@+id/lindata"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_gravity="center_vertical"
@@ -49,6 +49,7 @@
 
                     <androidx.appcompat.widget.AppCompatButton
                         android:id="@+id/datazakat_dokumen"
+                        android:onClick="datazakat"
                         android:layout_width="match_parent"
                         android:layout_height="70dp"
                         android:layout_gravity="center"
@@ -69,6 +70,7 @@
 
                     <androidx.appcompat.widget.AppCompatButton
                         android:id="@+id/datainfaq_dokumen"
+                        android:onClick="datainfaq"
                         android:layout_width="match_parent"
                         android:layout_height="70dp"
                         android:layout_gravity="center"
@@ -108,10 +110,30 @@
                         android:textColor="@color/white">
                     </androidx.appcompat.widget.AppCompatButton>
 
+                    <LinearLayout
+                        android:layout_marginBottom="10dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="70sp"
+                        android:orientation="vertical">
+                        <ImageView
+                            android:layout_marginTop="20dp"
+                            android:id="@+id/imageView"
+                            android:layout_width="match_parent"
+                            android:layout_height="200dp"
+                            android:layout_gravity="center"/>
+
+
+                    </LinearLayout>
 
                 </LinearLayout>
+
+
+
             </ScrollView>
         </LinearLayout>
     </RelativeLayout>
+
+
+
 
 </FrameLayout>
