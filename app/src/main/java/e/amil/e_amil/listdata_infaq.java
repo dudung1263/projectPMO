@@ -8,13 +8,16 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
+import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -34,6 +37,8 @@ public class listdata_infaq extends AppCompatActivity {
     private DatabaseReference reference;
 
     private ArrayList<data_amilinfaqq> datainfaq;
+
+    private FloatingActionButton adddatainfaq, homeinfaq;
 
     private EditText Search_liasdata_infaq;
 
@@ -78,12 +83,30 @@ public class listdata_infaq extends AppCompatActivity {
 
         MyRecycleView();
 
+        adddatainfaq.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(listdata_infaq.this, data_infaqq.class);
+                startActivity(intent);
+            }
+        });
+
+        homeinfaq.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent intent = new Intent(listdata_infaq.this, MainActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+
     }
 
     private void GetData(String data) {
 
         reference = FirebaseDatabase.getInstance().getReference();
-        reference.child("Admin").child("Zakat")
+        reference.child("Admin").child("Infaq")
                 .addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -105,7 +128,7 @@ public class listdata_infaq extends AppCompatActivity {
                     public void onCancelled(@NonNull DatabaseError error) {
 
                         Toast.makeText(getApplicationContext(), "Data Gagal Menampilkan", Toast.LENGTH_SHORT).show();
-                        Log.e("MyListDataZakat", error.getDetails() + " " + error.getMessage());
+                        Log.e("MyListDataInfaq", error.getDetails() + " " + error.getMessage());
                     }
                 });
     }

@@ -4,7 +4,6 @@ import static android.text.TextUtils.isEmpty;
 
 import android.annotation.SuppressLint;
 import android.content.DialogInterface;
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -29,39 +28,39 @@ import com.google.firebase.database.FirebaseDatabase;
 import java.util.ArrayList;
 import java.util.List;
 
-public class RecycleViewInfaq extends RecyclerView.Adapter<RecycleViewInfaq.ViewHolder> implements Filterable {
+public class RecycleViewSodakoh extends RecyclerView.Adapter<RecycleViewSodakoh.ViewHolder> implements Filterable {
 
     //Deklarasi Variabel
-    ArrayList<data_amilinfaqq> listInfaq;
-    listdata_infaq context;
-    ArrayList<data_amilinfaqq> listInfaqSearch;
+    ArrayList<data_amilsodakoh> listSodakoh;
+    lisdata_sodakoh context;
+    ArrayList<data_amilsodakoh> listSodakohSearch;
     DatabaseReference database = FirebaseDatabase.getInstance().getReference();
 
     //Filter Data berdasarkan nama
     Filter setSearch = new Filter() {
         @Override
         protected FilterResults performFiltering(CharSequence constraint) {
-            ArrayList<data_amilinfaqq> filterInfaq = new ArrayList<>();
+            ArrayList<data_amilsodakoh> filterSodakoh = new ArrayList<>();
             if (constraint == null || constraint.length() == 0){
-                filterInfaq.addAll(listInfaqSearch);
+                filterSodakoh.addAll(listSodakohSearch);
             }else {
                 String filterPattern = constraint.toString().toLowerCase().trim();
-                for (data_amilinfaqq item : listInfaqSearch){
-                    if (item.getRjenisinfak().toLowerCase().contains(filterPattern)) {
-                        filterInfaq.add(item);
+                for (data_amilsodakoh item : listSodakohSearch){
+                    if (item.getRjenissodakoh().toLowerCase().contains(filterPattern)) {
+                        filterSodakoh.add(item);
                     }
                 }
             }
             FilterResults results = new FilterResults();
-            results.values = filterInfaq;
+            results.values = filterSodakoh;
             return results;
         }
 
         @Override
         protected void publishResults(CharSequence charSequence, FilterResults results) {
 
-            listInfaq.clear();
-            listInfaq.addAll((List) results.values);
+            listSodakoh.clear();
+            listSodakoh.addAll((List) results.values);
             notifyDataSetChanged();
         }
     };
@@ -69,10 +68,10 @@ public class RecycleViewInfaq extends RecyclerView.Adapter<RecycleViewInfaq.View
 //    private int position;
 
     //Membuat konstruktor untuk menyimpan data
-    public RecycleViewInfaq(ArrayList<data_amilinfaqq> listInfaq, listdata_infaq context){
-        this.listInfaq = listInfaq;
+    public RecycleViewSodakoh(ArrayList<data_amilsodakoh> listSodakoh, lisdata_sodakoh context){
+        this.listSodakoh = listSodakoh;
         this.context = context;
-        this.listInfaqSearch = listInfaq;
+        this.listSodakohSearch = listSodakoh;
     }
     @Override
     public Filter getFilter() {
@@ -82,42 +81,42 @@ public class RecycleViewInfaq extends RecyclerView.Adapter<RecycleViewInfaq.View
 
     @NonNull
     @Override
-    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.activity_viewdesign_infaq, parent, false);
-        return new ViewHolder(v);
+    public RecycleViewSodakoh.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.viewdesign_sodakoh, parent, false);
+        return new RecycleViewSodakoh.ViewHolder(v);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ViewHolder holder, @SuppressLint("RecyclerView") int position) {
+    public void onBindViewHolder(@NonNull RecycleViewSodakoh.ViewHolder holder, @SuppressLint("RecyclerView") int position) {
 //        this.holder = holder;
 //        this.position = position;
 
-        final String JenisInfaq = listInfaq.get(position).getRjenisinfak();
-        final String Jumlahinfaq = listInfaq.get(position).getJumlahinfak();
-        final String TglInfaq = listInfaq.get(position).getTglinfak();
-        final String MuzakiInfaq = listInfaq.get(position).getMuzakiinfak();
-        final String Penyaluraninfaq = listInfaq.get(position).getPenyaluraninfak();
-        final String Keteranganinfaq = listInfaq.get(position).getKetinfak();
-        final String Gambar = listInfaq.get(position).getGambarinfak();
-        final data_amilinfaqq dataInfaq = listInfaq.get(position);
+        final String JenisSodakoh = listSodakoh.get(position).getRjenissodakoh();
+        final String JumlahSodakoh = listSodakoh.get(position).getJumlahsodakoh();
+        final String TglSodakoh = listSodakoh.get(position).getTglsodakoh();
+        final String MuzakiSodakoh = listSodakoh.get(position).getMuzakisodakoh();
+        final String Penyaluransodakoh = listSodakoh.get(position).getPenyaluransodakoh();
+        final String Keterangansodakoh = listSodakoh.get(position).getKeterangansodakoh();
+        final String Gambar = listSodakoh.get(position).getGambarsodakoh();
+        final data_amilsodakoh dataSodakoh = listSodakoh.get(position);
 
         //Memasukkan nilai kedalam view : NIM, Nama, Prodi
-        holder.JenisInfaq.setText(": "+JenisInfaq);
-        holder.JumlahInfaq.setText(": "+Jumlahinfaq);
-        holder.TglInfaq.setText(": "+TglInfaq);
-        holder.MuzakiInfaq.setText(": "+MuzakiInfaq);
-        holder.PenyaluranInfaq.setText(": "+Penyaluraninfaq);
-        holder.KetInfaq.setText(": "+Keteranganinfaq);
+        holder.JenisSodakoh.setText(": "+JenisSodakoh);
+        holder.JumlahSodakoh.setText(": "+JumlahSodakoh);
+        holder.TglSodakoh.setText(": "+TglSodakoh);
+        holder.MuzakiSodakoh.setText(": "+MuzakiSodakoh);
+        holder.PenyaluranSodakoh.setText(": "+Penyaluransodakoh);
+        holder.KetSodakoh.setText(": "+Keterangansodakoh);
 
         if (isEmpty(Gambar)){
-            holder.Gambarinfaq.setImageResource(R.drawable.carigambar);
+            holder.GambarSodakoh.setImageResource(R.drawable.carigambar);
         }else {
             Glide.with(holder.itemView.getContext())
                     .load(Gambar.trim())
-                    .into(holder.Gambarinfaq);
+                    .into(holder.GambarSodakoh);
         }
 
-        holder.ListIteminfaq.setOnLongClickListener(new View.OnLongClickListener(){
+        holder.ListItemsodakoh.setOnLongClickListener(new View.OnLongClickListener(){
 
             @Override
             public boolean onLongClick(View view) {
@@ -131,14 +130,14 @@ public class RecycleViewInfaq extends RecyclerView.Adapter<RecycleViewInfaq.View
                             case 0:
                                 //Berpindah activity pada halaman layout UpdateData dan mengambil data dari ListMahasiswa
                                 Bundle bundle = new Bundle();
-                                bundle.putString("dataJenisInfaq",listInfaq.get(position).getRjenisinfak());
-                                bundle.putString("dataJumlahInfaq",listInfaq.get(position).getJumlahinfak());
-                                bundle.putString("dataTglInfaq",listInfaq.get(position).getTglinfak());
-                                bundle.putString("dataMuzakiInfaq",listInfaq.get(position).getKetinfak());
-                                bundle.putString("dataPenyaluranInfaq",listInfaq.get(position).getPenyaluraninfak());
-                                bundle.putString("dataKetInfaq",listInfaq.get(position).getKetinfak());
-                                bundle.putString("dataPrimaryInfaq",listInfaq.get(position).getKey());
-                                bundle.putString("dataGambarInfaq",listInfaq.get(position).getGambarinfak());
+                                bundle.putString("dataJenisSodakoh",listSodakoh.get(position).getRjenissodakoh());
+                                bundle.putString("dataJumlahSodakoh",listSodakoh.get(position).getJumlahsodakoh());
+                                bundle.putString("dataTglSodakoh",listSodakoh.get(position).getTglsodakoh());
+                                bundle.putString("dataMuzakiSodakoh",listSodakoh.get(position).getMuzakisodakoh());
+                                bundle.putString("dataPenyaluranSodakoh",listSodakoh.get(position).getPenyaluransodakoh());
+                                bundle.putString("dataKetSodakoh",listSodakoh.get(position).getKeterangansodakoh());
+                                bundle.putString("dataPrimarySodakoh",listSodakoh.get(position).getKey());
+                                bundle.putString("dataGambarSodakoh",listSodakoh.get(position).getGambarsodakoh());
 
                                 //Intent intent = new Intent(view.getContext(), update_zakat.class);
                                 //intent.putExtras(bundle);
@@ -152,7 +151,7 @@ public class RecycleViewInfaq extends RecyclerView.Adapter<RecycleViewInfaq.View
                                     @Override
                                     public void onClick(DialogInterface dialogInterface, int i) {
                                         //Menjalankan Fungsi hapus disini
-                                        database.child("Admin").child("infaq").child(dataInfaq.getKey()).removeValue().addOnSuccessListener(new OnSuccessListener<Void>() {
+                                        database.child("Admin").child("sodakoh").child(dataSodakoh.getKey()).removeValue().addOnSuccessListener(new OnSuccessListener<Void>() {
                                             @Override
                                             public void onSuccess(Void unused) {
                                                 Toast.makeText(context, "Berhasil Menghapus Data", Toast.LENGTH_SHORT).show();
@@ -188,25 +187,25 @@ public class RecycleViewInfaq extends RecyclerView.Adapter<RecycleViewInfaq.View
     @Override
     public int getItemCount() {
 
-        return listInfaq.size();
+        return listSodakoh.size();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
 
-        private TextView JenisInfaq, JumlahInfaq, TglInfaq, MuzakiInfaq, PenyaluranInfaq, KetInfaq;
-        private ImageView Gambarinfaq;
-        private LinearLayout ListIteminfaq;
+        private TextView JenisSodakoh, JumlahSodakoh, TglSodakoh, MuzakiSodakoh, PenyaluranSodakoh, KetSodakoh;
+        private ImageView GambarSodakoh;
+        private LinearLayout ListItemsodakoh;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             //Menginisialisasi view view yang terpasang pada layout ini
-            JenisInfaq = itemView.findViewById(R.id.jenisinfaq_ds);
-            JumlahInfaq = itemView.findViewById(R.id.jumlahinfaq_ds);
-            TglInfaq = itemView.findViewById(R.id.tglinfaq_ds);
-            MuzakiInfaq = itemView.findViewById(R.id.muzakinfaq_ds);
-            PenyaluranInfaq = itemView.findViewById(R.id.penyaluraninfaq_ds);
-            KetInfaq = itemView.findViewById(R.id.ketinfaq_ds);
-            Gambarinfaq = itemView.findViewById(R.id.gambarinfaq_ds);
-            ListIteminfaq = itemView.findViewById(R.id.listinfaq);
+            JenisSodakoh = itemView.findViewById(R.id.jenissodakoh_ds);
+            JumlahSodakoh = itemView.findViewById(R.id.jumlahsodakoh_ds);
+            TglSodakoh = itemView.findViewById(R.id.tglsodakoh_ds);
+            MuzakiSodakoh = itemView.findViewById(R.id.muzakisodakoh_ds);
+            PenyaluranSodakoh = itemView.findViewById(R.id.penyaluransodakoh_ds);
+            KetSodakoh = itemView.findViewById(R.id.ketsodakoh_ds);
+            GambarSodakoh = itemView.findViewById(R.id.gambarsodakoh_ds);
+            ListItemsodakoh = itemView.findViewById(R.id.listsodakoh);
 
         }
     }

@@ -8,20 +8,20 @@ public class data_amilinfaqq {
     private String penyaluraninfak;
     private String ketinfak;
 
-    private String gambar;
+    private String gambarinfak;
     private String key;
 
     public data_amilinfaqq() {
     }
 
-    public data_amilinfaqq(String rjenisinfak, String jumlahinfak, String tglinfak, String muzakiinfak, String penyaluraninfak, String ketinfak, String gambar) {
+    public data_amilinfaqq(String rjenisinfak, String jumlahinfak, String tglinfak, String muzakiinfak, String penyaluraninfak, String ketinfak, String gambarinfak) {
         this.rjenisinfak = rjenisinfak;
         this.jumlahinfak = jumlahinfak;
         this.tglinfak = tglinfak;
         this.muzakiinfak = muzakiinfak;
         this.penyaluraninfak = penyaluraninfak;
         this.ketinfak = ketinfak;
-        this.gambar = gambar;
+        this.gambarinfak = gambarinfak;
     }
 
     public String getRjenisinfak() {
@@ -72,12 +72,12 @@ public class data_amilinfaqq {
         this.ketinfak = ketinfak;
     }
 
-    public String getGambar() {
-        return gambar;
+    public String getGambarinfak() {
+        return gambarinfak;
     }
 
-    public void setGambar(String gambar) {
-        this.gambar = gambar;
+    public void setGambarsodakoh(String gambar) {
+        this.gambarinfak = gambar;
     }
 
     public String getKey() {

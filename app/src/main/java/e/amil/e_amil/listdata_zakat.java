@@ -2,10 +2,12 @@ package e.amil.e_amil;
 
 import static android.widget.LinearLayout.VERTICAL;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
+import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -16,6 +18,7 @@ import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -35,6 +38,8 @@ public class listdata_zakat extends AppCompatActivity {
     private DatabaseReference reference;
 
     private ArrayList<data_amil> dataAmil;
+
+    private FloatingActionButton adddatazakat, homezakat;
 
     private EditText Search_liasdata_zakat;
 
@@ -78,12 +83,30 @@ public class listdata_zakat extends AppCompatActivity {
 
         MyRecycleView();
 
+        adddatazakat.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(listdata_zakat.this, data_zakat.class);
+                startActivity(intent);
+            }
+        });
+
+        homezakat.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent intent = new Intent(listdata_zakat.this, MainActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+
     }
 
     private void GetData(String data) {
 
         reference = FirebaseDatabase.getInstance().getReference();
-        reference.child("Admin").child("Zakat")
+        reference.child("Admin").child("Infaq")
                 .addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {

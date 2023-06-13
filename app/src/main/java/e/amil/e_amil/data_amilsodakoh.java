@@ -9,20 +9,20 @@ public class data_amilsodakoh {
     private String penyaluransodakoh;
     private String keterangansodakoh;
 
-    private String gambar;
+    private String gambarsodakoh;
     private String key;
 
     public data_amilsodakoh() {
     }
 
-    public data_amilsodakoh(String rjenissodakoh, String jumlahsodakoh, String tglsodakoh, String muzakisodakoh, String penyaluransodakoh, String keterangansodakoh, String gambar) {
+    public data_amilsodakoh(String rjenissodakoh, String jumlahsodakoh, String tglsodakoh, String muzakisodakoh, String penyaluransodakoh, String keterangansodakoh, String gambarsodakoh) {
         this.rjenissodakoh = rjenissodakoh;
         this.jumlahsodakoh = jumlahsodakoh;
         this.tglsodakoh = tglsodakoh;
         this.muzakisodakoh = muzakisodakoh;
         this.penyaluransodakoh = penyaluransodakoh;
         this.keterangansodakoh = keterangansodakoh;
-        this.gambar = gambar;
+        this.gambarsodakoh = gambarsodakoh;
     }
 
     public String getRjenissodakoh() {
@@ -73,12 +73,12 @@ public class data_amilsodakoh {
         this.keterangansodakoh = keterangansodakoh;
     }
 
-    public String getGambar() {
-        return gambar;
+    public String getGambarsodakoh() {
+        return gambarsodakoh;
     }
 
-    public void setGambar(String gambar) {
-        this.gambar = gambar;
+    public void setGambarsodakoh(String gambar) {
+        this.gambarsodakoh = gambar;
     }
 
     public String getKey() {

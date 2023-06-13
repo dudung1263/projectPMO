@@ -204,7 +204,7 @@ public class data_sodakoh extends AppCompatActivity {
                     tasksnapshot.getStorage().getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
                         @Override
                         public void onSuccess(Uri uri) {
-                            dbF.child("Admin").child("Zakat").push()
+                            dbF.child("Admin").child("Sodakoh").push()
                                     .setValue(new data_amilsodakoh(getrjenissodakoh, getJumlahsodakoh, getTglsodakoh, getMuzakisodakoh, getPenyaluransodakoh, getKeterangansodakoh, uri.toString().trim()))
                                     .addOnCompleteListener(new OnCompleteListener<Void>() {
                                         @Override

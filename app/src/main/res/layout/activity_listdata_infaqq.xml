@@ -17,7 +17,7 @@
         android:layout_marginBottom="5dp"
         android:elegantTextHeight="true"
         android:gravity="center"
-        android:text="Data Zakat"
+        android:text="Data Infaq"
         android:textColor="@color/black"
         android:textSize="20dp"
         android:textStyle="bold"

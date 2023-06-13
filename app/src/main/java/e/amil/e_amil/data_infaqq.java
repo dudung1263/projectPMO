@@ -207,7 +207,7 @@ public class data_infaqq extends AppCompatActivity {
                     tasksnapshot.getStorage().getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
                         @Override
                         public void onSuccess(Uri uri) {
-                            dbF.child("Admin").child("Zakat").push()
+                            dbF.child("Admin").child("Infaq").push()
                                     .setValue(new data_amilinfaqq(getrjenisinfak, getJumlahinfak, getTglinfak, getMuzakiinfak, getPenyaluraninfak, getketeranganinfak, uri.toString().trim()))
                                     .addOnCompleteListener(new OnCompleteListener<Void>() {
                                         @Override
