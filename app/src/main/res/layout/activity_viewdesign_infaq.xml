@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/list_item_zakat"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="25dp"
+    android:layout_marginTop="20dp"
+    android:layout_marginRight="25dp"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/shape3">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="110dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="4dp"
+                android:text="Jenis Zakat"
+                android:textColor="@color/black"
+                android:textSize="15dp"
+                android:textStyle="bold">
+            </TextView>
+
+            <TextView
+                android:id="@+id/jenisinfaq_ds"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginRight="20dp"
+                android:text="Jenis infaq"
+                android:textColor="@color/black"
+                android:textSize="15dp"
+                android:textStyle="bold">
+            </TextView>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="110dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="7dp"
+                android:text="Jumlah Zakat"
+                android:textColor="@color/black"
+                android:textStyle="bold">
+            </TextView>
+
+            <TextView
+                android:id="@+id/jumlahinfaq_ds"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="7dp"
+                android:layout_marginRight="20dp"
+                android:text="Jumlah infaq"
+                android:textColor="@color/black"
+                android:textStyle="bold">
+            </TextView>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="110dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="7dp"
+                android:text="Tanggal Terima"
+                android:textColor="@color/black"
+                android:textStyle="bold">
+            </TextView>
+
+            <TextView
+                android:id="@+id/tglinfaq_ds"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="7dp"
+                android:layout_marginRight="20dp"
+                android:text="Tanggal Terima"
+                android:textColor="@color/black"
+                android:textStyle="bold">
+            </TextView>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="110dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="7dp"
+                android:text="Muzaki/Pemberi"
+                android:textColor="@color/black"
+                android:textStyle="bold">
+            </TextView>
+
+            <TextView
+                android:id="@+id/muzakinfaq_ds"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="7dp"
+                android:layout_marginRight="20dp"
+                android:text="Muzaki/Pemberi"
+                android:textColor="@color/black"
+                android:textStyle="bold">
+            </TextView>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="110dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="7dp"
+                android:text="Penyaluran"
+                android:textColor="@color/black"
+                android:textStyle="bold">
+            </TextView>
+
+            <TextView
+                android:id="@+id/penyaluraninfaq_ds"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="7dp"
+                android:layout_marginRight="20dp"
+                android:text="Penyaluran"
+                android:textColor="@color/black"
+                android:textStyle="bold">
+            </TextView>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="110dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="7dp"
+                android:text="Keterangan"
+                android:textColor="@color/black"
+                android:textStyle="bold">
+            </TextView>
+
+            <TextView
+                android:id="@+id/ketinfaq_ds"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="7dp"
+                android:layout_marginRight="20dp"
+                android:text="Keterangan"
+                android:textColor="@color/black"
+                android:textStyle="bold">
+            </TextView>
+
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/gambarinfaq_ds"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_gravity="center"
+            android:layout_margin="10dp"
+            android:contentDescription="TODO"
+            android:src="@drawable/carigambar">
+        </ImageView>
+
+    </LinearLayout>
+
+</LinearLayout>

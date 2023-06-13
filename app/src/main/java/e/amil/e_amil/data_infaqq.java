@@ -72,6 +72,9 @@ public class data_infaqq extends AppCompatActivity {
     private static final int REQUEST_CODE_CAMERA = 1;
     private static final int REQUEST_CODE_GALLERY = 2;
 
+    public static void clear() {
+    }
+
     @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {

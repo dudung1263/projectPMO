@@ -110,15 +110,19 @@
                         android:textColor="@color/white">
                     </androidx.appcompat.widget.AppCompatButton>
 
-
-                    <com.denzcoskun.imageslider.ImageSlider
-                        android:id="@+id/imageslider"
-                        android:layout_width="350dp"
-                        android:layout_height="210dp"
-                        android:layout_gravity="center"
-                        android:layout_marginTop="10dp"
+                    <LinearLayout
                         android:layout_marginBottom="10dp"
-                        app:iss_corner_radius="10" />
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+                        <ImageView
+                            android:layout_marginTop="20dp"
+                            android:id="@+id/imageView"
+                            android:layout_width="match_parent"
+                            android:layout_height="170dp"/>
+
+
+                    </LinearLayout>
 
                 </LinearLayout>
 
