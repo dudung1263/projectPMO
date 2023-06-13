@@ -102,12 +102,12 @@ public class RecycleViewInfaq extends RecyclerView.Adapter<RecycleViewInfaq.View
         final data_amilinfaqq dataInfaq = listInfaq.get(position);
 
 
-        holder.JenisInfaq.setText(": "+JenisInfaq);
-        holder.JumlahInfaq.setText(": "+Jumlahinfaq);
-        holder.TglInfaq.setText(": "+TglInfaq);
-        holder.MuzakiInfaq.setText(": "+MuzakiInfaq);
-        holder.PenyaluranInfaq.setText(": "+Penyaluraninfaq);
-        holder.KetInfaq.setText(": "+Keteranganinfaq);
+        holder.JenisInfaq.setText(" "+JenisInfaq);
+        holder.JumlahInfaq.setText("Rp. "+Jumlahinfaq);
+        holder.TglInfaq.setText(" "+TglInfaq);
+        holder.MuzakiInfaq.setText(" "+MuzakiInfaq);
+        holder.PenyaluranInfaq.setText(" "+Penyaluraninfaq);
+        holder.KetInfaq.setText(" "+Keteranganinfaq);
 
         if (isEmpty(Gambar)){
             holder.Gambarinfaq.setImageResource(R.drawable.carigambar);
