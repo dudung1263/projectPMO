@@ -106,7 +106,7 @@ public class listdata_zakat extends AppCompatActivity {
     private void GetData(String data) {
 
         reference = FirebaseDatabase.getInstance().getReference();
-        reference.child("Admin").child("Infaq")
+        reference.child("Admin").child("Zakat")
                 .addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
