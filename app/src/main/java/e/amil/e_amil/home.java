@@ -3,18 +3,24 @@ package e.amil.e_amil;
 import android.content.Intent;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 
 import com.denzcoskun.imageslider.ImageSlider;
 import com.denzcoskun.imageslider.constants.ScaleTypes;
 import com.denzcoskun.imageslider.models.SlideModel;
 
 import java.util.ArrayList;
+import java.util.Timer;
+import java.util.TimerTask;
 
 public class home extends Fragment implements View.OnClickListener {
 
@@ -27,8 +33,17 @@ public class home extends Fragment implements View.OnClickListener {
 
     private ImageSlider imageslider;
 
+        private ImageView imageView;
+        private int[] imageResources = {R.drawable.img_2, R.drawable.img_3, R.drawable.img_4};
+        private int currentPage = 0;
+        private Timer timer;
+        private final long DELAY_MS = 500; // Delay in milliseconds before task is to be executed
+        private final long PERIOD_MS = 3000; // Time interval in milliseconds between successive task executions.
+
 
     public home() {
+
+
     }
 
 
@@ -55,6 +70,7 @@ public class home extends Fragment implements View.OnClickListener {
 
     }
 
+    @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -68,8 +84,45 @@ public class home extends Fragment implements View.OnClickListener {
         btnzakat.setOnClickListener(this);
         btninfaq.setOnClickListener(this);
         btnsodakoh.setOnClickListener(this);
+
+        imageView = view.findViewById(R.id.imageView);
+
+        // Auto start image slider
+        autoStartImageSlider();
+
         return view;
     }
+
+
+    private void autoStartImageSlider() {
+        final Handler handler = new Handler();
+        final Runnable update = new Runnable() {
+            public void run() {
+                if (currentPage == imageResources.length) {
+                    currentPage = 0;
+                }
+                imageView.setImageResource(imageResources[currentPage++]);
+            }
+        };
+
+        timer = new Timer(); // This will create a new Thread
+        timer.schedule(new TimerTask() { // task to be scheduled
+            @Override
+            public void run() {
+                handler.post(update);
+            }
+        }, DELAY_MS, PERIOD_MS);
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        if (timer != null) {
+            timer.cancel();
+        }
+    }
+
+
 
 
     @Override
