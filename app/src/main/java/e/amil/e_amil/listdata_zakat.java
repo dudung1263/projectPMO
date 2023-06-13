@@ -2,6 +2,7 @@ package e.amil.e_amil;
 
 import static android.widget.LinearLayout.VERTICAL;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
@@ -43,6 +44,7 @@ public class listdata_zakat extends AppCompatActivity {
 
     private EditText Search_liasdata_zakat;
 
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

@@ -59,15 +59,13 @@ public class dokumen extends Fragment implements View.OnClickListener {
         // Inflate the layout for this fragment
         view = inflater.inflate(R.layout.fragment_dokumen, container, false);
         Btndatazakat_data = view.findViewById(R.id.datazakat_dokumen);
-        Btndatazakat_data.setOnClickListener(this);
-
-        view = inflater.inflate(R.layout.fragment_dokumen, container, false);
         Btndatainfaq_data = view.findViewById(R.id.datainfaq_dokumen);
-        Btndatainfaq_data.setOnClickListener(this);
-
-        view = inflater.inflate(R.layout.fragment_dokumen, container, false);
         Btndatasodakoh_data = view.findViewById(R.id.datasodakoh_dokumen);
+
+
+        Btndatazakat_data.setOnClickListener(this);
         Btndatasodakoh_data.setOnClickListener(this);
+        Btndatainfaq_data.setOnClickListener(this);
 
         return view;
 
