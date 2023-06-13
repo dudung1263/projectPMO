@@ -3,7 +3,6 @@ package e.amil.e_amil;
 import android.content.Intent;
 import android.os.Bundle;
 
-import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
@@ -15,10 +14,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 
 import com.denzcoskun.imageslider.ImageSlider;
-import com.denzcoskun.imageslider.constants.ScaleTypes;
-import com.denzcoskun.imageslider.models.SlideModel;
 
-import java.util.ArrayList;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -34,7 +30,7 @@ public class home extends Fragment implements View.OnClickListener {
     private ImageSlider imageslider;
 
         private ImageView imageView;
-        private int[] imageResources = {R.drawable.img_2, R.drawable.img_3, R.drawable.img_4};
+        private int[] imageResources = {R.drawable.slidezakat, R.drawable.slideinfaq, R.drawable.slidesodakoh};
         private int currentPage = 0;
         private Timer timer;
         private final long DELAY_MS = 500; // Delay in milliseconds before task is to be executed

@@ -205,7 +205,7 @@ public class RecycleViewSodakoh extends RecyclerView.Adapter<RecycleViewSodakoh.
             PenyaluranSodakoh = itemView.findViewById(R.id.penyaluransodakoh_ds);
             KetSodakoh = itemView.findViewById(R.id.ketsodakoh_ds);
             GambarSodakoh = itemView.findViewById(R.id.gambarsodakoh_ds);
-            ListItemsodakoh = itemView.findViewById(R.id.listsodakoh);
+            ListItemsodakoh = itemView.findViewById(R.id.list_item_sodakoh);
 
         }
     }

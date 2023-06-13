@@ -206,7 +206,7 @@ public class RecycleViewInfaq extends RecyclerView.Adapter<RecycleViewInfaq.View
             PenyaluranInfaq = itemView.findViewById(R.id.penyaluraninfaq_ds);
             KetInfaq = itemView.findViewById(R.id.ketinfaq_ds);
             Gambarinfaq = itemView.findViewById(R.id.gambarinfaq_ds);
-            ListIteminfaq = itemView.findViewById(R.id.listinfaq);
+            ListIteminfaq = itemView.findViewById(R.id.list_item_infaq);
 
         }
     }
