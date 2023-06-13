@@ -83,23 +83,6 @@ public class listdata_infaq extends AppCompatActivity {
 
         MyRecycleView();
 
-        adddatainfaq.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(listdata_infaq.this, data_infaqq.class);
-                startActivity(intent);
-            }
-        });
-
-        homeinfaq.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                Intent intent = new Intent(listdata_infaq.this, MainActivity.class);
-                startActivity(intent);
-                finish();
-            }
-        });
 
     }
 

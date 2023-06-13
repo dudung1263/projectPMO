@@ -83,23 +83,6 @@ public class listdata_zakat extends AppCompatActivity {
 
         MyRecycleView();
 
-        adddatazakat.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(listdata_zakat.this, data_zakat.class);
-                startActivity(intent);
-            }
-        });
-
-        homezakat.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                Intent intent = new Intent(listdata_zakat.this, MainActivity.class);
-                startActivity(intent);
-                finish();
-            }
-        });
 
     }
 
@@ -110,7 +93,7 @@ public class listdata_zakat extends AppCompatActivity {
                 .addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                        dataAmil = new ArrayList<>();
+                        dataAmil = new ArrayList<data_amil>();
                         dataAmil.clear();
                         for (DataSnapshot snapshot : dataSnapshot.getChildren()){
                             data_amil amil = snapshot.getValue(data_amil.class);

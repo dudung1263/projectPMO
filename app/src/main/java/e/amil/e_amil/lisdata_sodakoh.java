@@ -83,24 +83,6 @@ public class lisdata_sodakoh extends AppCompatActivity {
 
         MyRecycleView();
 
-        adddatasodakoh.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(lisdata_sodakoh.this, data_sodakoh.class);
-                startActivity(intent);
-            }
-        });
-
-        homesodakoh.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                Intent intent = new Intent(lisdata_sodakoh.this, MainActivity.class);
-                startActivity(intent);
-                finish();
-            }
-        });
-
     }
 
     private void GetData(String data) {

@@ -4,7 +4,6 @@ import static android.text.TextUtils.isEmpty;
 
 import android.annotation.SuppressLint;
 import android.content.DialogInterface;
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -83,7 +82,7 @@ public class RecycleViewInfaq extends RecyclerView.Adapter<RecycleViewInfaq.View
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.activity_viewdesign_infaq, parent, false);
+        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.viewdesign_infaq, parent, false);
         return new ViewHolder(v);
     }
 
