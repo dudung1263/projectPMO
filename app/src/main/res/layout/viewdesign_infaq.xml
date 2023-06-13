@@ -7,13 +7,16 @@
     android:layout_marginTop="5dp"
     android:layout_marginBottom="5dp"
     android:id="@+id/list_item_infaq"
+
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:padding="10dp">
+        android:layout_height="170sp"
+        android:padding="5dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/shape3">
 
 
         <ImageView
@@ -38,7 +41,7 @@
             android:text="Jenis infaq"
             android:textColor="@color/black"
             android:textSize="15dp"
-            android:textStyle="bold"
+
             app:layout_constraintStart_toEndOf="@+id/gambarinfaq_ds"
             app:layout_constraintTop_toTopOf="parent">
         </TextView>
@@ -47,7 +50,7 @@
             android:id="@+id/tglinfaq_ds"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="80sp"
+            android:layout_marginStart="90sp"
             android:text="Tanggal Terima"
             android:textColor="@color/black"
             android:textStyle="bold"
@@ -75,9 +78,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="20sp"
+            android:layout_marginTop="10sp"
             android:text="Keterangan"
+            android:maxLength="30"
             android:textColor="@color/black"
-            android:textStyle="bold"
             app:layout_constraintStart_toEndOf="@+id/gambarinfaq_ds"
             app:layout_constraintTop_toBottomOf="@+id/muzakinfaq_ds">
         </TextView>
@@ -86,6 +90,7 @@
             android:id="@+id/penyaluraninfaq_ds"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="10sp"
             android:layout_marginStart="20sp"
             android:text="Penyaluran"
             android:textColor="@color/black"
@@ -102,7 +107,7 @@
             android:layout_marginStart="180dp"
             android:textColor="@color/black"
             android:textStyle="bold"
-            android:layout_marginTop="10sp"
+            android:layout_marginTop="30sp"
             app:layout_constraintStart_toEndOf="@+id/gambarinfaq_ds"
             app:layout_constraintTop_toBottomOf="@+id/penyaluraninfaq_ds"/>
 
