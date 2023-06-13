@@ -101,7 +101,6 @@ public class RecycleViewZakat extends RecyclerView.Adapter<RecycleViewZakat.View
         final String Gambar = listZakat.get(position).getGambar();
         final data_amil dataAmil = listZakat.get(position);
 
-        //Memasukkan nilai kedalam view : NIM, Nama, Prodi
         holder.JenisZakat.setText(": "+JenisZakat);
         holder.JumlahZakat.setText(": "+JumlahZakat);
         holder.TglZakat.setText(": "+TglZakat);

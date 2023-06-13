@@ -17,6 +17,7 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
@@ -81,9 +82,9 @@ public class RecycleViewInfaq extends RecyclerView.Adapter<RecycleViewInfaq.View
 
     @NonNull
     @Override
-    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public RecycleViewInfaq.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.viewdesign_infaq, parent, false);
-        return new ViewHolder(v);
+        return new RecycleViewInfaq.ViewHolder(v);
     }
 
     @Override
@@ -100,7 +101,7 @@ public class RecycleViewInfaq extends RecyclerView.Adapter<RecycleViewInfaq.View
         final String Gambar = listInfaq.get(position).getGambarinfak();
         final data_amilinfaqq dataInfaq = listInfaq.get(position);
 
-        //Memasukkan nilai kedalam view : NIM, Nama, Prodi
+
         holder.JenisInfaq.setText(": "+JenisInfaq);
         holder.JumlahInfaq.setText(": "+Jumlahinfaq);
         holder.TglInfaq.setText(": "+TglInfaq);
@@ -151,7 +152,7 @@ public class RecycleViewInfaq extends RecyclerView.Adapter<RecycleViewInfaq.View
                                     @Override
                                     public void onClick(DialogInterface dialogInterface, int i) {
                                         //Menjalankan Fungsi hapus disini
-                                        database.child("Admin").child("infaq").child(dataInfaq.getKey()).removeValue().addOnSuccessListener(new OnSuccessListener<Void>() {
+                                        database.child("Admin").child("Infaq").child(dataInfaq.getKey()).removeValue().addOnSuccessListener(new OnSuccessListener<Void>() {
                                             @Override
                                             public void onSuccess(Void unused) {
                                                 Toast.makeText(context, "Berhasil Menghapus Data", Toast.LENGTH_SHORT).show();
@@ -194,7 +195,7 @@ public class RecycleViewInfaq extends RecyclerView.Adapter<RecycleViewInfaq.View
 
         private TextView JenisInfaq, JumlahInfaq, TglInfaq, MuzakiInfaq, PenyaluranInfaq, KetInfaq;
         private ImageView Gambarinfaq;
-        private LinearLayout ListIteminfaq;
+        private CardView ListIteminfaq;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             //Menginisialisasi view view yang terpasang pada layout ini
