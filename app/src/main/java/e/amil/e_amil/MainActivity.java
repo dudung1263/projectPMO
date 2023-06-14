@@ -16,8 +16,11 @@ import androidx.fragment.app.Fragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseUser;
 
+
+
 public class MainActivity extends AppCompatActivity implements BottomNavigationView
         .OnNavigationItemSelectedListener {
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,6 +51,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
 
 
     public void onBackPressed(){
+
         new AlertDialog.Builder(this)
                 .setIcon(R.drawable.ikonamil)
                 .setTitle(R.string.app_name)
@@ -64,9 +68,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
                         dialog.cancel();
                     }
                 }).show();
-    }
-
-
+        }
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -86,12 +88,10 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
 
     }
 
-
     public void logout(View view) {
         FirebaseUser user = auth.getCurrentUser();
         Intent intent = new Intent(MainActivity.this, login.class);
         auth.signOut();
         startActivity(intent);
     }
-
 }
