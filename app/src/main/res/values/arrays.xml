@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+    <resources>
+        <string-array name="prayer_names">
+            <item>Subuh</item>
+            <item>Dzuhur</item>
+            <item>Ashar</item>
+            <item>Maghrib</item>
+            <item>Isya</item>
+        </string-array>
+    </resources>
+
+
+

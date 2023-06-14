@@ -5,4 +5,16 @@
     <string name="data_dokumen">Data Dokumen</string>
     <string name="tentang">Tentang</string>
     <string name="isiabout">Aplikasi E-amil ini dibuat untuk memudahkan pendataan zakat, sodaqoh, dan infaq yang dilakukan oleh amil (petugas zakat). Dengan E-amil ini, tugas amil dalam menginput data menjadi lebih efektif.</string>
+
+    <resources>
+        <string-array name="prayer_names">
+            <item>Subuh</item>
+            <item>Dzuhur</item>
+            <item>Ashar</item>
+            <item>Maghrib</item>
+            <item>Isya</item>
+        </string-array>
+    </resources>
+
+
 </resources>
