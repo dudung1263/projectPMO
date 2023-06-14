@@ -4,7 +4,6 @@ import static android.text.TextUtils.isEmpty;
 
 import android.annotation.SuppressLint;
 import android.content.DialogInterface;
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,12 +11,12 @@ import android.view.ViewGroup;
 import android.widget.Filter;
 import android.widget.Filterable;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
@@ -69,7 +68,7 @@ public class RecycleViewZakat extends RecyclerView.Adapter<RecycleViewZakat.View
 //    private int position;
 
     //Membuat konstruktor untuk menyimpan data
-    public RecycleViewZakat(ArrayList<data_amil> listZakat, listdata_zakat context){
+    public RecycleViewZakat(ArrayList<data_amil> list, listdata_zakat context){
         this.listZakat = listZakat;
         this.context = context;
         this.listZakatSearch = listZakat;
@@ -194,7 +193,7 @@ public class RecycleViewZakat extends RecyclerView.Adapter<RecycleViewZakat.View
 
         private TextView JenisZakat, JumlahZakat, TglZakat, MuzakiZakat, PenyaluranZakat, KetZakat;
         private ImageView Gambarzakat;
-        private LinearLayout ListItemZakat;
+        private CardView ListItemZakat;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             //Menginisialisasi view view yang terpasang pada layout ini

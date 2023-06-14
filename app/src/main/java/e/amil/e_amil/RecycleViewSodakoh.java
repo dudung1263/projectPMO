@@ -17,6 +17,7 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
@@ -194,18 +195,18 @@ public class RecycleViewSodakoh extends RecyclerView.Adapter<RecycleViewSodakoh.
 
         private TextView JenisSodakoh, JumlahSodakoh, TglSodakoh, MuzakiSodakoh, PenyaluranSodakoh, KetSodakoh;
         private ImageView GambarSodakoh;
-        private LinearLayout ListItemsodakoh;
+        private CardView ListItemsodakoh;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             //Menginisialisasi view view yang terpasang pada layout ini
-            JenisSodakoh = itemView.findViewById(R.id.jenissodakoh_ds);
-            JumlahSodakoh = itemView.findViewById(R.id.jumlahsodakoh_ds);
-            TglSodakoh = itemView.findViewById(R.id.tglsodakoh_ds);
-            MuzakiSodakoh = itemView.findViewById(R.id.muzakisodakoh_ds);
-            PenyaluranSodakoh = itemView.findViewById(R.id.penyaluransodakoh_ds);
-            KetSodakoh = itemView.findViewById(R.id.ketsodakoh_ds);
-            GambarSodakoh = itemView.findViewById(R.id.gambarsodakoh_ds);
-            ListItemsodakoh = itemView.findViewById(R.id.list_item_sodakoh);
+            JenisSodakoh = itemView.findViewById(R.id.jenissodaqoh_ds);
+            JumlahSodakoh = itemView.findViewById(R.id.jumlahsodaqoh_ds);
+            TglSodakoh = itemView.findViewById(R.id.tglsodaqoh_ds);
+            MuzakiSodakoh = itemView.findViewById(R.id.muzakisodaqoh_ds);
+            PenyaluranSodakoh = itemView.findViewById(R.id.penyaluransodaqoh_ds);
+            KetSodakoh = itemView.findViewById(R.id.ketsodaqoh_ds);
+            GambarSodakoh = itemView.findViewById(R.id.gambarsodaqoh_ds);
+            ListItemsodakoh = itemView.findViewById(R.id.list_item_sodaqoh);
 
         }
     }
