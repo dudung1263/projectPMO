@@ -21,7 +21,7 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class daftar extends AppCompatActivity {
 
-    private EditText  nama_daftar, email_daftr, password2_dftr;
+    private EditText  user_daftar, email_daftr, password2_dftr;
     private Button btndaftar;
     //private ProgressBar progesbar_daftar;
     private FirebaseAuth auth;
@@ -35,7 +35,7 @@ public class daftar extends AppCompatActivity {
             getSupportActionBar().hide();
         }
 
-        nama_daftar = findViewById(R.id.nama_daftar);
+        user_daftar = findViewById(R.id.nama_daftar);
         email_daftr = findViewById(R.id.email_daftr);
         password2_dftr = findViewById(R.id.password2_dftr);
         btndaftar = findViewById(R.id.btndaftar);
@@ -52,7 +52,7 @@ public class daftar extends AppCompatActivity {
 
             private void cekDataUser() {
                 //mendapatkan data inputan user
-                getUsername = nama_daftar.getText().toString();
+                getUsername = user_daftar.getText().toString().toLowerCase();
                 getEmail = email_daftr.getText().toString();
                 getPassword = password2_dftr.getText().toString();
 
@@ -65,12 +65,15 @@ public class daftar extends AppCompatActivity {
             }
 
             private void createUserAccount() {
+                getUsername = user_daftar.getText().toString().toLowerCase();
+                getEmail = email_daftr.getText().toString();
+                getPassword = password2_dftr.getText().toString();
                 auth.createUserWithEmailAndPassword(getEmail, getPassword)
                         .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                             @Override
                             public void onComplete(@NonNull final Task<AuthResult> task) {
-                                Pengguna user = new Pengguna(getEmail, getPassword);
-                                FirebaseDatabase.getInstance().getReference("Pengguna")
+                                Pengguna user = new Pengguna(getUsername, getEmail, getPassword);
+                                FirebaseDatabase.getInstance().getReference("Pengguna").child("userAuth").child(getUsername)
                                         .setValue(user).addOnCompleteListener(new OnCompleteListener<Void>() {
                                             @Override
                                             public void onComplete(@NonNull Task<Void> task) {

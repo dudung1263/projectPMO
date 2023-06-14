@@ -31,17 +31,17 @@
         android:orientation="vertical">
 
         <EditText
-            android:id="@+id/email"
+            android:id="@+id/username"
             android:layout_width="380dp"
             android:layout_height="55dp"
             android:autofillHints="emailAddress"
             android:background="@drawable/shapehitam"
             android:drawablePadding="15dp"
-            android:hint="Email"
-            android:inputType="textEmailAddress"
+            android:hint="Username"
+            android:inputType="textPersonName"
             android:padding="10dp"
             android:textSize="20dp"
-            android:drawableStart="@drawable/email"
+            android:drawableStart="@drawable/orang"
             android:textColor="@color/black"
             android:textColorHint="@color/black"
             android:layout_marginTop="57dp">
@@ -119,6 +119,15 @@
                 android:textSize="18dp"
                 android:textStyle="italic|bold">
             </TextView>
+
+            <ProgressBar
+                android:id="@+id/progresslogin"
+                android:layout_marginTop="20dp"
+                android:progressBackgroundTint="@color/ijomuda"
+                android:layout_width="50dp"
+                android:layout_height="50dp">
+
+            </ProgressBar>
 
         </LinearLayout>
 

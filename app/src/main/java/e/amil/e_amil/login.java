@@ -1,32 +1,44 @@
 package e.amil.e_amil;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 //import android.widget.ProgressBar;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.auth.GetTokenResult;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class login extends AppCompatActivity {
 
-    private EditText email, password;
+    private EditText etusername, etpassword;
     private Button btnlogin;
     public static FirebaseAuth auth;
-    public static FirebaseAuth.AuthStateListener Listener;
-    private String getEmail, getPassword;
+    public static FirebaseAuth.AuthStateListener userAuthlistener, adminAuthlistener;
+    ProgressBar progresslgn;
+    FirebaseUser firebaseUser;
+    String admintoken, usertoken;
+    private String getUsername, getEmail, getPassword;
+    String Username, Password;
+    SharedPreferences sharedPreferences;
     //private ProgressBar progesbar_login;
 
     @Override
@@ -38,85 +50,239 @@ public class login extends AppCompatActivity {
             getSupportActionBar().hide();
         }
 
-            email = findViewById(R.id.email);
-            password = findViewById(R.id.password);
+            etusername = findViewById(R.id.username);
+            etpassword = findViewById(R.id.password);
             btnlogin = findViewById(R.id.btnlogin);
-            //progesbar_login = findViewById(R.id.progesbar_login);
-            //rogesbar_login.setVisibility(View.GONE);
+            progresslgn = findViewById(R.id.progresslogin);
 
             auth = FirebaseAuth.getInstance();
+            firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
 
-            Listener = new FirebaseAuth.AuthStateListener() {
+            sharedPreferences = getSharedPreferences("userAuth", MODE_PRIVATE);
+
+            userAuthlistener = new FirebaseAuth.AuthStateListener() {
                 @Override
                 public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
                     FirebaseUser user = firebaseAuth.getCurrentUser();
-                    if (user != null && user.isEmailVerified()) {
-                        startActivity(new Intent(login.this, MainActivity.class));
+                    if ( !user.isEmailVerified()) {
+                        new android.app.AlertDialog.Builder(login.this)
+                                .setTitle("Email belum terverifikasi")
+                                .setMessage("Periksa email anda untuk \nverifikasi !")
+                                .setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
+                                    public void onClick(DialogInterface dialog, int which) {
+                                        // Continue with delete operation
+                                        progresslgn.setVisibility(View.GONE);
+                                    }
+                                }).show();
+                    }else{
+                        progresslgn.setVisibility(View.GONE);
+                        Toast.makeText(login.this, "Login Berhasil", Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(login.this, MainActivity_user.class);
+                        intent.putExtra("username",getUsername);
+                        intent.putExtra("email",getEmail);
+                        startActivity(intent);
                         finish();
+
                     }
                 }
             };
+       adminAuthlistener = new FirebaseAuth.AuthStateListener() {
+            @Override
+            public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
+                FirebaseUser user = firebaseAuth.getCurrentUser();
+                if (!user.isEmailVerified()){
+                    new android.app.AlertDialog.Builder(login.this)
+                            .setTitle("Email belum terverifikasi")
+                            .setMessage("Periksa email anda untuk \nverifikasi !")
+                            .setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
+                                public void onClick(DialogInterface dialog, int which) {
+                                    // Continue with delete operation
+                                    progresslgn.setVisibility(View.GONE);
+                                }
+                            }).show();
+                }else{
+                    progresslgn.setVisibility(View.GONE);
+                    Toast.makeText(login.this, "Login Sebagai Admin", Toast.LENGTH_SHORT).show();
+                    startActivity(new Intent(login.this, MainActivity.class));
+                    finish();
+                }
+            }
+        };
             btnlogin.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     //progesbar_login.setVisibility(View.VISIBLE);
-                    getEmail = email.getText().toString();
-                    getPassword = password.getText().toString();
+                    Username = etusername.getText().toString().toLowerCase();
+                    Password = etpassword.getText().toString();
 
-                    if (TextUtils.isEmpty(getEmail) || TextUtils.isEmpty(getPassword)) {
-                        Toast.makeText(login.this, "Email dan Password Tidak Boleh Kosong",
-                                Toast.LENGTH_SHORT).show();
-                    } else {
-                        loginUserAccount();
+                    progresslgn.setVisibility(View.VISIBLE);
+                    if (TextUtils.isEmpty(Username)){
+                        etusername.setError("Tidak boleh kosong");
+                        etusername.requestFocus();
+                        progresslgn.setVisibility(View.GONE);
+                    } else if (TextUtils.isEmpty(Password)) {
+                        etpassword.setError("Tidak boleh kosong");
+                        etpassword.requestFocus();
+                        progresslgn.setVisibility(View.GONE);
+                    }
+                    else {
+                        getAdmin(Username);
                     }
                 }
             });
         }
 
-        @Override
-        protected void onStart() {
-            login.super.onStart();
-            auth.addAuthStateListener(Listener);
-        }
-
-        @Override
-        protected void onStop() {
-            login.super.onStop();
-            if  (Listener != null) {
-                auth.removeAuthStateListener(Listener);
+    private void getUsers(String username){
+        DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference("Pengguna")
+                .child("userAuth");
+        databaseReference.child(username).get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<DataSnapshot> task) {
+                if (task.isSuccessful()){
+                    if (task.getResult().exists()){
+                        DataSnapshot dataSnapshot = task.getResult();
+                        getUsername = String.valueOf(dataSnapshot.child("username").getValue());
+                        getEmail = String.valueOf(dataSnapshot.child("email").getValue());
+                        UserLogin();
+                    }else {
+                        etusername.setError("Username tidak ada");
+                        etusername.requestFocus();
+                        progresslgn.setVisibility(View.GONE);
+                    }
+                }
             }
-        }
-
-        private void loginUserAccount() {
-            auth.signInWithEmailAndPassword(getEmail, getPassword)
-                    .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                        public void onComplete(@NonNull Task<AuthResult> task) {
+        });
+    }
+    private void UserLogin() {
+        auth.signInWithEmailAndPassword(getEmail, etpassword.getText().toString()).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+            @Override
+            public void onComplete(@NonNull Task<AuthResult> task) {
+                if (task.isSuccessful()){
+                    Intent intent = new Intent(login.this, MainActivity_user.class);
+                    intent.putExtra("username",getUsername);
+                    intent.putExtra("email",getEmail);
+                    // Mendapatkan token login
+                    auth.getCurrentUser().getIdToken(true).addOnCompleteListener(new OnCompleteListener<GetTokenResult>() {
+                        @Override
+                        public void onComplete(@NonNull Task<GetTokenResult> task) {
                             if (task.isSuccessful()) {
-                                //progesbar_login.setVisibility(View.GONE);
-                                if (auth.getCurrentUser().isEmailVerified()) {
-                                    Toast.makeText(login.this, "Login Berhasil", Toast.LENGTH_SHORT).show();
-                                    Intent intent = new Intent(login.this, MainActivity.class);
-                                    startActivity(intent);
-                                } else {
-                                    AlertDialog.Builder alert = new AlertDialog.Builder(login.this);
-                                    alert.setTitle("Periksa Email anda, verifikasi!!");
-                                    alert.setNeutralButton("Ok", new DialogInterface.OnClickListener() {
-                                        @Override
-                                        public void onClick(DialogInterface dialog, int which) {
-                                            return;
-                                        }
-                                    });
-                                    alert.create();
-                                    alert.show();
-                                }
+                                usertoken = task.getResult().getToken();
+                                SharedPreferences.Editor editor = sharedPreferences.edit();
+                                editor.putString("userToken", usertoken);
+                                editor.apply();
                             } else {
-                                //progesbar_login.setVisibility(View.GONE);
-                                Toast.makeText(login.this, task.getException().getMessage(),
-                                        Toast.LENGTH_SHORT).show();
+                                Toast.makeText(login.this, task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                             }
                         }
                     });
+                    auth.addAuthStateListener(userAuthlistener);
+                }else {
+                    new android.app.AlertDialog.Builder(login.this)
+                            .setTitle("Login Gagal")
+                            .setMessage("Periksa password anda!")
+                            .setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
+                                public void onClick(DialogInterface dialog, int which) {
+                                    // Continue with delete operation
+                                    progresslgn.setVisibility(View.GONE);
+                                    etpassword.requestFocus();
+                                }
+                            }).show();
+                }
+
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                Toast.makeText(login.this, e.getMessage(), Toast.LENGTH_SHORT).show();
+                progresslgn.setVisibility(View.GONE);
+            }
+        });
+    }
+    private void AdminLogin() {
+        auth.signInWithEmailAndPassword(getEmail, Password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+            @Override
+            public void onComplete(@NonNull Task<AuthResult> task) {
+                if (task.isSuccessful()){
+                    // Mendapatkan token login
+                    auth.getCurrentUser().getIdToken(true).addOnCompleteListener(new OnCompleteListener<GetTokenResult>() {
+                        @Override
+                        public void onComplete(@NonNull Task<GetTokenResult> task) {
+                            if (task.isSuccessful()) {
+                                admintoken = task.getResult().getToken();
+                                SharedPreferences.Editor editor = sharedPreferences.edit();
+                                editor.putString("adminToken", admintoken);
+                                editor.apply();
+                            } else {
+                                Toast.makeText(login.this, task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                            }
+                        }
+                    });
+                    auth.addAuthStateListener(adminAuthlistener);
+                }else {
+                    new AlertDialog.Builder(login.this)
+                            .setTitle("Login Gagal")
+                            .setMessage("Periksa password anda!")
+                            .setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
+                                public void onClick(DialogInterface dialog, int which) {
+                                    // Continue with delete operation
+                                    progresslgn.setVisibility(View.GONE);
+                                    etpassword.requestFocus();
+                                }
+                            }).show();
+                }
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                Toast.makeText(login.this, e.getMessage(), Toast.LENGTH_SHORT).show();
+                progresslgn.setVisibility(View.GONE);
+            }
+        });
+    }
+    private void getAdmin(String username){
+        DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference("Admin");
+        databaseReference.child(username).get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<DataSnapshot> task) {
+                if (task.isSuccessful()){
+                    if (task.getResult().exists()){
+                        DataSnapshot dataSnapshot = task.getResult();
+                        getEmail = String.valueOf(dataSnapshot.child("dataEmail").getValue());
+                        AdminLogin();
+                    }else {
+                        getUsers(Username);
+                    }
+                }
+            }
+        });
+    }
+    @Override
+    protected void onStart() {
+        super.onStart();
+        FirebaseUser user = auth.getCurrentUser();
+        if (user != null){
+            if (sharedPreferences.getString("adminToken", null) != null){
+                auth.addAuthStateListener(adminAuthlistener);
+            } else if (sharedPreferences.getString("userToken", null) != null) {
+                auth.addAuthStateListener(userAuthlistener);
+            }
+        }else {
+            SharedPreferences.Editor editor = sharedPreferences.edit();
+            editor.clear();
+            editor.apply();
         }
+    }
+    @Override
+    protected void onStop() {
+        super.onStop();
+        if (sharedPreferences.getString("adminToken", null) != null){
+            auth.removeAuthStateListener(adminAuthlistener);
+        } else if (sharedPreferences.getString("userToken", null) != null) {
+            auth.removeAuthStateListener(userAuthlistener);
+        }
+    }
+
+
 
     public void daftarakun(View view) {
         Intent intent = new Intent( login.this, daftar.class);

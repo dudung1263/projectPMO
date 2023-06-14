@@ -1,11 +1,20 @@
 package e.amil.e_amil;
 
     public class Pengguna {
-        public String email, password;
-        private String key;
+        public String username, email, password;
 
-        public Pengguna(String getEmail, String getPassword){
+        public Pengguna(String username, String email, String password) {
+            this.username = username;
+            this.email = email;
+            this.password = password;
+        }
 
+        public String getUsername() {
+            return username;
+        }
+
+        public void setUsername(String username) {
+            this.username = username;
         }
 
         public String getEmail() {
@@ -22,14 +31,6 @@ package e.amil.e_amil;
 
         public void setPassword(String password) {
             this.password = password;
-        }
-
-        public String getKey() {
-            return key;
-        }
-
-        public void setKey(String key) {
-            this.key = key;
         }
     }
 
