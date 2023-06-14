@@ -2,10 +2,6 @@ package e.amil.e_amil;
 
 import static e.amil.e_amil.login.auth;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
-
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -13,10 +9,15 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseUser;
 
-public class MainActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
+public class MainActivity extends AppCompatActivity implements BottomNavigationView
+        .OnNavigationItemSelectedListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,12 +66,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
                 }).show();
     }
 
-    public void logout(View view) {
-        FirebaseUser user = auth.getCurrentUser();
-        Intent intent = new Intent(MainActivity.this, login.class);
-        auth.signOut();
-        startActivity(intent);
-    }
+
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -87,6 +83,15 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
                 break;
         }
         return loadFragment(fragment);
+
+    }
+
+
+    public void logout(View view) {
+        FirebaseUser user = auth.getCurrentUser();
+        Intent intent = new Intent(MainActivity.this, login.class);
+        auth.signOut();
+        startActivity(intent);
     }
 
 }

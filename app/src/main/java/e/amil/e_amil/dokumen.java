@@ -2,15 +2,14 @@ package e.amil.e_amil;
 
 import android.content.Intent;
 import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-
 import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
+
+import androidx.fragment.app.Fragment;
 
 import java.util.Timer;
 import java.util.TimerTask;
@@ -90,8 +89,6 @@ public class dokumen extends Fragment implements View.OnClickListener {
 
         // Auto start image slider
         autoStartImageSlider();
-
-
         return view;
 
     }
@@ -118,6 +115,14 @@ public class dokumen extends Fragment implements View.OnClickListener {
     }
 
     @Override
+    public void onDestroy() {
+        super.onDestroy();
+        if (timer != null) {
+            timer.cancel();
+        }
+    }
+
+    @Override
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.datazakat_dokumen:
@@ -141,9 +146,6 @@ public class dokumen extends Fragment implements View.OnClickListener {
 
         }
     }
-
-
-
 
 
 

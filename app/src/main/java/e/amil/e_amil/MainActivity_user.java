@@ -1,11 +1,11 @@
 package e.amil.e_amil;
 
+import android.os.Bundle;
+import android.view.MenuItem;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
-
-import android.os.Bundle;
-import android.view.MenuItem;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -47,7 +47,6 @@ public class MainActivity_user extends AppCompatActivity implements BottomNaviga
                 fragment = new profile();
                 break;
         }
-
         return loadFragment(fragment);
     }
 }
