@@ -113,13 +113,13 @@
                     <LinearLayout
                         android:layout_marginBottom="10dp"
                         android:layout_width="match_parent"
-                        android:layout_height="70sp"
+                        android:layout_height="200sp"
                         android:orientation="vertical">
                         <ImageView
                             android:layout_marginTop="20dp"
                             android:id="@+id/imageView"
                             android:layout_width="match_parent"
-                            android:layout_height="200dp"
+                            android:layout_height="200sp"
                             android:layout_gravity="center"/>
 
 
