@@ -109,17 +109,37 @@
                         android:textSize="30dp"
                         android:textColor="@color/white">
                     </androidx.appcompat.widget.AppCompatButton>
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/datasholat_dokumen"
+                        android:onClick="jadwalsholat"
+                        android:layout_width="match_parent"
+                        android:layout_height="70dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginTop="15dp"
+                        android:padding="10dp"
+                        android:paddingStart="0dp"
+                        android:paddingEnd="25dp"
+                        android:drawableStart="@mipmap/sodaqoh"
+                        android:drawablePadding="0dp"
+                        android:text="Data Sodaqoh"
+                        android:background="@drawable/shap3"
+                        android:fontFamily="sans-serif-black"
+                        android:textStyle="bold"
+                        android:textSize="30dp"
+                        android:textColor="@color/white">
+                    </androidx.appcompat.widget.AppCompatButton>
 
                     <LinearLayout
                         android:layout_marginBottom="10dp"
                         android:layout_width="match_parent"
-                        android:layout_height="70sp"
+                        android:layout_height="200sp"
                         android:orientation="vertical">
                         <ImageView
-                            android:layout_marginTop="20dp"
+                            android:layout_marginTop="10dp"
                             android:id="@+id/imageView"
                             android:layout_width="match_parent"
-                            android:layout_height="200dp"
+                            android:layout_height="200sp"
                             android:layout_gravity="center"/>
 
 

@@ -32,7 +32,7 @@ public class dokumen extends Fragment implements View.OnClickListener {
     private String mParam2;
     private int[] imageResources = {R.drawable.slidezakat, R.drawable.slideinfaq, R.drawable.slidesodakoh};
 
-    Button Btndatazakat_data,  Btndatainfaq_data, Btndatasodakoh_data;
+    Button Btndatazakat_data,  Btndatainfaq_data, Btndatasodakoh_data, Btnsholat ;
 
     private ImageView imageView;
     private int currentPage = 0;
@@ -76,11 +76,13 @@ public class dokumen extends Fragment implements View.OnClickListener {
         Btndatazakat_data = view.findViewById(R.id.datazakat_dokumen);
         Btndatainfaq_data = view.findViewById(R.id.datainfaq_dokumen);
         Btndatasodakoh_data = view.findViewById(R.id.datasodakoh_dokumen);
+        Btnsholat = view.findViewById(R.id.datasholat_dokumen);
 
 
         Btndatazakat_data.setOnClickListener(this);
         Btndatasodakoh_data.setOnClickListener(this);
         Btndatainfaq_data.setOnClickListener(this);
+        Btnsholat.setOnClickListener(this);
 
 
         imageView = view.findViewById(R.id.imageView);
@@ -128,6 +130,13 @@ public class dokumen extends Fragment implements View.OnClickListener {
             case R.id.datasodakoh_dokumen:
                 getActivity().startActivity(new Intent(getActivity(), lisdata_sodakoh.class));
                 break;
+
+
+            case R.id.datasholat_dokumen:
+                getActivity().startActivity(new Intent(getActivity(), JadwalSholat.class));
+                break;
+
+
         }
     }
 
