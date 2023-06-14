@@ -68,7 +68,7 @@ public class RecycleViewZakat extends RecyclerView.Adapter<RecycleViewZakat.View
 //    private int position;
 
     //Membuat konstruktor untuk menyimpan data
-    public RecycleViewZakat(ArrayList<data_amil> list, listdata_zakat context){
+    public RecycleViewZakat(ArrayList<data_amil> listZakat, listdata_zakat context){
         this.listZakat = listZakat;
         this.context = context;
         this.listZakatSearch = listZakat;
