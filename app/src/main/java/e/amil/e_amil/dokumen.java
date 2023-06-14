@@ -30,7 +30,7 @@ public class dokumen extends Fragment implements View.OnClickListener {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
-    private int[] imageResources = {R.drawable.slidezakat, R.drawable.slideinfaq, R.drawable.slidesodakoh};
+    private int[] imageResources = {R.drawable.img_14, R.drawable.img_16, R.drawable.img_12};
 
     Button Btndatazakat_data,  Btndatainfaq_data, Btndatasodakoh_data, Btnsholat ;
 
@@ -85,7 +85,7 @@ public class dokumen extends Fragment implements View.OnClickListener {
         Btnsholat.setOnClickListener(this);
 
 
-        imageView = view.findViewById(R.id.imageView);
+        imageView = view.findViewById(R.id.imageView_dokumen);
 
         // Auto start image slider
         autoStartImageSlider();
