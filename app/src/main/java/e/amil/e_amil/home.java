@@ -33,7 +33,7 @@ public class home extends Fragment implements View.OnClickListener {
         private int[] imageResources = {R.drawable.slidezakat, R.drawable.slideinfaq, R.drawable.slidesodakoh};
         private int currentPage = 0;
         private Timer timer;
-        private final long DELAY_MS = 500; // Delay in milliseconds before task is to be executed
+        private final long DELAY_MS = 5; // Delay in milliseconds before task is to be executed
         private final long PERIOD_MS = 3000; // Time interval in milliseconds between successive task executions.
 
 

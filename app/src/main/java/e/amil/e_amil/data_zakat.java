@@ -76,6 +76,10 @@ public class data_zakat extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_data_zakat);
 
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().hide();
+        }
+
         jumlahzakat = findViewById(R.id.jumlahzakat);
         tglzakat = findViewById(R.id.tglzakat);
         muzakizakat = findViewById(R.id.muzakizakat);

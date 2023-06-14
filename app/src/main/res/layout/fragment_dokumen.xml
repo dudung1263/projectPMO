@@ -95,6 +95,7 @@
                         android:layout_marginStart="10dp"
                         android:layout_marginEnd="10dp"
                         android:layout_marginTop="15dp"
+                        android:layout_gravity="center"
                         android:padding="10dp"
                         android:paddingStart="0dp"
                         android:paddingEnd="25dp"
@@ -107,6 +108,7 @@
                         android:textSize="30dp"
                         android:textColor="@color/white">
                     </androidx.appcompat.widget.AppCompatButton>
+
                     <androidx.appcompat.widget.AppCompatButton
                         android:id="@+id/sholat"
                         android:onClick="jadwalsholat"
@@ -120,6 +122,7 @@
                         android:paddingEnd="25dp"
                         android:drawablePadding="0dp"
                         android:layout_marginBottom="20dp"
+                        android:layout_gravity="center"
                         android:text="Jam Sholat"
                         android:background="@drawable/shap3"
                         android:fontFamily="sans-serif-black"

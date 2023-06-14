@@ -78,6 +78,10 @@ public class data_sodakoh extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_data_sodakoh);
 
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().hide();
+        }
+
         jumlahsodakoh = findViewById(R.id.jumlahsodakoh);
         tglsodakoh = findViewById(R.id.tglsodakoh);
         muzakisodakoh = findViewById(R.id.muzakisodakoh);

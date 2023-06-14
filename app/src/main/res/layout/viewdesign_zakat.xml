@@ -50,7 +50,7 @@
             android:id="@+id/tglzakat_ds"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="90sp"
+            android:layout_marginStart="70sp"
             android:text="Tanggal Terima"
             android:textColor="@color/black"
             android:textStyle="bold"

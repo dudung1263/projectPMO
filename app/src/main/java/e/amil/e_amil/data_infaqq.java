@@ -81,6 +81,10 @@ public class data_infaqq extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_data_infaqq);
 
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().hide();
+        }
+
         jumlahinfak = findViewById(R.id.jumlahinfak);
         tglinfak = findViewById(R.id.tglinfak);
         muzakiinfak = findViewById(R.id.muzakiinfak);

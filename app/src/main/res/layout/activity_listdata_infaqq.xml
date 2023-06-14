@@ -18,10 +18,10 @@
         android:elegantTextHeight="true"
         android:gravity="center"
         android:text="Data Infaq"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
         android:textSize="20dp"
         android:textStyle="bold"
-        android:background="@color/ijomuda">
+        android:background="#4CAF50">
 
     </TextView>
 
@@ -58,28 +58,6 @@
         android:layout_below="@id/Search_listinfaq">
     </androidx.recyclerview.widget.RecyclerView>
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/add_listdataa_infaq"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginRight="20dp"
-        android:layout_marginBottom="120dp"
-        android:backgroundTint="@color/ijomuda"
-        android:src="@drawable/ic_add">
-    </com.google.android.material.floatingactionbutton.FloatingActionButton>
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/home_listdataa_infaq"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginRight="20dp"
-        android:layout_marginBottom="50dp"
-        android:backgroundTint="@color/ijomuda"
-        android:src="@drawable/ic_home">
-    </com.google.android.material.floatingactionbutton.FloatingActionButton>
 
 </RelativeLayout>

@@ -27,6 +27,10 @@ public class jadwalsholat extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_jadwalsholat);
 
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().hide();
+        }
+
         listView = findViewById(R.id.listView2);
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, prayerTimes);
         listView.setAdapter(adapter);

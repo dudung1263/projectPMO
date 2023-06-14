@@ -38,7 +38,7 @@ public class dokumen extends Fragment implements View.OnClickListener {
     private int currentPage = 0;
     private Timer timer;
 
-    private final long DELAY_MS = 500; // Delay in milliseconds before task is to be executed
+    private final long DELAY_MS =8; // Delay in milliseconds before task is to be executed
     private final long PERIOD_MS = 3000; // Time interval in milliseconds between successive task executions.
 
 
@@ -130,8 +130,7 @@ public class dokumen extends Fragment implements View.OnClickListener {
 
             case R.id.datasodakoh_dokumen:
                 getActivity().startActivity(new Intent(getActivity(), lisdata_sodakoh.class));
-
-
+                break;
 
             case R.id.sholat:
                 getActivity().startActivity(new Intent(getActivity(), jadwalsholat.class));
