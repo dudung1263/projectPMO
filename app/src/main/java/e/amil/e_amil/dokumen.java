@@ -133,7 +133,7 @@ public class dokumen extends Fragment implements View.OnClickListener {
 
 
 
-            case R.id.datasholat_dokumen:
+            case R.id.sholat:
                 getActivity().startActivity(new Intent(getActivity(), jadwalsholat.class));
                 break;
 

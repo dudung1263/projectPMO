@@ -109,7 +109,7 @@
                         android:textColor="@color/white">
                     </androidx.appcompat.widget.AppCompatButton>
                     <androidx.appcompat.widget.AppCompatButton
-                        android:id="@+id/datasholat_dokumen"
+                        android:id="@+id/sholat"
                         android:onClick="jadwalsholat"
                         android:layout_width="match_parent"
                         android:layout_height="70dp"
