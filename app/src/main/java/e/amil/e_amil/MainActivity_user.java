@@ -9,7 +9,8 @@ import android.view.MenuItem;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-public class MainActivity_user extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
+public class MainActivity_user extends AppCompatActivity implements BottomNavigationView
+        .OnNavigationItemSelectedListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,13 +20,34 @@ public class MainActivity_user extends AppCompatActivity implements BottomNaviga
             getSupportActionBar().hide();
         }
 
+        loadFragment(new dokumen());
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigation_user);
         bottomNavigationView.setItemIconTintList(null);
         bottomNavigationView.setOnNavigationItemSelectedListener(this);
     }
 
+    private boolean loadFragment(Fragment fragment) {
+        if (fragment != null){
+            getSupportFragmentManager().beginTransaction()
+                    .replace(R.id.container_layout_user, fragment)
+                    .commit();
+            return true;
+        }
+        return false;
+    }
+
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-        return false;
+        Fragment fragment = null;
+        switch (item.getItemId()){
+            case R.id.menu_data:
+                fragment = new dokumen();
+                break;
+            case R.id.menu_Tentang:
+                fragment = new profile();
+                break;
+        }
+
+        return loadFragment(fragment);
     }
 }
