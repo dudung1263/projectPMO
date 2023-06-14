@@ -6,6 +6,7 @@
     android:orientation="vertical"
     android:padding="16dp"
     android:id="@+id/sholat_linear"
+    android:background="#4CAF50"
     tools:ignore="InvalidId">
 
     <TextView
@@ -13,7 +14,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Jadwal Sholat"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
+        android:textStyle="bold"
         android:textSize="24sp"
         android:gravity="center"/>
 
