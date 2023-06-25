@@ -40,7 +40,7 @@ public class MainActivity_user extends AppCompatActivity implements BottomNaviga
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         Fragment fragment = null;
         switch (item.getItemId()){
-            case R.id.menu_data:
+            case R.id.menu_data_user:
                 fragment = new dokumen_user();
                 break;
             case R.id.menu_Tentang:

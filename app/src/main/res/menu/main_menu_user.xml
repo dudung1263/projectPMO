@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
-        android:id="@+id/menu_data"
+        android:id="@+id/menu_data_user"
         android:title="@string/data_dokumen"
         android:icon="@drawable/data_selector">
     </item>

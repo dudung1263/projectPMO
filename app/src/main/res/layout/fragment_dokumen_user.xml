@@ -35,7 +35,7 @@
         <GridLayout
             android:layout_marginTop="30dp"
             android:layout_width="400sp"
-            android:layout_height="90sp"
+            android:layout_height="100sp"
             android:rowCount="1"
             android:columnCount="4"
             android:layout_gravity="center"
@@ -44,6 +44,7 @@
 
 
          <androidx.cardview.widget.CardView
+             android:id="@+id/datazakat"
              android:layout_width="80sp"
              android:layout_height="50sp"
              android:layout_rowWeight="1"
@@ -66,9 +67,11 @@
 
 
                 <TextView
-                    android:layout_width="50sp"
+                    android:layout_width="match_parent"
                     android:layout_height="20sp"
-                    android:text="ppp"
+                    android:text=" ZAKAT"
+                    android:textColor="@color/black"
+                    android:gravity="center"
                     android:layout_gravity="center"/>
 
 
@@ -78,6 +81,7 @@
 
 
          <androidx.cardview.widget.CardView
+             android:id="@+id/datainfaq"
              android:layout_width="80sp"
              android:layout_height="50sp"
              android:layout_rowWeight="1"
@@ -102,7 +106,9 @@
                 <TextView
                     android:layout_width="50sp"
                     android:layout_height="20sp"
-                    android:text="ppp"
+                    android:text="INFAK"
+                    android:textColor="@color/black"
+                    android:gravity="center"
                     android:layout_gravity="center"/>
 
 
@@ -110,6 +116,42 @@
 
          </androidx.cardview.widget.CardView>
 
+
+
+
+         <androidx.cardview.widget.CardView
+             android:id="@+id/datasodakoh"
+             android:layout_width="80sp"
+             android:layout_height="80sp"
+             android:layout_rowWeight="1"
+             android:layout_marginLeft="10dp">
+
+             <LinearLayout
+
+                 android:layout_width="match_parent"
+                 android:layout_height="100sp"
+                 android:orientation="vertical">
+
+
+                 <ImageView
+                     android:layout_width="60sp"
+                     android:layout_height="60sp"
+                     android:layout_gravity="center_horizontal"
+                     android:src="@drawable/back"/>
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="20sp"
+                    android:text="SODAKOH"
+                    android:textColor="@color/black"
+                    android:gravity="center"
+                    android:layout_gravity="center"/>
+
+
+             </LinearLayout>
+
+         </androidx.cardview.widget.CardView>
 
 
 
@@ -134,42 +176,11 @@
 
 
                 <TextView
-                    android:layout_width="50sp"
-                    android:layout_height="20sp"
-                    android:text="ppp"
-                    android:layout_gravity="center"/>
-
-
-             </LinearLayout>
-
-         </androidx.cardview.widget.CardView>
-
-
-
-         <androidx.cardview.widget.CardView
-             android:layout_width="80sp"
-             android:layout_height="80sp"
-             android:layout_rowWeight="1"
-             android:layout_marginLeft="10dp">
-
-             <LinearLayout
-
-                 android:layout_width="match_parent"
-                 android:layout_height="100sp"
-                 android:orientation="vertical">
-
-
-                 <ImageView
-                     android:layout_width="60sp"
-                     android:layout_height="60sp"
-                     android:layout_gravity="center_horizontal"
-                     android:src="@drawable/back"/>
-
-
-                <TextView
-                    android:layout_width="50sp"
-                    android:layout_height="20sp"
-                    android:text="ppp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="JADWAL SHOLAT"
+                    android:textColor="@color/black"
+                    android:gravity="center"
                     android:layout_gravity="center"/>
 
 
