@@ -1,8 +1,5 @@
 package e.amil.e_amil;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -12,9 +9,10 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-//import android.widget.ProgressBar;
-import android.widget.ProgressBar;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -33,7 +31,7 @@ public class login extends AppCompatActivity {
     private Button btnlogin;
     public static FirebaseAuth auth;
     public static FirebaseAuth.AuthStateListener userAuthlistener, adminAuthlistener;
-    ProgressBar progresslgn;
+    //ProgressBar progresslgn;
     FirebaseUser firebaseUser;
     String admintoken, usertoken;
     private String getUsername, getEmail, getPassword;
@@ -53,7 +51,7 @@ public class login extends AppCompatActivity {
             etusername = findViewById(R.id.username);
             etpassword = findViewById(R.id.password);
             btnlogin = findViewById(R.id.btnlogin);
-            progresslgn = findViewById(R.id.progresslogin);
+            //progresslgn = findViewById(R.id.progresslogin);
 
             auth = FirebaseAuth.getInstance();
             firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
@@ -71,11 +69,11 @@ public class login extends AppCompatActivity {
                                 .setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
                                     public void onClick(DialogInterface dialog, int which) {
                                         // Continue with delete operation
-                                        progresslgn.setVisibility(View.GONE);
+                                        //progresslgn.setVisibility(View.GONE);
                                     }
                                 }).show();
                     }else{
-                        progresslgn.setVisibility(View.GONE);
+                        //progresslgn.setVisibility(View.GONE);
                         Toast.makeText(login.this, "Login Berhasil", Toast.LENGTH_SHORT).show();
                         Intent intent = new Intent(login.this, MainActivity_user.class);
                         intent.putExtra("username",getUsername);
@@ -97,11 +95,11 @@ public class login extends AppCompatActivity {
                             .setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
                                 public void onClick(DialogInterface dialog, int which) {
                                     // Continue with delete operation
-                                    progresslgn.setVisibility(View.GONE);
+                                    //progresslgn.setVisibility(View.GONE);
                                 }
                             }).show();
                 }else{
-                    progresslgn.setVisibility(View.GONE);
+                    //progresslgn.setVisibility(View.GONE);
                     Toast.makeText(login.this, "Login Sebagai Admin", Toast.LENGTH_SHORT).show();
                     startActivity(new Intent(login.this, MainActivity.class));
                     finish();
@@ -115,15 +113,15 @@ public class login extends AppCompatActivity {
                     Username = etusername.getText().toString().toLowerCase();
                     Password = etpassword.getText().toString();
 
-                    progresslgn.setVisibility(View.VISIBLE);
+                    //progresslgn.setVisibility(View.VISIBLE);
                     if (TextUtils.isEmpty(Username)){
                         etusername.setError("Tidak boleh kosong");
                         etusername.requestFocus();
-                        progresslgn.setVisibility(View.GONE);
+                        //progresslgn.setVisibility(View.GONE);
                     } else if (TextUtils.isEmpty(Password)) {
                         etpassword.setError("Tidak boleh kosong");
                         etpassword.requestFocus();
-                        progresslgn.setVisibility(View.GONE);
+                        //progresslgn.setVisibility(View.GONE);
                     }
                     else {
                         getAdmin(Username);
@@ -147,7 +145,7 @@ public class login extends AppCompatActivity {
                     }else {
                         etusername.setError("Username tidak ada");
                         etusername.requestFocus();
-                        progresslgn.setVisibility(View.GONE);
+                        //progresslgn.setVisibility(View.GONE);
                     }
                 }
             }
@@ -183,7 +181,7 @@ public class login extends AppCompatActivity {
                             .setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
                                 public void onClick(DialogInterface dialog, int which) {
                                     // Continue with delete operation
-                                    progresslgn.setVisibility(View.GONE);
+                                    //progresslgn.setVisibility(View.GONE);
                                     etpassword.requestFocus();
                                 }
                             }).show();
@@ -194,7 +192,7 @@ public class login extends AppCompatActivity {
             @Override
             public void onFailure(@NonNull Exception e) {
                 Toast.makeText(login.this, e.getMessage(), Toast.LENGTH_SHORT).show();
-                progresslgn.setVisibility(View.GONE);
+                //progresslgn.setVisibility(View.GONE);
             }
         });
     }
@@ -225,7 +223,7 @@ public class login extends AppCompatActivity {
                             .setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
                                 public void onClick(DialogInterface dialog, int which) {
                                     // Continue with delete operation
-                                    progresslgn.setVisibility(View.GONE);
+                                    //progresslgn.setVisibility(View.GONE);
                                     etpassword.requestFocus();
                                 }
                             }).show();
@@ -235,7 +233,7 @@ public class login extends AppCompatActivity {
             @Override
             public void onFailure(@NonNull Exception e) {
                 Toast.makeText(login.this, e.getMessage(), Toast.LENGTH_SHORT).show();
-                progresslgn.setVisibility(View.GONE);
+                //progresslgn.setVisibility(View.GONE);
             }
         });
     }

@@ -39,10 +39,6 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.UUID;
 
-import e.amil.e_amil.MainActivity;
-import e.amil.e_amil.R;
-import e.amil.e_amil.data_amil;
-
 public class data_zakat extends AppCompatActivity {
 
     RadioGroup rg;
@@ -51,7 +47,7 @@ public class data_zakat extends AppCompatActivity {
 
     private ProgressBar progreszakat;
 
-    private EditText jumlahzakat, tglzakat, muzakizakat, penyaluranzakat, ketzakat;
+    private EditText namaamilzakat, jumlahzakat, tglzakat, muzakizakat, penyaluranzakat, ketzakat;
 
     DatePickerDialog datePickerDialog;
 
@@ -61,7 +57,7 @@ public class data_zakat extends AppCompatActivity {
 
     private Button simpan_zakat, getfotozakat, kembalizakat;
 
-    private String getrjeniszakat, getJumlahzakat, getTglzakat, getMuzakizakat, getPenyaluran, getKeterangan;
+    private String getrjeniszakat, getNamaamilzakat, getJumlahzakat, getTglzakat, getMuzakizakat, getPenyaluran, getKeterangan;
 
     public Uri url;
     public Bitmap bitmap;
@@ -80,6 +76,7 @@ public class data_zakat extends AppCompatActivity {
             getSupportActionBar().hide();
         }
 
+        namaamilzakat = findViewById(R.id.namaamil_zakat);
         jumlahzakat = findViewById(R.id.jumlahzakat);
         tglzakat = findViewById(R.id.tglzakat);
         muzakizakat = findViewById(R.id.muzakizakat);
@@ -117,6 +114,7 @@ public class data_zakat extends AppCompatActivity {
                 }else {
                     getrjeniszakat = rb.getText().toString();
                 }
+                getNamaamilzakat = namaamilzakat.getText().toString();
                 getJumlahzakat = jumlahzakat.getText().toString();
                 getTglzakat = tglzakat.getText().toString();
                 getMuzakizakat = muzakizakat.getText().toString();
@@ -183,7 +181,7 @@ public class data_zakat extends AppCompatActivity {
         }
     }
     private void checkUser(){
-        if (isEmpty(getrjeniszakat) || isEmpty(getJumlahzakat) ||
+        if (isEmpty(getNamaamilzakat) || isEmpty(getrjeniszakat) || isEmpty(getJumlahzakat) ||
                 isEmpty(getTglzakat) || isEmpty(getMuzakizakat) || isEmpty(getPenyaluran) ||
                 isEmpty(getKeterangan) || url == null){
 
@@ -207,7 +205,7 @@ public class data_zakat extends AppCompatActivity {
                         @Override
                         public void onSuccess(Uri uri) {
                             dbF.child("Admin").child("Zakat").push()
-                                    .setValue(new data_amil(getrjeniszakat, getJumlahzakat, getTglzakat, getMuzakizakat, getPenyaluran, getKeterangan, uri.toString().trim()))
+                                    .setValue(new data_amil(getNamaamilzakat, getrjeniszakat, getJumlahzakat, getTglzakat, getMuzakizakat, getPenyaluran, getKeterangan, uri.toString().trim()))
                                     .addOnCompleteListener(new OnCompleteListener<Void>() {
                                         @Override
                                         public void onComplete(@NonNull Task<Void> task) {

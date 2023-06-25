@@ -29,11 +29,27 @@
             app:layout_constraintTop_toTopOf="parent"/>
 
         <TextView
-            android:id="@+id/jeniszakat_ds"
+            android:id="@+id/namaamilzakat_ds"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
             android:layout_marginTop="4dp"
+            android:layout_marginRight="20dp"
+            android:text="Nama Amil"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:textSize="15dp"
+
+            app:layout_constraintStart_toEndOf="@+id/gambarzakat_ds"
+            app:layout_constraintTop_toTopOf="parent">
+        </TextView>
+
+        <TextView
+            android:id="@+id/jeniszakat_ds"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="25dp"
             android:layout_marginRight="20dp"
             android:text="Jenis infaq"
             android:textColor="@color/black"
@@ -63,7 +79,7 @@
             android:id="@+id/muzakizakat_ds"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10sp"
+            android:layout_marginTop="30sp"
             android:layout_marginStart="20sp"
             android:text="Muzaki/Pemberi"
             android:textColor="@color/black"

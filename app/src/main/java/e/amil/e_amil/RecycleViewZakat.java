@@ -91,6 +91,7 @@ public class RecycleViewZakat extends RecyclerView.Adapter<RecycleViewZakat.View
 //        this.holder = holder;
 //        this.position = position;
 
+        final String NamaamilZakat = listZakat.get(position).getNamaamilzakat();
         final String JenisZakat = listZakat.get(position).getRjeniszakat();
         final String JumlahZakat = listZakat.get(position).getJumlahzakat();
         final String TglZakat = listZakat.get(position).getTglzakat();
@@ -100,6 +101,7 @@ public class RecycleViewZakat extends RecyclerView.Adapter<RecycleViewZakat.View
         final String Gambar = listZakat.get(position).getGambar();
         final data_amil dataAmil = listZakat.get(position);
 
+        holder.NamaamilZakat.setText(": "+NamaamilZakat);
         holder.JenisZakat.setText(": "+JenisZakat);
         holder.JumlahZakat.setText(": "+JumlahZakat);
         holder.TglZakat.setText(": "+TglZakat);
@@ -129,6 +131,7 @@ public class RecycleViewZakat extends RecyclerView.Adapter<RecycleViewZakat.View
                             case 0:
                                 //Berpindah activity pada halaman layout UpdateData dan mengambil data dari ListMahasiswa
                                 Bundle bundle = new Bundle();
+                                bundle.putString("dataNamaamilZakat",listZakat.get(position).getNamaamilzakat());
                                 bundle.putString("dataJenisZakat",listZakat.get(position).getRjeniszakat());
                                 bundle.putString("dataJumlahZakat",listZakat.get(position).getJumlahzakat());
                                 bundle.putString("dataTglZakat",listZakat.get(position).getTglzakat());
@@ -191,12 +194,13 @@ public class RecycleViewZakat extends RecyclerView.Adapter<RecycleViewZakat.View
 
     public class ViewHolder extends RecyclerView.ViewHolder {
 
-        private TextView JenisZakat, JumlahZakat, TglZakat, MuzakiZakat, PenyaluranZakat, KetZakat;
+        private TextView NamaamilZakat, JenisZakat, JumlahZakat, TglZakat, MuzakiZakat, PenyaluranZakat, KetZakat;
         private ImageView Gambarzakat;
         private CardView ListItemZakat;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             //Menginisialisasi view view yang terpasang pada layout ini
+            NamaamilZakat = itemView.findViewById(R.id.namaamilzakat_ds);
             JenisZakat = itemView.findViewById(R.id.jeniszakat_ds);
             JumlahZakat = itemView.findViewById(R.id.jumlahzakat_ds);
             TglZakat = itemView.findViewById(R.id.tglzakat_ds);

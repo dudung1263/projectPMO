@@ -2,6 +2,7 @@ package e.amil.e_amil;
 
 public class data_amil {
 
+    private String namaamilzakat;
     private String rjeniszakat;
     private String jumlahzakat;
     private String tglzakat;
@@ -31,7 +32,8 @@ public class data_amil {
     public data_amil() {
     }
 
-    public data_amil(String rjeniszakat, String jumlahzakat, String tglzakat, String muzakizakat, String penyaluranzakat, String ketzakat, String gambar) {
+    public data_amil(String namaamilzakat, String rjeniszakat, String jumlahzakat, String tglzakat, String muzakizakat, String penyaluranzakat, String ketzakat, String gambar) {
+        this.namaamilzakat = namaamilzakat;
         this.rjeniszakat = rjeniszakat;
         this.jumlahzakat = jumlahzakat;
         this.tglzakat = tglzakat;
@@ -39,6 +41,14 @@ public class data_amil {
         this.penyaluranzakat = penyaluranzakat;
         this.ketzakat = ketzakat;
         this.gambar = gambar;
+    }
+
+    public String getNamaamilzakat() {
+        return namaamilzakat;
+    }
+
+    public void setNamaamilzakatzakat(String namaamilzakat) {
+        this.namaamilzakat = namaamilzakat;
     }
 
     public String getJumlahzakat() {
