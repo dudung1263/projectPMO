@@ -61,7 +61,39 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginLeft="20dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:text="Nama Amil"
+                        android:textColor="@color/black"
+                        android:textSize="15dp"
+                        android:textStyle="bold">
+
+                    </TextView>
+
+                    <EditText
+                        android:id="@+id/namaamil_zakat"
+                        android:layout_width="240dp"
+                        android:layout_height="30dp"
+                        android:background="@drawable/shape3"
+                        android:hint="Nama"
+                        android:paddingLeft="5dp"
+                        android:ems="10"
+                        android:textColor="@color/black">
+
+                    </EditText>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
                     android:layout_marginRight="20dp"
                     android:layout_marginLeft="20dp"
                     android:orientation="horizontal">
@@ -126,6 +158,7 @@
                         android:hint="Jumlah Zakat"
                         android:paddingLeft="5dp"
                         android:ems="10"
+                        android:inputType="number"
                         android:textColor="@color/black">
 
                     </EditText>
@@ -250,7 +283,7 @@
                     <EditText
                         android:id="@+id/keteranganzakat"
                         android:layout_width="240dp"
-                        android:layout_height="30dp"
+                        android:layout_height="100dp"
                         android:background="@drawable/shape3"
                         android:hint="Keterangan"
                         android:paddingLeft="5dp"
