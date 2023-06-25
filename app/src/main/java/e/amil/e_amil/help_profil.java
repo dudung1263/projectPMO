@@ -22,7 +22,7 @@ public class help_profil extends AppCompatActivity {
         panduan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(help_profil.this, PDF_panduan.class));
+              //  startActivity(new Intent(help_profil.this, PDF_panduan.class));
             }
         });
 

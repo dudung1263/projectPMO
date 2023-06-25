@@ -75,7 +75,7 @@ public class dokumen extends Fragment implements View.OnClickListener {
         Btndatazakat_data = view.findViewById(R.id.datazakat_dokumen);
         Btndatainfaq_data = view.findViewById(R.id.datainfaq_dokumen);
         Btndatasodakoh_data = view.findViewById(R.id.datasodakoh_dokumen);
-        Btnsholat = view.findViewById(R.id.sholat);
+        Btnsholat = view.findViewById(R.id.diagram2);
 
 
 
@@ -137,8 +137,8 @@ public class dokumen extends Fragment implements View.OnClickListener {
                 getActivity().startActivity(new Intent(getActivity(), lisdata_sodakoh.class));
                 break;
 
-            case R.id.sholat:
-                getActivity().startActivity(new Intent(getActivity(), jadwalsholat.class));
+            case R.id.diagram2:
+                getActivity().startActivity(new Intent(getActivity(), diagram.class));
                 break;
 
 
