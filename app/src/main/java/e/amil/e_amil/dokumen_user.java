@@ -1,16 +1,17 @@
 package e.amil.e_amil;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
-
-import androidx.annotation.NonNull;
-import androidx.fragment.app.Fragment;
-
 import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+
+import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
+import androidx.fragment.app.Fragment;
 
 import com.github.mikephil.charting.charts.BarChart;
 import com.github.mikephil.charting.components.Description;
@@ -22,10 +23,10 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-import java.util.Timer;
-import java.util.TimerTask;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Timer;
+import java.util.TimerTask;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -36,7 +37,7 @@ public class dokumen_user extends Fragment {
 
     private ImageView imageView;
     private int[] imageResources = {R.drawable.img_14, R.drawable.img_16, R.drawable.img_12};
-    private final long DELAY_MS =8; // Delay in milliseconds before task is to be executed
+    private final long DELAY_MS = 8; // Delay in milliseconds before task is to be executed
     private final long PERIOD_MS = 3000; // Time interval in milliseconds between successive task executions.
 
     private BarChart barChart;
@@ -53,6 +54,7 @@ public class dokumen_user extends Fragment {
     private int currentPage = 0;
     private Timer timer;
 
+    private CardView gambarzakat, gambarinfak;
 
 
     View view;
@@ -95,8 +97,17 @@ public class dokumen_user extends Fragment {
         // Inflate the layout for this fragment
         view = inflater.inflate(R.layout.fragment_dokumen_user, container, false);
 
+        gambarzakat = view.findViewById(R.id.datazakat_user);
         //Barchart
         barChart = view.findViewById(R.id.barChart);
+
+        gambarzakat.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(requireContext(), ketersngan_zakat.class);
+                startActivity(intent);
+            }
+        });
 
         setupBarChart();
         loadDataFromFirebase();
@@ -106,9 +117,9 @@ public class dokumen_user extends Fragment {
         imageView = view.findViewById(R.id.image_dokumenuser);
         autoStartImageSlider();
         return view;
-
-
     }
+
+
 
     private void setupBarChart() {
         // Mengatur deskripsi
@@ -128,7 +139,7 @@ public class dokumen_user extends Fragment {
 
 
     private void loadDataFromFirebase() {
-        FirebaseDatabase.getInstance().getReference().child("Zakat").child("Infak")
+        FirebaseDatabase.getInstance().getReference().child("Zakat")
                 .addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -179,4 +190,6 @@ public class dokumen_user extends Fragment {
             }
         }, DELAY_MS, PERIOD_MS);
     }
+
+
 }

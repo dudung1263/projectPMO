@@ -44,7 +44,7 @@
 
 
          <androidx.cardview.widget.CardView
-             android:id="@+id/datazakat"
+             android:id="@+id/datazakat_user"
              android:layout_width="80sp"
              android:layout_height="60sp"
              android:layout_rowWeight="1"
@@ -60,7 +60,7 @@
 
 
                  <ImageView
-                     android:id="@+id/pp123"
+                     android:id="@+id/gambarzakat"
                      android:layout_marginTop="5dp"
                      android:layout_width="60sp"
                      android:layout_height="60sp"
@@ -102,7 +102,7 @@
 
 
                  <ImageView
-                     android:id="@+id/pp1234"
+                     android:id="@+id/gambarinfak"
                      android:layout_marginTop="5dp"
                      android:layout_width="60sp"
                      android:layout_height="60sp"
