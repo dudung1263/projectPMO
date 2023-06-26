@@ -104,7 +104,7 @@ public class dokumen_user extends Fragment {
         gambarzakat.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(requireContext(), ketersngan_zakat.class);
+                Intent intent = new Intent(requireContext(), keterangan_zakat.class);
                 startActivity(intent);
             }
         });

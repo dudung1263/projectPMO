@@ -17,7 +17,7 @@
         android:theme="@style/Theme.EAmil"
         tools:targetApi="31">
         <activity
-            android:name=".ketersngan_zakat"
+            android:name=".keterangan_zakat"
             android:exported="false" />
         <activity
             android:name=".diagram"

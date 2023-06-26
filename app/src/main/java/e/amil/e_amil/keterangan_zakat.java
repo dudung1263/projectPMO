@@ -4,7 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class ketersngan_zakat extends AppCompatActivity {
+public class keterangan_zakat extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
