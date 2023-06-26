@@ -43,7 +43,7 @@ public class MainActivity_user extends AppCompatActivity implements BottomNaviga
             case R.id.menu_data_user:
                 fragment = new dokumen_user();
                 break;
-            case R.id.menu_Tentang:
+            case R.id.menu_Tentang_user:
                 fragment = new profile();
                 break;
         }
