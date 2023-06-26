@@ -1,8 +1,8 @@
 package e.amil.e_amil;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class fedback_profil extends AppCompatActivity {
 
@@ -13,5 +13,6 @@ public class fedback_profil extends AppCompatActivity {
         if (getSupportActionBar() != null) {
             getSupportActionBar().hide();
         }
+
     }
 }

@@ -6,7 +6,7 @@
         android:icon="@drawable/data_selector">
     </item>
     <item
-        android:id="@+id/menu_Tentang"
+        android:id="@+id/menu_Tentang_user"
         android:title="@string/tentang"
         android:icon="@drawable/profil_selector">
     </item>
