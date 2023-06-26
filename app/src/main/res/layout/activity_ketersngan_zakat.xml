@@ -8,22 +8,23 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="vertical">
 
 
         <GridLayout
-            android:layout_marginTop="15sp"
             android:layout_width="400sp"
             android:layout_height="55sp"
-            android:rowCount="1"
-            android:columnCount="2">
+            android:layout_gravity="center"
+            android:layout_marginTop="10sp"
+            android:columnCount="2"
+            android:rowCount="1">
 
             <androidx.cardview.widget.CardView
-                android:layout_marginLeft="10sp"
                 android:layout_width="200sp"
                 android:layout_height="55sp"
                 android:layout_rowWeight="1"
+                android:layout_marginStart="0sp"
                 app:cardElevation="15dp">
 
 
@@ -31,30 +32,32 @@
 
                     android:layout_width="match_parent"
                     android:layout_height="55sp"
-                    android:background="@color/ijomuda"
+                    android:background="@drawable/garis_tepi_ijo"
                     android:orientation="vertical">
 
                     <TextView
                         android:id="@+id/judulzakatfitrah"
                         android:layout_width="wrap_content"
                         android:layout_height="20sp"
-                        android:text="Pemasukan Zakat Fitrah"
+                        android:layout_marginLeft="5sp"
                         android:gravity="center"
+                        android:text="Pemasukan Zakat Fitrah"
                         android:textColor="@color/black"
-                        android:textStyle="bold"
-                        android:layout_marginLeft="15sp"/>
+                        android:textSize="10sp"
+                        android:textStyle="bold" />
 
 
                     <TextView
                         android:id="@+id/julmahzakatfitrah"
+                        android:layout_width="185sp"
+                        android:layout_height="25sp"
+                        android:layout_gravity="center"
                         android:layout_marginTop="5sp"
-                        android:layout_width="150sp"
-                        android:layout_height="20sp"
-                        android:text="hasil"
                         android:gravity="center"
+                        android:text="0,0 Kg"
                         android:textColor="@color/black"
-                        android:textStyle="bold"
-                        android:layout_marginLeft="25sp"/>
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
 
 
                 </LinearLayout>
@@ -65,38 +68,38 @@
             <androidx.cardview.widget.CardView
                 android:layout_width="200sp"
                 android:layout_height="55sp"
-                android:layout_rowWeight="1"
-                android:layout_marginLeft="5sp">
+                android:layout_rowWeight="1">
 
 
                 <LinearLayout
-
                     android:layout_width="match_parent"
                     android:layout_height="55sp"
-                    android:background="@color/ijomuda"
+                    android:background="@drawable/garis_tepi_ijo"
                     android:orientation="vertical">
 
                     <TextView
-                        android:id="@+id/pengeluaranzakat"
+                        android:id="@+id/judulzakatmall"
                         android:layout_width="wrap_content"
                         android:layout_height="20sp"
-                        android:text="Pengeluaran zakat Fitrah"
+                        android:layout_marginLeft="5sp"
                         android:gravity="center"
+                        android:text="Pemasukan Zakat Mall"
                         android:textColor="@color/black"
-                        android:textStyle="bold"
-                        android:layout_marginLeft="15sp"/>
+                        android:textSize="10sp"
+                        android:textStyle="bold" />
 
 
                     <TextView
-                        android:id="@+id/pengeluaranzakatfitrah"
+                        android:id="@+id/julmahzakatmall"
+                        android:layout_width="185sp"
+                        android:layout_height="25sp"
+                        android:layout_gravity="center"
                         android:layout_marginTop="5sp"
-                        android:layout_width="150sp"
-                        android:layout_height="20sp"
-                        android:text="hasil "
                         android:gravity="center"
+                        android:text="Rp. "
                         android:textColor="@color/black"
-                        android:textStyle="bold"
-                        android:layout_marginLeft="25sp"/>
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
 
 
                 </LinearLayout>
@@ -106,24 +109,20 @@
 
         </GridLayout>
 
-
-
-
-
-
-
         <GridLayout
-            android:layout_marginTop="15sp"
             android:layout_width="400sp"
             android:layout_height="55sp"
-            android:rowCount="1"
-            android:columnCount="2">
+            android:layout_gravity="center"
+            android:layout_marginTop="5sp"
+            android:layout_marginBottom="10sp"
+            android:columnCount="2"
+            android:rowCount="1">
 
             <androidx.cardview.widget.CardView
-                android:layout_marginLeft="10sp"
                 android:layout_width="200sp"
                 android:layout_height="55sp"
                 android:layout_rowWeight="1"
+                android:layout_marginStart="0sp"
                 app:cardElevation="15dp">
 
 
@@ -131,30 +130,32 @@
 
                     android:layout_width="match_parent"
                     android:layout_height="55sp"
-                    android:background="@color/ijomuda"
+                    android:background="@drawable/garis_tepi_ijo"
                     android:orientation="vertical">
 
                     <TextView
-                        android:id="@+id/pemasukanzakatmal"
-                        android:layout_width="150sp"
+                        android:id="@+id/judulpengeluaranzakatfitrah"
+                        android:layout_width="wrap_content"
                         android:layout_height="20sp"
-                        android:text="Pemasukan Zakat Mal"
+                        android:layout_marginLeft="5sp"
                         android:gravity="center"
+                        android:text="Pengeluaran Zakat Fitrah"
                         android:textColor="@color/black"
-                        android:textStyle="bold"
-                        android:layout_marginLeft="25sp"/>
+                        android:textSize="10sp"
+                        android:textStyle="bold" />
 
 
                     <TextView
-                        android:id="@+id/pengluaranzakatmal"
+                        android:id="@+id/julmahpengeluaranzakatfitrah"
+                        android:layout_width="185sp"
+                        android:layout_height="25sp"
+                        android:layout_gravity="center"
                         android:layout_marginTop="5sp"
-                        android:layout_width="150sp"
-                        android:layout_height="20sp"
-                        android:text="hasil"
                         android:gravity="center"
+                        android:text="0,0 Kg"
                         android:textColor="@color/black"
-                        android:textStyle="bold"
-                        android:layout_marginLeft="25sp"/>
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
 
 
                 </LinearLayout>
@@ -165,38 +166,39 @@
             <androidx.cardview.widget.CardView
                 android:layout_width="200sp"
                 android:layout_height="55sp"
-                android:layout_rowWeight="1"
-                android:layout_marginLeft="5sp">
+                android:layout_rowWeight="1">
 
 
                 <LinearLayout
 
                     android:layout_width="match_parent"
                     android:layout_height="55sp"
-                    android:background="@color/ijomuda"
+                    android:background="@drawable/garis_tepi_ijo"
                     android:orientation="vertical">
 
                     <TextView
-                        android:id="@+id/judulzakatmal"
-                        android:layout_width="150sp"
+                        android:id="@+id/judulpengeluaranzakatmall"
+                        android:layout_width="wrap_content"
                         android:layout_height="20sp"
-                        android:text="Pengeluaran Zakat mal"
+                        android:layout_marginLeft="5sp"
                         android:gravity="center"
+                        android:text="Pengeleuaran Zakat Mall"
                         android:textColor="@color/black"
-                        android:textStyle="bold"
-                        android:layout_marginLeft="15sp"/>
+                        android:textSize="10sp"
+                        android:textStyle="bold" />
 
 
                     <TextView
-                        android:id="@+id/julmahzakatmal"
+                        android:id="@+id/julmahpengeluaranzakatmall"
+                        android:layout_width="185sp"
+                        android:layout_height="25sp"
+                        android:layout_gravity="center"
                         android:layout_marginTop="5sp"
-                        android:layout_width="150sp"
-                        android:layout_height="20sp"
-                        android:text="hasil "
                         android:gravity="center"
+                        android:text="Rp. "
                         android:textColor="@color/black"
-                        android:textStyle="bold"
-                        android:layout_marginLeft="25sp"/>
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
 
 
                 </LinearLayout>
@@ -206,9 +208,7 @@
 
         </GridLayout>
 
-
-
-
     </LinearLayout>
+
 
 </FrameLayout>
