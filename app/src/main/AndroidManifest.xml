@@ -3,6 +3,9 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="SimpleDateFormat" />
+    <uses-permission android:name="java.text" />
+
 
     <application
         android:allowBackup="true"

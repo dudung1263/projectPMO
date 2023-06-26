@@ -14,6 +14,8 @@ import androidx.fragment.app.Fragment;
 import java.util.Timer;
 import java.util.TimerTask;
 
+
+
 /**
  * A simple {@link Fragment} subclass.
  * Use the {@link dokumen#newInstance} factory method to
@@ -138,7 +140,7 @@ public class dokumen extends Fragment implements View.OnClickListener {
                 break;
 
             case R.id.diagram2:
-                getActivity().startActivity(new Intent(getActivity(), diagram.class));
+                getActivity().startActivity(new Intent(getActivity(), jadwalsholat.class));
                 break;
 
 
