@@ -20,7 +20,7 @@ public class MainActivity_user extends AppCompatActivity implements BottomNaviga
             getSupportActionBar().hide();
         }
 
-        loadFragment(new dokumen());
+        loadFragment(new dokumen_user());
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigation_user);
         bottomNavigationView.setItemIconTintList(null);
         bottomNavigationView.setOnNavigationItemSelectedListener(this);
