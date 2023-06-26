@@ -10,14 +10,13 @@
     <LinearLayout
         android:id="@+id/image111"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_marginTop="0dp"
-        android:gravity="center_vertical">
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="150sp">
+            android:layout_height="153sp"
+            android:layout_gravity="center">
 
             <ImageView
                 android:id="@+id/image_dokumenuser"
@@ -26,200 +25,186 @@
 
         </LinearLayout>
 
+        <LinearLayout
+            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="110dp"
+            android:gravity="center"
+            android:layout_gravity="center_horizontal">
 
-        <GridLayout
-            android:layout_marginTop="30dp"
-            android:layout_width="400sp"
-            android:layout_height="100sp"
-            android:rowCount="1"
-            android:columnCount="4"
-            android:layout_gravity="center_horizontal"
-            android:columnOrderPreserved="false">
+            <GridLayout
+                android:layout_marginTop="20dp"
+                android:layout_width="400sp"
+                android:layout_height="100sp"
+                android:rowCount="1"
+                android:columnCount="4"
+                android:layout_gravity="center_horizontal"
+                android:columnOrderPreserved="false">
 
 
 
-         <androidx.cardview.widget.CardView
-             android:id="@+id/datazakat_user"
-             android:layout_width="80sp"
-             android:layout_height="60sp"
-             android:layout_rowWeight="1"
-             android:layout_marginLeft="25sp"
-             app:cardCornerRadius="10dp">
+             <androidx.cardview.widget.CardView
+                 android:id="@+id/datazakat_user"
+                 android:layout_width="80sp"
+                 android:layout_height="60sp"
+                 android:layout_rowWeight="1"
+                 android:layout_marginLeft="10sp"
+                 app:cardCornerRadius="10dp">
 
-             <LinearLayout
+                 <LinearLayout
 
-                 android:layout_width="match_parent"
+                     android:layout_width="match_parent"
+                     android:layout_height="100sp"
+                     android:background="#87D913"
+                     android:orientation="vertical">
+
+
+                     <ImageView
+                         android:id="@+id/gambarzakat"
+                         android:layout_width="63dp"
+                         android:layout_height="60dp"
+                         android:layout_gravity="center_horizontal"
+                         android:layout_marginTop="5dp"
+                         android:src="@drawable/img_11" />
+
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="20sp"
+                        android:text=" ZAKAT"
+                        android:layout_marginTop="7dp"
+                        android:textColor="@color/white"
+                        android:gravity="center"
+                        android:textStyle="bold"
+                        android:layout_gravity="center"/>
+
+
+                 </LinearLayout>
+
+             </androidx.cardview.widget.CardView>
+
+             <androidx.cardview.widget.CardView
+                 android:id="@+id/datainfaq"
+                 android:layout_width="80sp"
+                 android:layout_height="50sp"
+                 android:layout_rowWeight="1"
+                 android:layout_column="1"
+                 android:layout_marginLeft="20dp"
+                 app:cardCornerRadius="10dp">
+
+                 <LinearLayout
+
+                     android:layout_width="match_parent"
+                     android:layout_height="100sp"
+                     android:background="#4EC10F"
+                     android:orientation="vertical">
+
+
+                     <ImageView
+                         android:id="@+id/gambarinfak"
+                         android:layout_marginTop="5dp"
+                         android:layout_width="60sp"
+                         android:layout_height="60sp"
+                         android:layout_gravity="center"
+                         android:src="@drawable/vektorinfak"/>
+
+
+                    <TextView
+                        android:layout_width="50sp"
+                        android:layout_height="20sp"
+                        android:text="INFAK"
+                        android:layout_marginTop="7dp"
+                        android:textColor="@color/white"
+                        android:textStyle="bold"
+                        android:gravity="center"
+                        android:layout_gravity="center"/>
+
+
+                 </LinearLayout>
+
+             </androidx.cardview.widget.CardView>
+
+             <androidx.cardview.widget.CardView
+                 android:id="@+id/datasodakoh"
+                 android:layout_width="80sp"
+                 android:layout_height="80sp"
+                 android:layout_rowWeight="1"
+                 android:layout_marginLeft="20dp"
+                 app:cardCornerRadius="10dp">
+
+                 <LinearLayout
+
+                     android:layout_width="match_parent"
+                     android:layout_height="100sp"
+                     android:background="#0AA305"
+                     android:orientation="vertical">
+
+
+                     <ImageView
+                         android:layout_marginTop="5dp"
+                         android:layout_width="60sp"
+                         android:layout_height="60sp"
+                         android:layout_gravity="center_horizontal"
+                         android:src="@drawable/vektorsdkh"/>
+
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="20sp"
+                        android:layout_marginTop="7dp"
+                        android:text="SODEKAH"
+                        android:textColor="@color/white"
+                        android:gravity="center"
+                        android:textStyle="bold"
+                        android:layout_gravity="center"/>
+
+
+                 </LinearLayout>
+
+             </androidx.cardview.widget.CardView>
+
+             <androidx.cardview.widget.CardView
+                 android:id="@+id/jadwalsholat_dokumen"
+                 android:layout_width="80sp"
                  android:layout_height="100sp"
-                 android:background="@color/ijomuda"
-                 android:orientation="vertical">
+                 android:layout_rowWeight="1"
+                 android:layout_marginRight="10dp"
+                 android:layout_marginLeft="20dp"
+                 app:cardCornerRadius="10dp">
+
+                 <LinearLayout
+
+                     android:layout_width="match_parent"
+                     android:layout_height="100sp"
+                     android:background="@color/sodaqoh1_background"
+                     android:orientation="vertical">
 
 
-                 <ImageView
-                     android:id="@+id/gambarzakat"
-                     android:layout_width="63dp"
-                     android:layout_height="60dp"
-                     android:layout_gravity="center_horizontal"
-                     android:layout_marginTop="5dp"
-                     android:src="@drawable/img_11" />
+                     <ImageView
+                         android:layout_marginTop="5dp"
+                         android:layout_width="60sp"
+                         android:layout_height="60sp"
+                         android:layout_gravity="center_horizontal"
+                         android:src="@drawable/masjid"/>
 
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="20sp"
-                    android:text=" ZAKAT"
-                    android:layout_marginTop="7dp"
-                    android:textColor="@color/white"
-                    android:gravity="center"
-                    android:textStyle="bold"
-                    android:layout_gravity="center"/>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="JADWAL SHOLAT"
+                        android:textColor="@color/white"
+                        android:textStyle="bold"
+                        android:textSize="12sp"
+                        android:gravity="center"
+                        android:layout_gravity="center"/>
 
 
-             </LinearLayout>
+                 </LinearLayout>
 
-         </androidx.cardview.widget.CardView>
-
-
-         <androidx.cardview.widget.CardView
-             android:id="@+id/datainfaq"
-             android:layout_width="80sp"
-             android:layout_height="50sp"
-             android:layout_rowWeight="1"
-             android:layout_column="1"
-             android:layout_marginLeft="10dp"
-             app:cardCornerRadius="10dp">
-
-             <LinearLayout
-
-                 android:layout_width="match_parent"
-                 android:layout_height="100sp"
-                 android:background="@color/sodaqoh1_background"
-                 android:orientation="vertical">
-
-
-                 <ImageView
-                     android:id="@+id/gambarinfak"
-                     android:layout_marginTop="5dp"
-                     android:layout_width="60sp"
-                     android:layout_height="60sp"
-                     android:layout_gravity="center"
-                     android:src="@drawable/vektorinfak"/>
-
-
-                <TextView
-                    android:layout_width="50sp"
-                    android:layout_height="20sp"
-                    android:text="INFAK"
-                    android:layout_marginTop="7dp"
-                    android:textColor="@color/white"
-                    android:textStyle="bold"
-                    android:gravity="center"
-                    android:layout_gravity="center"/>
-
-
-             </LinearLayout>
-
-         </androidx.cardview.widget.CardView>
-
-
-
-
-         <androidx.cardview.widget.CardView
-             android:id="@+id/datasodakoh"
-             android:layout_width="80sp"
-             android:layout_height="80sp"
-             android:layout_rowWeight="1"
-             android:layout_marginLeft="10dp"
-             app:cardCornerRadius="10dp">
-
-             <LinearLayout
-
-                 android:layout_width="match_parent"
-                 android:layout_height="100sp"
-                 android:background="@color/ijomuda"
-                 android:orientation="vertical">
-
-
-                 <ImageView
-                     android:layout_marginTop="5dp"
-                     android:layout_width="60sp"
-                     android:layout_height="60sp"
-                     android:layout_gravity="center_horizontal"
-                     android:src="@drawable/vektorsdkh"/>
-
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="20sp"
-                    android:layout_marginTop="7dp"
-                    android:text="SODEKAH"
-                    android:textColor="@color/white"
-                    android:gravity="center"
-                    android:textStyle="bold"
-                    android:layout_gravity="center"/>
-
-
-             </LinearLayout>
-
-         </androidx.cardview.widget.CardView>
-
-
-
-         <androidx.cardview.widget.CardView
-             android:layout_width="80sp"
-             android:layout_height="100sp"
-             android:layout_rowWeight="1"
-             android:layout_marginLeft="10dp"
-             app:cardCornerRadius="10dp">
-
-             <LinearLayout
-
-                 android:layout_width="match_parent"
-                 android:layout_height="100sp"
-                 android:background="@color/sodaqoh1_background"
-                 android:orientation="vertical">
-
-
-                 <ImageView
-                     android:layout_marginTop="5dp"
-                     android:layout_width="60sp"
-                     android:layout_height="60sp"
-                     android:layout_gravity="center_horizontal"
-                     android:src="@drawable/masjid"/>
-
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="JADWAL SHOLAT"
-                    android:textColor="@color/white"
-                    android:textStyle="bold"
-                    android:textSize="12sp"
-                    android:gravity="center"
-                    android:layout_gravity="center"/>
-
-
-             </LinearLayout>
-
-         </androidx.cardview.widget.CardView>
-
+             </androidx.cardview.widget.CardView>
 
         </GridLayout>
-
-        <com.github.mikephil.charting.charts.BarChart
-            android:id="@+id/barChart"
-            android:layout_marginTop="30dp"
-            android:layout_width="match_parent"
-            android:layout_height="300dp" />
-
-
-
-
-
-
-
-
-
-
+        </LinearLayout>
 
     </LinearLayout>
 
