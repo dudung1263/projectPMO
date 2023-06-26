@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,6 +7,30 @@
     tools:context=".keterangan_zakat">
 
     <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_gravity="center_vertical"
+            android:background="#46B14B">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:text="Data Laporan Zakat"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:layout_gravity="center"
+                android:gravity="center">
+
+            </TextView>
+        </LinearLayout>
+
+        <LinearLayout
+        android:id="@+id/jumlahup"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
@@ -33,7 +57,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="55sp"
                     android:background="@drawable/garis_tepi_ijo"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    android:layout_marginRight="2sp">
 
                     <TextView
                         android:id="@+id/judulzakatfitrah"
@@ -72,6 +97,7 @@
 
 
                 <LinearLayout
+                    android:layout_marginLeft="2sp"
                     android:layout_width="match_parent"
                     android:layout_height="55sp"
                     android:background="@drawable/garis_tepi_ijo"
@@ -127,7 +153,7 @@
 
 
                 <LinearLayout
-
+                    android:layout_marginRight="2sp"
                     android:layout_width="match_parent"
                     android:layout_height="55sp"
                     android:background="@drawable/garis_tepi_ijo"
@@ -170,7 +196,7 @@
 
 
                 <LinearLayout
-
+                    android:layout_marginLeft="2sp"
                     android:layout_width="match_parent"
                     android:layout_height="55sp"
                     android:background="@drawable/garis_tepi_ijo"
@@ -210,5 +236,26 @@
 
     </LinearLayout>
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="25dp"
+            android:layout_gravity="center_vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:text="Diagram Laporan "
+                android:padding="5dp"
+                android:paddingStart="10sp"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:gravity="left"
+                android:layout_gravity="center_vertical">
 
-</FrameLayout>
+            </TextView>
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</androidx.cardview.widget.CardView>
