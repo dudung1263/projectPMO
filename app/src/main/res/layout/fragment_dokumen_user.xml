@@ -27,18 +27,13 @@
         </LinearLayout>
 
 
-
-
-
-
-
         <GridLayout
             android:layout_marginTop="30dp"
             android:layout_width="400sp"
             android:layout_height="100sp"
             android:rowCount="1"
             android:columnCount="4"
-            android:layout_gravity="center"
+            android:layout_gravity="center_horizontal"
             android:columnOrderPreserved="false">
 
 
@@ -48,7 +43,7 @@
              android:layout_width="80sp"
              android:layout_height="60sp"
              android:layout_rowWeight="1"
-             android:layout_marginLeft="20sp"
+             android:layout_marginLeft="25sp"
              app:cardCornerRadius="10dp">
 
              <LinearLayout
@@ -61,11 +56,11 @@
 
                  <ImageView
                      android:id="@+id/gambarzakat"
-                     android:layout_marginTop="5dp"
-                     android:layout_width="60sp"
-                     android:layout_height="60sp"
+                     android:layout_width="63dp"
+                     android:layout_height="60dp"
                      android:layout_gravity="center_horizontal"
-                     android:src="@drawable/img_11"/>
+                     android:layout_marginTop="5dp"
+                     android:src="@drawable/img_11" />
 
 
                 <TextView
