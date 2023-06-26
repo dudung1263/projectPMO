@@ -6,7 +6,6 @@
     <uses-permission android:name="SimpleDateFormat" />
     <uses-permission android:name="java.text" />
 
-
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -16,6 +15,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.EAmil"
         tools:targetApi="31">
+        <activity
+            android:name=".keterangan_infaq"
+            android:exported="false" />
         <activity
             android:name=".keterangan_zakat"
             android:exported="false" />
