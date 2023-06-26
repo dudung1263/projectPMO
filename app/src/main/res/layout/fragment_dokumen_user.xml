@@ -72,8 +72,10 @@
                     android:layout_width="match_parent"
                     android:layout_height="20sp"
                     android:text=" ZAKAT"
-                    android:textColor="@color/black"
+                    android:layout_marginTop="7dp"
+                    android:textColor="@color/white"
                     android:gravity="center"
+                    android:textStyle="bold"
                     android:layout_gravity="center"/>
 
 
@@ -112,7 +114,9 @@
                     android:layout_width="50sp"
                     android:layout_height="20sp"
                     android:text="INFAK"
-                    android:textColor="@color/black"
+                    android:layout_marginTop="7dp"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
                     android:gravity="center"
                     android:layout_gravity="center"/>
 
@@ -151,9 +155,11 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="20sp"
+                    android:layout_marginTop="7dp"
                     android:text="SODEKAH"
-                    android:textColor="@color/black"
+                    android:textColor="@color/white"
                     android:gravity="center"
+                    android:textStyle="bold"
                     android:layout_gravity="center"/>
 
 
@@ -190,7 +196,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="JADWAL SHOLAT"
-                    android:textColor="@color/black"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    android:textSize="12sp"
                     android:gravity="center"
                     android:layout_gravity="center"/>
 
