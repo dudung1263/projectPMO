@@ -56,8 +56,8 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="5dp"
-                android:layout_marginRight="5dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
                 android:background="@drawable/garis_tepi_ijo"
                 android:orientation="vertical">
 
@@ -71,10 +71,12 @@
                     android:orientation="horizontal">
 
                     <TextView
-                        android:layout_width="100dp"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Nama Petugas"
                         android:textColor="@color/black"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginEnd="5dp"
                         android:textSize="15dp"
                         android:textStyle="bold">
 
@@ -90,7 +92,7 @@
                         android:paddingLeft="5dp"
                         android:ems="10"
                         android:textColor="@color/black"
-                        android:layout_marginLeft="10sp">
+                        android:layout_marginLeft="20sp">
 
                     </EditText>
 
@@ -109,6 +111,8 @@
                         android:layout_height="wrap_content"
                         android:text="Jenis Infaq"
                         android:textColor="@color/black"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginEnd="5dp"
                         android:textSize="15dp"
                         android:textStyle="bold"/>
 
@@ -125,7 +129,7 @@
                             android:onClick="rbclick"
                             android:text="Infaq"
                             android:textColor="@color/black"
-                            android:layout_marginLeft="10sp"/>
+                            android:layout_marginLeft="20sp"/>
 
                     </RadioGroup>
 
@@ -144,6 +148,8 @@
                         android:layout_height="wrap_content"
                         android:text="Jumlah Infaq"
                         android:textColor="@color/black"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginEnd="5dp"
                         android:textSize="15dp"
                         android:textStyle="bold">
 
@@ -160,7 +166,7 @@
                         android:ems="10"
                         android:inputType="number"
                         android:textColor="@color/black"
-                        android:layout_marginLeft="10sp">
+                        android:layout_marginLeft="20sp">
 
                     </EditText>
 
@@ -175,10 +181,12 @@
                     android:orientation="horizontal">
 
                     <TextView
-                        android:layout_width="100dp"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Tgl Penyaluran"
                         android:textColor="@color/black"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginEnd="5dp"
                         android:textSize="15dp"
                         android:textStyle="bold">
 
@@ -194,7 +202,7 @@
                         android:paddingLeft="5dp"
                         android:ems="10"
                         android:textColor="@color/black"
-                        android:layout_marginLeft="10sp">
+                        android:layout_marginLeft="19sp">
 
                     </EditText>
 
@@ -214,6 +222,8 @@
                         android:layout_height="wrap_content"
                         android:text="Keterangan"
                         android:textColor="@color/black"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginEnd="5dp"
                         android:textSize="15dp"
                         android:textStyle="bold">
 
@@ -230,7 +240,7 @@
                         android:inputType="textMultiLine"
                         android:ems="10"
                         android:textColor="@color/black"
-                        android:layout_marginLeft="10sp">
+                        android:layout_marginLeft="20sp">
 
                     </EditText>
 
@@ -251,6 +261,8 @@
                         android:layout_gravity="center_vertical"
                         android:text="Foto"
                         android:textColor="@color/black"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginEnd="5dp"
                         android:textStyle="bold"
                         android:textSize="15dp"></TextView>
 
@@ -258,7 +270,7 @@
                         android:id="@+id/image_infaq_penyaluran"
                         android:layout_width="60dp"
                         android:layout_height="60dp"
-                        android:layout_marginLeft="50dp"
+                        android:layout_marginLeft="70dp"
                         android:src="@drawable/carigambar">
 
                     </ImageView>
@@ -280,6 +292,8 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center"
                     android:orientation="vertical">
 
                     <androidx.appcompat.widget.AppCompatButton
@@ -292,6 +306,7 @@
                         android:background="@drawable/img_15"
                         android:text="Simpan"
                         android:textColor="@color/white"
+                        android:layout_gravity="center"
                         android:textStyle="bold"
                         android:textSize="20dp">
 
@@ -301,7 +316,9 @@
                         android:id="@+id/progressinfaq_penyaluran"
                         android:layout_width="40dp"
                         android:layout_height="40dp"
-                        android:layout_gravity="center">
+                        android:layout_gravity="center"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp">
 
                     </ProgressBar>
 

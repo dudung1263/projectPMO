@@ -19,7 +19,7 @@ import java.util.TimerTask;
 
 public class home extends Fragment implements View.OnClickListener {
 
-    Button btnzakat, btninfaq, btnsodakoh;
+    Button btnzakat, btninfaq, btnsodakoh, btnpenyaluranzakat, btnpenyaluraninfaq;
     View view ;
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
@@ -75,10 +75,15 @@ public class home extends Fragment implements View.OnClickListener {
         btnzakat = view.findViewById(R.id.datazakat_home);
         btninfaq = view.findViewById(R.id.datainfaq_home);
         btnsodakoh = view.findViewById(R.id.datasodakoh_home);
+        btnpenyaluranzakat = view.findViewById(R.id.penyalurandatazakat_home);
+        btnpenyaluraninfaq = view.findViewById(R.id.penyalurandatainfaq_home);
 
         btnzakat.setOnClickListener(this);
         btninfaq.setOnClickListener(this);
         btnsodakoh.setOnClickListener(this);
+        btnpenyaluranzakat.setOnClickListener(this);
+        btnpenyaluraninfaq.setOnClickListener(this);
+
 
         imageView = view.findViewById(R.id.imageView);
 
@@ -134,9 +139,11 @@ public class home extends Fragment implements View.OnClickListener {
             case R.id.datasodakoh_home:
                 getActivity().startActivity(new Intent(getActivity(), data_sodakoh.class));
                 break;
+
             case R.id.penyalurandatazakat_home:
                 getActivity().startActivity(new Intent(getActivity(), penyaluran_zakat.class));
                 break;
+
             case R.id.penyalurandatainfaq_home:
             getActivity().startActivity(new Intent(getActivity(), penyaluran_infaq.class));
                 break;
