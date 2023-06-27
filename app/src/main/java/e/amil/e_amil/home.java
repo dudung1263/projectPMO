@@ -2,16 +2,15 @@ package e.amil.e_amil;
 
 import android.content.Intent;
 import android.os.Bundle;
-
-import androidx.annotation.Nullable;
-import androidx.fragment.app.Fragment;
-
 import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
+
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
 
 import com.denzcoskun.imageslider.ImageSlider;
 
@@ -134,6 +133,9 @@ public class home extends Fragment implements View.OnClickListener {
 
             case R.id.datasodakoh_home:
                 getActivity().startActivity(new Intent(getActivity(), data_sodakoh.class));
+                break;
+            case R.id.penyalurandatazakat_home:_home:
+                getActivity().startActivity(new Intent(getActivity(), penyaluran_zakat.class));
                 break;
 
         }
