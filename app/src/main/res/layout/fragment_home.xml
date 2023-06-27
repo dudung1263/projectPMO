@@ -112,7 +112,6 @@
                     </androidx.appcompat.widget.AppCompatButton>
                     <androidx.appcompat.widget.AppCompatButton
                         android:id="@+id/penyalurandatazakat_home"
-                        android:onClick="datasodakoh"
                         android:layout_width="match_parent"
                         android:layout_height="60dp"
                         android:layout_marginStart="10dp"
@@ -132,7 +131,6 @@
                     </androidx.appcompat.widget.AppCompatButton>
                     <androidx.appcompat.widget.AppCompatButton
                         android:id="@+id/penyalurandatainfaq_home"
-                        android:onClick="datasodakoh"
                         android:layout_width="match_parent"
                         android:layout_height="60dp"
                         android:layout_marginStart="10dp"
@@ -141,7 +139,7 @@
                         android:padding="10dp"
                         android:paddingStart="0dp"
                         android:paddingEnd="25dp"
-                        android:drawableStart="@mipmap/zakat"
+                        android:drawableStart="@mipmap/infaq"
                         android:drawablePadding="0dp"
                         android:text="Penyaluran Infaq"
                         android:background="@drawable/shap2"
