@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".penyaluran_zakat">
+    tools:context=".penyaluran_infaq">
 
     <LinearLayout
         android:id="@+id/topinputzakat"
@@ -14,7 +14,7 @@
         android:background="@drawable/img_13">
 
         <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/kembalizakat_penyaluran"
+            android:id="@+id/kembaliinfak_penyaluran"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:background="@drawable/kembalizakat"
@@ -29,7 +29,7 @@
             android:layout_marginLeft="8sp"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="Penyaluran Data Zakat"
+            android:text="Penyaluran Data Infaq"
             android:gravity="center_vertical"
             android:textSize="30dp"
             android:textColor="@color/white"
@@ -81,7 +81,7 @@
                     </TextView>
 
                     <EditText
-                        android:id="@+id/namaamil_zakat_penyaluran"
+                        android:id="@+id/namaamil_infaq_penyaluran"
                         android:layout_width="240dp"
                         android:layout_height="30dp"
                         android:background="@drawable/shape3"
@@ -107,35 +107,26 @@
                     <TextView
                         android:layout_width="100dp"
                         android:layout_height="wrap_content"
-                        android:text="Jenis Zakat"
+                        android:text="Jenis Infaq"
                         android:textColor="@color/black"
                         android:textSize="15dp"
                         android:textStyle="bold"/>
 
                     <RadioGroup
-                        android:id="@+id/rjeniszakat_penyaluran"
+                        android:id="@+id/rjenisinfaq_penyaluran"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
 
                         <RadioButton
-                            android:id="@+id/rzakatfitrah_penyaluran"
+                            android:id="@+id/rinfaq_penyaluran"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:checked="false"
                             android:onClick="rbclick"
-                            android:text="Zakat Fitrah"
+                            android:text="Infaq"
                             android:textColor="@color/black"
                             android:layout_marginLeft="10sp"/>
 
-                        <RadioButton
-                            android:id="@+id/rzakatmal_penyaluran"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:checked="false"
-                            android:onClick="rbclick"
-                            android:text="Zakat Mal"
-                            android:textColor="@color/black"
-                            android:layout_marginLeft="10sp"/>
                     </RadioGroup>
 
                 </LinearLayout>
@@ -151,7 +142,7 @@
                     <TextView
                         android:layout_width="100dp"
                         android:layout_height="wrap_content"
-                        android:text="Jumlah Zakat"
+                        android:text="Jumlah Infaq"
                         android:textColor="@color/black"
                         android:textSize="15dp"
                         android:textStyle="bold">
@@ -159,11 +150,11 @@
                     </TextView>
 
                     <EditText
-                        android:id="@+id/jumlahzakat_penyaluran"
+                        android:id="@+id/jumlahinfaq_penyaluran"
                         android:layout_width="240dp"
                         android:layout_height="30dp"
                         android:background="@drawable/shape3"
-                        android:hint="Jumlah Zakat"
+                        android:hint="Jumlah Infaq"
                         android:textSize="17sp"
                         android:paddingLeft="5dp"
                         android:ems="10"
@@ -194,11 +185,11 @@
                     </TextView>
 
                     <EditText
-                        android:id="@+id/tglzakat_penyaluran"
+                        android:id="@+id/tglinfaq_penyaluran"
                         android:layout_width="240dp"
                         android:layout_height="30dp"
                         android:background="@drawable/shape3"
-                        android:hint="Tgl Penyaluran Zakat"
+                        android:hint="Tgl Penyaluran Infaq"
                         android:textSize="17sp"
                         android:paddingLeft="5dp"
                         android:ems="10"
@@ -229,7 +220,7 @@
                     </TextView>
 
                     <EditText
-                        android:id="@+id/keteranganzakat_penyaluran"
+                        android:id="@+id/keteranganinfaq_penyaluran"
                         android:layout_width="240dp"
                         android:layout_height="100dp"
                         android:background="@drawable/shape3"
@@ -264,7 +255,7 @@
                         android:textSize="15dp"></TextView>
 
                     <ImageView
-                        android:id="@+id/image_zakat_penyaluran"
+                        android:id="@+id/image_infaq_penyaluran"
                         android:layout_width="60dp"
                         android:layout_height="60dp"
                         android:layout_marginLeft="50dp"
@@ -273,7 +264,7 @@
                     </ImageView>
 
                     <androidx.appcompat.widget.AppCompatButton
-                        android:id="@+id/getfotozakat_penyaluran"
+                        android:id="@+id/getfotoinfaq_penyaluran"
                         android:layout_width="160dp"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="20dp"
@@ -293,7 +284,7 @@
 
                     <androidx.appcompat.widget.AppCompatButton
                         android:layout_marginTop="10dp"
-                        android:id="@+id/simpan_zakat_penyaluran"
+                        android:id="@+id/simpan_infaq_penyaluran"
                         android:layout_width="match_parent"
                         android:layout_height="60dp"
                         android:layout_marginLeft="100dp"
@@ -307,7 +298,7 @@
                     </androidx.appcompat.widget.AppCompatButton>
 
                     <ProgressBar
-                        android:id="@+id/progresszakat_penyaluran"
+                        android:id="@+id/progressinfaq_penyaluran"
                         android:layout_width="40dp"
                         android:layout_height="40dp"
                         android:layout_gravity="center">

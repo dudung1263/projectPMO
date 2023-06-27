@@ -16,6 +16,9 @@
         android:theme="@style/Theme.EAmil"
         tools:targetApi="31">
         <activity
+            android:name=".penyaluran_infaq"
+            android:exported="false" />
+        <activity
             android:name=".penyaluran_zakat"
             android:exported="false" />
         <activity
