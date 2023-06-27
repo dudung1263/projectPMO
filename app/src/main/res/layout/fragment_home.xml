@@ -14,27 +14,27 @@
         <LinearLayout
                 android:id="@+id/img10"
                 android:layout_width="match_parent"
-                android:layout_height="260dp"
+                android:layout_height="200dp"
                 android:background="@drawable/img_9">
             <TextView
                 android:id="@+id/text1"
-                android:layout_width="280dp"
-                android:layout_height="70dp"
+                android:layout_width="220dp"
+                android:layout_height="50dp"
                 android:layout_marginTop="40dp"
                 android:text="KELOLA DATA"
-                android:layout_marginStart="0dp"
                 android:fontFamily="sans-serif-black"
                 android:textStyle="bold"
-                android:textSize="38dp"
+                android:textSize="29dp"
                 android:textColor="@color/white"
-                android:padding="10dp"
-                android:background="@drawable/img_10">
+                android:padding="7dp"
+                android:background="@drawable/img_10"
+                android:gravity="center_vertical">
             </TextView>
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginTop="200dp"
+            android:layout_marginTop="140dp"
             android:orientation="vertical">
             <ScrollView
                 android:layout_width="match_parent"
@@ -51,7 +51,7 @@
                         android:id="@+id/datazakat_home"
                         android:onClick="datazakat"
                         android:layout_width="match_parent"
-                        android:layout_height="70dp"
+                        android:layout_height="60dp"
                         android:layout_gravity="center"
                         android:layout_marginStart="10dp"
                         android:layout_marginEnd="10dp"
@@ -72,7 +72,7 @@
                         android:id="@+id/datainfaq_home"
                         android:onClick="datainfaq"
                         android:layout_width="match_parent"
-                        android:layout_height="70dp"
+                        android:layout_height="60dp"
                         android:layout_gravity="center"
                         android:layout_marginStart="10dp"
                         android:layout_marginEnd="10dp"
@@ -93,7 +93,7 @@
                         android:id="@+id/datasodakoh_home"
                         android:onClick="datasodakoh"
                         android:layout_width="match_parent"
-                        android:layout_height="70dp"
+                        android:layout_height="60dp"
                         android:layout_marginStart="10dp"
                         android:layout_marginEnd="10dp"
                         android:layout_marginTop="15dp"
@@ -107,6 +107,46 @@
                         android:fontFamily="sans-serif-black"
                         android:textStyle="bold"
                         android:textSize="30dp"
+                        android:textColor="@color/white">
+                    </androidx.appcompat.widget.AppCompatButton>
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/penyalurandatazakat_home"
+                        android:onClick="datasodakoh"
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginTop="15dp"
+                        android:padding="10dp"
+                        android:paddingStart="0dp"
+                        android:paddingEnd="25dp"
+                        android:drawableStart="@mipmap/zakat"
+                        android:drawablePadding="0dp"
+                        android:text="Penyaluran Zakat"
+                        android:background="@drawable/shap1"
+                        android:fontFamily="sans-serif-black"
+                        android:textStyle="bold"
+                        android:textSize="25dp"
+                        android:textColor="@color/white">
+                    </androidx.appcompat.widget.AppCompatButton>
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/penyalurandatainfaq_home"
+                        android:onClick="datasodakoh"
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginTop="15dp"
+                        android:padding="10dp"
+                        android:paddingStart="0dp"
+                        android:paddingEnd="25dp"
+                        android:drawableStart="@mipmap/zakat"
+                        android:drawablePadding="0dp"
+                        android:text="Penyaluran Infaq"
+                        android:background="@drawable/shap2"
+                        android:fontFamily="sans-serif-black"
+                        android:textStyle="bold"
+                        android:textSize="25dp"
                         android:textColor="@color/white">
                     </androidx.appcompat.widget.AppCompatButton>
 
