@@ -59,5 +59,8 @@ dependencies {
     implementation 'com.joanzapata.pdfview:android-pdfview:1.0.4@aar'
     implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0'
 
+    implementation 'com.theartofdev.edmodo:android-image-cropper:2.7.+'
+    implementation 'com.github.mohammadatif:CircularImageView:1.0.0'
+
 
 }

@@ -23,132 +23,116 @@
         </androidx.appcompat.widget.AppCompatButton>
 
     </LinearLayout>
-
-    <LinearLayout
-        android:layout_below="@+id/backprofil"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Profil"
-            android:gravity="center"
-            android:textSize="35dp"
-            android:textColor="@color/black"
-            android:textStyle="bold">
-
-        </TextView>
-
-        <LinearLayout
-            android:layout_marginTop="20dp"
-            android:layout_width="350dp"
-            android:layout_height="330dp"
-            android:layout_gravity="center"
-            android:background="@drawable/shap1"
-            android:padding="15dp"
-            android:orientation="vertical">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <ImageView
-                    android:layout_width="70dp"
-                    android:layout_height="70dp"
-                    android:background="@drawable/shap3">
-
-                </ImageView>
-
-                <TextView
-                    android:id="@+id/nurma"
-                    android:layout_marginLeft="15dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Nurma Budi S.W.       Instagram : @nurmabs"
-                    android:textColor="@color/black"
-                    android:textStyle="bold"
-                    android:textSize="18dp"
-                    android:layout_gravity="center">
-
-                </TextView>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginTop="25dp">
-
-                <ImageView
-                    android:layout_width="70dp"
-                    android:layout_height="70dp"
-                    android:background="@drawable/shap3">
-
-                </ImageView>
-
-                <TextView
-                    android:id="@+id/ginda"
-                    android:layout_marginLeft="15dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Ginda Dwi P.           Instagram : @ginda.sann"
-                    android:textColor="@color/black"
-                    android:textStyle="bold"
-                    android:textSize="18dp"
-                    android:layout_gravity="center">
-
-                </TextView>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginTop="25dp">
-
-                <ImageView
-                    android:layout_width="70dp"
-                    android:layout_height="70dp"
-                    android:background="@drawable/shap3">
-
-                </ImageView>
-
-                <TextView
-                    android:id="@+id/faiz"
-                    android:layout_marginLeft="15dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Faiz Nurramdani   Instagram : @faiznurramdani"
-                    android:textColor="@color/black"
-                    android:textStyle="bold"
-                    android:textSize="18dp"
-                    android:layout_gravity="center">
-
-                </TextView>
-
-            </LinearLayout>
-
-        </LinearLayout>
-
-    </LinearLayout>
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:gravity="bottom">
-
-        <ImageView
+        android:orientation="vertical">
+        <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="150dp"
-            android:background="@drawable/img_8">
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_margin="10dp">
+                <com.blogspot.atifsoftwares.circularimageview.CircularImageView
+                    android:id="@+id/image_profile"
+                    android:layout_width="170dp"
+                    android:layout_height="170dp"
+                    android:layout_gravity="center"
+                    app:c_border="true"
+                    app:c_border_width="1dp"
+                    app:c_border_color="@color/colorGrey"
+                    android:layout_marginBottom="10dp"
+                    />
+                <EditText
+                    android:id="@+id/txID_Edit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Nomor"
+                    android:textStyle="bold"/>
+                <EditText
+                    android:id="@+id/txNomor_Edit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="number"/>
 
-        </ImageView>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Nama Lengkap"
+                    android:textStyle="bold" />
+                <EditText
+                    android:id="@+id/txNama_Edit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textCapSentences"/>
 
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Jenis Kelamin"
+                    android:textStyle="bold"/>
+                <Spinner
+                    android:id="@+id/spJK_Edit"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:entries="@array/jenis_kelamin" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Tempat Lahir"
+                    android:textStyle="bold"/>
+                <EditText
+                    android:id="@+id/txTempatLahir_Edit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textCapSentences"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Tanggal Lahir"
+                    android:textStyle="bold"/>
+                <EditText
+                    android:id="@+id/txTglLahir_Edit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="date"
+                    android:focusable="false"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Alamat"
+                    android:textStyle="bold"/>
+                <EditText
+                    android:id="@+id/txAlamat_Edit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textCapSentences"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="bottom">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="150dp"
+                        android:background="@drawable/img_8">
+
+                    </ImageView>
+
+                </LinearLayout>
+            </LinearLayout>
+        </ScrollView>
     </LinearLayout>
+
 
 </RelativeLayout>
