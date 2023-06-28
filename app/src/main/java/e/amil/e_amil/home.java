@@ -74,13 +74,11 @@ public class home extends Fragment implements View.OnClickListener {
         view = inflater.inflate(R.layout.fragment_home, container, false);
         btnzakat = view.findViewById(R.id.datazakat_home);
         btninfaq = view.findViewById(R.id.datainfaq_home);
-        btnsodakoh = view.findViewById(R.id.datasodakoh_home);
         btnpenyaluranzakat = view.findViewById(R.id.penyalurandatazakat_home);
         btnpenyaluraninfaq = view.findViewById(R.id.penyalurandatainfaq_home);
 
         btnzakat.setOnClickListener(this);
         btninfaq.setOnClickListener(this);
-        btnsodakoh.setOnClickListener(this);
         btnpenyaluranzakat.setOnClickListener(this);
         btnpenyaluraninfaq.setOnClickListener(this);
 
@@ -134,10 +132,6 @@ public class home extends Fragment implements View.OnClickListener {
 
             case R.id.datainfaq_home:
                 getActivity().startActivity(new Intent(getActivity(), data_infaqq.class));
-                break;
-
-            case R.id.datasodakoh_home:
-                getActivity().startActivity(new Intent(getActivity(), data_sodakoh.class));
                 break;
 
             case R.id.penyalurandatazakat_home:
