@@ -110,6 +110,18 @@
                         android:textSize="30dp"
                         android:textColor="@color/white">
                     </androidx.appcompat.widget.AppCompatButton>
+
+                    <TextView
+                        android:layout_marginTop="15dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Input Data Penyaluran"
+                        android:textSize="20dp"
+                        android:textStyle="bold"
+                        android:textColor="@color/black"
+                        android:gravity="center">
+
+                    </TextView>
                     <androidx.appcompat.widget.AppCompatButton
                         android:id="@+id/penyalurandatazakat_home"
                         android:layout_width="match_parent"

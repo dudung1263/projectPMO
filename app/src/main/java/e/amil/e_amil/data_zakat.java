@@ -186,7 +186,8 @@ public class data_zakat extends AppCompatActivity {
                 isEmpty(getKeterangan) || url == null){
 
             Toast.makeText(this, "Data Tidak Boleh Ada Yang Kosong", Toast.LENGTH_SHORT).show();
-        }else {
+        }
+        else {
             image_zakat.setDrawingCacheEnabled(true);
             image_zakat.buildDrawingCache();
             Bitmap bitmap = ((BitmapDrawable) image_zakat.getDrawable()).getBitmap();
@@ -222,6 +223,7 @@ public class data_zakat extends AppCompatActivity {
                                             finish();
                                         }
                                     });
+
                         }
                     });
                 }

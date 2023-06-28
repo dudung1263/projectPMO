@@ -73,7 +73,7 @@
 
 
                     <TextView
-                        android:id="@+id/julmahzakatfitrah"
+                        android:id="@+id/jumlahzakatfitrah"
                         android:layout_width="185sp"
                         android:layout_height="25sp"
                         android:layout_gravity="center"
@@ -116,7 +116,7 @@
 
 
                     <TextView
-                        android:id="@+id/julmahzakatmall"
+                        android:id="@+id/jumlahzakatmall"
                         android:layout_width="185sp"
                         android:layout_height="25sp"
                         android:layout_gravity="center"
