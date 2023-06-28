@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".inputtotal">
+
+    <LinearLayout
+        android:id="@+id/topinputtotal"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:background="@drawable/img_13">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/kembalitotal"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/kembalizakat"
+            android:gravity="center"
+            android:layout_gravity="center"
+            >
+
+        </androidx.appcompat.widget.AppCompatButton>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Input Total Pemasukan"
+            android:gravity="center"
+            android:textSize="30dp"
+            android:textColor="@color/white"
+            android:textStyle="bold">
+
+        </TextView>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/listzakat"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/topinputtotal"
+        android:layout_marginTop="10dp"
+        android:background="#001AFF00"
+        android:orientation="vertical">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:background="@drawable/shap1"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginLeft="20dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:text="Zakat Fitrah"
+                        android:textColor="@color/black"
+                        android:textSize="15dp"
+                        android:textStyle="bold">
+
+                    </TextView>
+
+                    <EditText
+                        android:id="@+id/inputtotalfitrah"
+                        android:layout_width="240dp"
+                        android:layout_height="50dp"
+                        android:background="@drawable/shape3"
+                        android:hint="Total Pemasukan"
+                        android:paddingLeft="5dp"
+                        android:ems="10"
+                        android:inputType="number"
+                        android:textColor="@color/black">
+
+                    </EditText>
+
+                </LinearLayout>
+
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginLeft="20dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:text="Zakat Mal"
+                        android:textColor="@color/black"
+                        android:textSize="15dp"
+                        android:textStyle="bold">
+
+                    </TextView>
+
+                    <EditText
+                        android:id="@+id/inputtotalmal"
+                        android:layout_width="240dp"
+                        android:layout_height="50dp"
+                        android:background="@drawable/shape3"
+                        android:hint="Total Pemasukan"
+                        android:paddingLeft="5dp"
+                        android:ems="10"
+                        android:inputType="number"
+                        android:textColor="@color/black">
+
+                    </EditText>
+
+                </LinearLayout>
+
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginLeft="20dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:text="Total Infak"
+                        android:textColor="@color/black"
+                        android:textSize="15dp"
+                        android:textStyle="bold">
+
+                    </TextView>
+
+                    <EditText
+                        android:id="@+id/inputtotalinfak"
+                        android:layout_width="240dp"
+                        android:layout_height="50dp"
+                        android:background="@drawable/shape3"
+                        android:hint="Total Pemasukan"
+                        android:paddingLeft="5dp"
+                        android:ems="10"
+                        android:inputType="number"
+                        android:textColor="@color/black">
+
+                    </EditText>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:layout_marginTop="20dp"
+                        android:layout_marginBottom="20dp"
+                        android:id="@+id/simpan_totalsemua"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_marginLeft="100dp"
+                        android:layout_marginRight="100dp"
+                        android:background="@drawable/shap3"
+                        android:text="Simpan"
+                        android:textColor="@color/white"
+                        android:textStyle="bold"
+                        android:textSize="20dp">
+
+                    </androidx.appcompat.widget.AppCompatButton>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+        </ScrollView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ProgressBar
+                android:id="@+id/progresttotal"
+                android:layout_marginTop="20dp"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center">
+
+            </ProgressBar>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>
