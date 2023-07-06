@@ -9,9 +9,15 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.FirebaseDatabase;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -64,6 +70,10 @@ public class profile extends Fragment implements View.OnClickListener {
         }
     }
 
+    TextView tvNama;
+    String dataNama, dataUsername;
+    String ID;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -75,12 +85,15 @@ public class profile extends Fragment implements View.OnClickListener {
         about = view.findViewById(R.id.about);
         fedback = view.findViewById(R.id.fedback);
         keluar = view.findViewById(R.id.logout);
+        tvNama = view.findViewById(R.id.namaprofil);
+        ID = FirebaseAuth.getInstance().getUid();
 
         profil.setOnClickListener(this);
         help.setOnClickListener(this);
         about.setOnClickListener(this);
         fedback.setOnClickListener(this);
         keluar.setOnClickListener(this);
+        getUser();
         return view;
     }
 
@@ -90,7 +103,7 @@ public class profile extends Fragment implements View.OnClickListener {
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.profil:
-                getActivity().startActivity(new Intent(getActivity(), profil_profil.class));
+                getActivity().startActivity(new Intent(getActivity(), coba_user.class));
                 break;
 
             case R.id.help:
@@ -110,6 +123,19 @@ public class profile extends Fragment implements View.OnClickListener {
                 break;
 
         }
+    }
+
+    private void getUser(){
+        FirebaseDatabase.getInstance().getReference("Pengguna").child("userAuth").child(ID).get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<DataSnapshot> task) {
+                if (task.getResult().exists()){
+                    DataSnapshot snapshot = task.getResult();
+                    dataNama = String.valueOf(snapshot.child("dataNama").getValue());
+                    tvNama.setText(dataNama);
+                }
+            }
+        });
     }
     @Override
     public void onDestroyView() {

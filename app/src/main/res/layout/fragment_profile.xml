@@ -57,7 +57,8 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="10dp"
-                android:text="Nama Kamu "
+                android:textColor="@color/black"
+                android:text="..."
                 android:textSize="20dp"
                 android:textStyle="bold"
                 android:layout_marginBottom="10dp">
