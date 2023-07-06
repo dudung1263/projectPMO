@@ -66,8 +66,7 @@
                         android:fontFamily="sans-serif-black"
                         android:textStyle="bold"
                         android:textSize="30dp"
-                        android:textColor="@color/white">
-                    </androidx.appcompat.widget.AppCompatButton>
+                        android:textColor="@color/white"/>
 
                     <androidx.appcompat.widget.AppCompatButton
                         android:id="@+id/datainfaq_home"

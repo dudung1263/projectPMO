@@ -127,7 +127,7 @@ public class home extends Fragment implements View.OnClickListener {
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.datazakat_home:
-                getActivity().startActivity(new Intent(getActivity(), data_zakat.class));
+                getActivity().startActivity(new Intent(getActivity(), pilihanzakat.class));
                 break;
 
             case R.id.datainfaq_home:
