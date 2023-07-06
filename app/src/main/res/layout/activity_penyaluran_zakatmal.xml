@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".penyaluran_zakat">
+    tools:context=".penyaluran_zakatmal">
 
     <LinearLayout
         android:id="@+id/topinputzakat"
@@ -14,7 +14,7 @@
         android:background="@drawable/img_13">
 
         <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/kembalizakat_penyaluran"
+            android:id="@+id/kembalizakatmal_penyaluran"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:background="@drawable/kembalizakat"
@@ -29,7 +29,7 @@
             android:layout_marginLeft="8sp"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="Penyaluran Data Zakat"
+            android:text="Penyaluran Zakat Mal"
             android:gravity="center_vertical"
             android:textSize="30dp"
             android:textColor="@color/white"
@@ -83,7 +83,7 @@
                     </TextView>
 
                     <EditText
-                        android:id="@+id/namaamil_zakat_penyaluran"
+                        android:id="@+id/namaamil_zakatmal_penyaluran"
                         android:layout_width="240dp"
                         android:layout_height="30dp"
                         android:background="@drawable/shape3"
@@ -117,17 +117,17 @@
                         android:layout_marginEnd="5dp"/>
 
                     <RadioGroup
-                        android:id="@+id/rjeniszakat_penyaluran"
+                        android:id="@+id/rjeniszakatmal_penyaluran"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
 
                         <RadioButton
-                            android:id="@+id/rzakatfitrah_penyaluran"
+                            android:id="@+id/rzakatmal_penyaluran"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:checked="false"
                             android:onClick="rbclick"
-                            android:text="Zakat Fitrah"
+                            android:text="Zakat Mal"
                             android:textColor="@color/black"
                             android:layout_marginLeft="20sp"/>
 
@@ -156,7 +156,7 @@
                     </TextView>
 
                     <EditText
-                        android:id="@+id/jumlahzakat_penyaluran"
+                        android:id="@+id/jumlahzakatmal_penyaluran"
                         android:layout_width="240dp"
                         android:layout_height="30dp"
                         android:background="@drawable/shape3"
@@ -193,7 +193,7 @@
                     </TextView>
 
                     <EditText
-                        android:id="@+id/tglzakat_penyaluran"
+                        android:id="@+id/tglzakatmal_penyaluran"
                         android:layout_width="240dp"
                         android:layout_height="30dp"
                         android:background="@drawable/shape3"
@@ -230,7 +230,7 @@
                     </TextView>
 
                     <EditText
-                        android:id="@+id/keteranganzakat_penyaluran"
+                        android:id="@+id/keteranganzakatmal_penyaluran"
                         android:layout_width="240dp"
                         android:layout_height="100dp"
                         android:background="@drawable/shape3"
@@ -267,7 +267,7 @@
                         android:textSize="15dp"></TextView>
 
                     <ImageView
-                        android:id="@+id/image_zakat_penyaluran"
+                        android:id="@+id/image_zakatmal_penyaluran"
                         android:layout_width="60dp"
                         android:layout_height="60dp"
                         android:layout_marginLeft="70dp"
@@ -276,7 +276,7 @@
                     </ImageView>
 
                     <androidx.appcompat.widget.AppCompatButton
-                        android:id="@+id/getfotozakat_penyaluran"
+                        android:id="@+id/getfotozakatmal_penyaluran"
                         android:layout_width="160dp"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="20dp"
@@ -298,7 +298,7 @@
 
                     <androidx.appcompat.widget.AppCompatButton
                         android:layout_marginTop="10dp"
-                        android:id="@+id/simpan_zakat_penyaluran"
+                        android:id="@+id/simpan_zakatmal_penyaluran"
                         android:layout_width="match_parent"
                         android:layout_height="60dp"
                         android:layout_marginLeft="100dp"
@@ -313,7 +313,7 @@
                     </androidx.appcompat.widget.AppCompatButton>
 
                     <ProgressBar
-                        android:id="@+id/progresszakat_penyaluran"
+                        android:id="@+id/progresszakatmal_penyaluran"
                         android:layout_marginTop="10dp"
                         android:layout_marginBottom="10dp"
                         android:layout_width="40dp"

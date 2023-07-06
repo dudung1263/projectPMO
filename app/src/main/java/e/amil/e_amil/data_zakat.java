@@ -208,7 +208,7 @@ public class data_zakat extends AppCompatActivity {
                     tasksnapshot.getStorage().getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
                         @Override
                         public void onSuccess(Uri uri) {
-                            dbF.child("Admin").child("Zakat").push()
+                            dbF.child("Admin").child("Zakat Fitrah").push()
                                     .setValue(new data_amil(getNamaamilzakat, getrjeniszakat, getJumlahzakat, getTglzakat, getMuzakizakat, getPenyaluran, getKeterangan, uri.toString().trim()))
                                     .addOnCompleteListener(new OnCompleteListener<Void>() {
                                         @Override
