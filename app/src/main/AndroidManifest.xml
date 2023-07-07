@@ -4,7 +4,9 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="SimpleDateFormat" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
     <uses-permission android:name="java.text" />
+    <uses-permission android:name="android.permission.VIBRATE"/>
 
     <application
         android:allowBackup="true"
@@ -15,6 +17,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.EAmil"
         tools:targetApi="31">
+
+        <activity
+            android:name=".alaram"
+            android:exported="false" />
         <activity
             android:name=".pilih_penyaluranzakat"
             android:exported="false" />
@@ -55,9 +61,7 @@
         <activity
             android:name=".listdata_infaq"
             android:exported="false" />
-        <activity
-            android:name=".lisdata_sodakoh"
-            android:exported="false" />
+
         <activity
             android:name=".listdata_zakat"
             android:exported="false" />
@@ -75,9 +79,6 @@
             android:exported="false" />
         <activity
             android:name=".MainActivity_user"
-            android:exported="false" />
-        <activity
-            android:name=".data_sodakoh"
             android:exported="false" />
         <activity
             android:name=".data_infaqq"
@@ -103,6 +104,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <receiver android:name=".MyBraodcastReceiver"/>
     </application>
 
 </manifest>

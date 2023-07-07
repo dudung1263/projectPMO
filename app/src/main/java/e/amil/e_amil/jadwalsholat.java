@@ -27,11 +27,11 @@ public class jadwalsholat extends AppCompatActivity {
 
 
     private String[] prayerTimes = {
-            "Subuh - 04:30",
-            "Dzuhur - 12:30",
-            "Ashar - 15:30",
-            "Maghrib - 18:30",
-            "Isya - 20:30"
+            "Subuh   -  04:30",
+            "Dzuhur  -  12:30",
+            "Ashar   -  15:30",
+            "Maghrib -  18:30",
+            "Isya    -  20:30"
     };
 
     @SuppressLint("MissingInflatedId")
