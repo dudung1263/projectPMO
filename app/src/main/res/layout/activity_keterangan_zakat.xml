@@ -284,7 +284,7 @@
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/datazakatfitrah_dokumen"
                 android:onClick="datazakatfitrah"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="20dp"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:layout_gravity="center"
