@@ -125,11 +125,11 @@
                             android:id="@+id/rzakatfitrah_penyaluran"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:layout_marginLeft="20sp"
                             android:checked="false"
                             android:onClick="rbclick"
                             android:text="Zakat Fitrah"
-                            android:textColor="@color/black"
-                            android:layout_marginLeft="20sp"/>
+                            android:textColor="@color/black" />
 
                     </RadioGroup>
 
