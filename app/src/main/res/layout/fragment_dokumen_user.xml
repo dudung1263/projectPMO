@@ -206,6 +206,60 @@
 
         </GridLayout>
         </LinearLayout>
+        <LinearLayout
+            android:layout_width="350sp"
+            android:layout_height="200sp"
+            android:layout_gravity="center">
+            <ImageView
+                android:layout_width="350sp"
+                android:layout_height="200sp"
+                android:src="@drawable/dalil2"
+                android:layout_gravity="center"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="15sp"
+            android:background="#E8E8E8"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:paddingTop="10sp"
+                android:layout_width="400sp"
+                android:layout_height="40sp"
+                android:text="Tentang Kami"
+                android:paddingLeft="10sp"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:textStyle="bold"/>
+
+        </LinearLayout>
+
+
+        <ImageView
+            android:layout_width="200sp"
+            android:layout_height="120sp"
+            android:src="@drawable/kami"
+            android:layout_gravity="center_horizontal">
+
+        </ImageView>
+
+        <TextView
+            android:layout_width="410sp"
+            android:layout_height="30sp"
+            android:textStyle="bold"
+            android:text="Eamil :"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            android:paddingLeft="10sp"/>
+        <TextView
+            android:layout_width="410sp"
+            android:layout_height="40sp"
+            android:paddingLeft="10sp"
+            android:textColor="@color/black"
+            android:text="Eamil di buat untuk mempermudah pendataan zakat dan ifaq, apliaksi ini di buat oleh  Trio Joli"/>
 
     </LinearLayout>
 
