@@ -52,24 +52,21 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Buka Panduan Aplikasi E-amil"
+                android:text="Panduan Aplikasi E-amil  "
                 android:textColor="@color/black"
                 android:textSize="18dp"
                 android:gravity="center">
 
             </TextView>
 
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/bukapanduan"
-                android:layout_marginTop="10dp"
-                android:layout_width="200dp"
-                android:layout_height="wrap_content"
-                android:background="@drawable/shap3"
-                android:text="Buka"
-                android:textColor="@color/white"
-                android:layout_gravity="center">
 
-            </androidx.appcompat.widget.AppCompatButton>
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="190sp"
+                android:layout_marginTop="5sp"
+                android:src="@drawable/panduan_apk"/>
+
+
 
         </LinearLayout>
 
