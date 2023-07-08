@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-    tools:context=".listdata_zakat">
+    tools:context=".listdata_infaq">
 
 
 
@@ -27,14 +27,13 @@
 
 
     <ImageView
+        android:onClick="backcrudinfaq"
         android:layout_width="60dp"
         android:layout_height="40dp"
         android:layout_marginTop="5dp"
         android:src="@drawable/kembalizakat">
 
     </ImageView>
-
-
 
 
     <EditText

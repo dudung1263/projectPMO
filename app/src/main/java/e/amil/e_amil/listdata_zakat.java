@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
+import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -123,6 +124,10 @@ public class listdata_zakat extends AppCompatActivity {
         ItemDecoration.setDrawable(ContextCompat.getDrawable(getApplicationContext(), R.drawable.shap1));
         recyclerView.addItemDecoration(ItemDecoration);
 
+    }
+
+    public void bakzakfit(View view) {
+        onBackPressed();
     }
 
 
