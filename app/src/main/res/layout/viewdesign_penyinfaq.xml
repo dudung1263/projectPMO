@@ -32,6 +32,21 @@
 
 
         <TextView
+            android:id="@+id/namaamilPenyinfaq_ds"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginRight="20dp"
+            android:text="Nama Amil infaq"
+            android:textColor="@color/black"
+            android:textSize="15dp"
+
+            app:layout_constraintStart_toEndOf="@+id/gambarPenyinfaq_ds"
+            app:layout_constraintTop_toTopOf="parent">
+        </TextView>
+
+        <TextView
             android:id="@+id/jenisPenyinfaq_ds"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -43,7 +58,7 @@
             android:textSize="15dp"
 
             app:layout_constraintStart_toEndOf="@+id/gambarPenyinfaq_ds"
-            app:layout_constraintTop_toTopOf="parent">
+            app:layout_constraintTop_toBottomOf="@+id/namaamilPenyinfaq_ds">
         </TextView>
 
         <TextView
@@ -68,7 +83,7 @@
             android:maxLength="30"
             android:textColor="@color/black"
             app:layout_constraintStart_toEndOf="@+id/gambarPenyinfaq_ds"
-            app:layout_constraintTop_toBottomOf="@+id/tglPenyinfaq_ds">
+            app:layout_constraintTop_toBottomOf="@+id/jenisPenyinfaq_ds">
         </TextView>
 
         <TextView

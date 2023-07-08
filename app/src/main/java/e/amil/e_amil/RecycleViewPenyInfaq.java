@@ -89,6 +89,7 @@ public class RecycleViewPenyInfaq extends RecyclerView.Adapter<RecycleViewPenyIn
 //        this.holder = holder;
 //        this.position = position;
 
+        final String NamaAmilPenyInfaq = listPenyInfaq.get(position).getNamaamilinfak_pen();
         final String JenisPenyInfaq = listPenyInfaq.get(position).getRjenisinfak_pen();
         final String JumlahPenyinfaq = listPenyInfaq.get(position).getJumlahinfak_pen();
         final String TglPenyInfaq = listPenyInfaq.get(position).getTglinfak_pen();
@@ -97,6 +98,7 @@ public class RecycleViewPenyInfaq extends RecyclerView.Adapter<RecycleViewPenyIn
         final datapenyaluran_infak dataPenyInfaq = listPenyInfaq.get(position);
 
 
+        holder.NamaAmilPenyInfaq.setText(" "+NamaAmilPenyInfaq);
         holder.JenisPenyInfaq.setText(" "+JenisPenyInfaq);
         holder.JumlahPenyInfaq.setText("Rp. "+JumlahPenyinfaq);
         holder.TglPenyInfaq.setText(" "+TglPenyInfaq);
@@ -169,12 +171,13 @@ public class RecycleViewPenyInfaq extends RecyclerView.Adapter<RecycleViewPenyIn
 
     public class ViewHolder extends RecyclerView.ViewHolder {
 
-        private TextView JenisPenyInfaq, JumlahPenyInfaq, TglPenyInfaq, KetPenyInfaq;
+        private TextView NamaAmilPenyInfaq, JenisPenyInfaq, JumlahPenyInfaq, TglPenyInfaq, KetPenyInfaq;
         private ImageView GambarPenyinfaq;
         private CardView ListItemPenyinfaq;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             //Menginisialisasi view view yang terpasang pada layout ini
+            NamaAmilPenyInfaq = itemView.findViewById(R.id.namaamilPenyinfaq_ds);
             JenisPenyInfaq = itemView.findViewById(R.id.jenisPenyinfaq_ds);
             JumlahPenyInfaq = itemView.findViewById(R.id.jumlahPenyinfaq_ds);
             TglPenyInfaq = itemView.findViewById(R.id.tglPenyinfaq_ds);
