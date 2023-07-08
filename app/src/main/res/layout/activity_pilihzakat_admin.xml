@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".pilihzakat_admin">
+
+    <LinearLayout
+        android:id="@+id/backpil_zakatadmin"
+        android:layout_width="100dp"
+        android:layout_height="80dp"
+        android:background="@drawable/img_6">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/backpilih_zakatadmin"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/kembalizakat">
+
+        </androidx.appcompat.widget.AppCompatButton>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/backpil_zakatadmin"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Pilih Jenis Zakat"
+            android:textSize="25dp"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:gravity="center">
+
+        </TextView>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/datazakatfitrahadmin"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_gravity="center"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginTop="30dp"
+            android:text="zakat fitrah"
+            android:padding="10dp"
+            android:paddingStart="0dp"
+            android:paddingEnd="25dp"
+            android:drawableStart="@mipmap/zakat"
+            android:drawablePadding="0dp"
+            android:background="@drawable/shap1"
+            android:fontFamily="sans-serif-black"
+            android:textStyle="bold"
+            android:textSize="30dp"
+            android:textColor="@color/white"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/datazakatmaladmin"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_gravity="center"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginTop="20dp"
+            android:text="zakat mal"
+            android:padding="10dp"
+            android:paddingStart="0dp"
+            android:paddingEnd="25dp"
+            android:drawableStart="@mipmap/infaq"
+            android:background="@drawable/shap2"
+            android:fontFamily="sans-serif-black"
+            android:textStyle="bold"
+            android:textSize="30dp"
+            android:textColor="@color/white">
+        </androidx.appcompat.widget.AppCompatButton>
+
+    </LinearLayout>
+
+
+
+
+
+</RelativeLayout>

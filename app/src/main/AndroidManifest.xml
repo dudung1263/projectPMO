@@ -27,6 +27,9 @@
             android:name=".listdata_penyzakat_fitrah"
             android:exported="false" />
         <activity
+            android:name=".pilihzakat_admin"
+            android:exported="false" />
+        <activity
             android:name=".listdata_penyinfaq"
             android:exported="false" />
         <activity

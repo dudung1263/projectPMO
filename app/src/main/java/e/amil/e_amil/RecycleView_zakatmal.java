@@ -181,15 +181,15 @@ public class RecycleView_zakatmal extends RecyclerView.Adapter<RecycleView_zakat
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             //Menginisialisasi view view yang terpasang pada layout ini
-            NamaamilZakatmal = itemView.findViewById(R.id.namaamilzakat_ds);
-            JenisZakatmal = itemView.findViewById(R.id.jeniszakat_ds);
-            JumlahZakatmal = itemView.findViewById(R.id.jumlahzakat_ds);
-            TglZakatmal = itemView.findViewById(R.id.tglzakat_ds);
-            MuzakiZakatmal = itemView.findViewById(R.id.muzakizakat_ds);
-            PenyaluranZakatmal = itemView.findViewById(R.id.penyaluranzakat_ds);
-            KetZakatmal = itemView.findViewById(R.id.ketzakat_ds);
-            Gambarzakatmal = itemView.findViewById(R.id.gambarzakat_ds);
-            ListItemZakatmal = itemView.findViewById(R.id.list_item_zakat);
+            NamaamilZakatmal = itemView.findViewById(R.id.namaamilzakatmal_ds);
+            JenisZakatmal = itemView.findViewById(R.id.jeniszakatmal_ds);
+            JumlahZakatmal = itemView.findViewById(R.id.jumlahzakatmal_ds);
+            TglZakatmal = itemView.findViewById(R.id.tglzakatmal_ds);
+            MuzakiZakatmal = itemView.findViewById(R.id.muzakizakatmal_ds);
+            PenyaluranZakatmal = itemView.findViewById(R.id.penyaluranzakatmal_ds);
+            KetZakatmal = itemView.findViewById(R.id.ketzakatmal_ds);
+            Gambarzakatmal = itemView.findViewById(R.id.gambarzakatmal_ds);
+            ListItemZakatmal = itemView.findViewById(R.id.list_item_zakatmal);
 
         }
     }
