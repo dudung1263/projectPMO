@@ -15,15 +15,9 @@ public class help_profil extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_help_profil);
 
-        panduan = findViewById(R.id.bukapanduan);
+
         backhelp = findViewById(R.id.kembalihelp);
 
-        panduan.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-              //  startActivity(new Intent(help_profil.this, PDF_panduan.class));
-            }
-        });
         backhelp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

@@ -42,8 +42,8 @@
 
         <LinearLayout
             android:layout_marginTop="20dp"
-            android:layout_width="350dp"
-            android:layout_height="250dp"
+            android:layout_width="380dp"
+            android:layout_height="300dp"
             android:layout_gravity="center"
             android:background="@drawable/shap1"
             android:orientation="vertical"
@@ -62,8 +62,7 @@
 
             <ImageView
                 android:layout_width="match_parent"
-                android:layout_height="190sp"
-                android:layout_marginTop="5sp"
+                android:layout_height="250sp"
                 android:src="@drawable/panduan_apk"/>
 
 
