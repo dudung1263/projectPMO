@@ -38,6 +38,7 @@
                 android:layout_height="wrap_content">
 
                 <LinearLayout
+                    android:layout_marginTop="10dp"
                     android:id="@+id/lindata"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
@@ -88,7 +89,7 @@
                     </androidx.appcompat.widget.AppCompatButton>
 
                     <androidx.appcompat.widget.AppCompatButton
-                        android:id="@+id/datasodakoh_dokumen"
+                        android:id="@+id/datapenyaluranzakat"
                         android:onClick="datasodakoh"
                         android:layout_width="match_parent"
                         android:layout_height="70dp"
@@ -96,16 +97,27 @@
                         android:layout_marginEnd="10dp"
                         android:layout_marginTop="15dp"
                         android:layout_gravity="center"
-                        android:padding="10dp"
-                        android:paddingStart="0dp"
-                        android:paddingEnd="25dp"
-                        android:drawableStart="@mipmap/sodaqoh"
-                        android:drawablePadding="0dp"
-                        android:text="Data Sodaqoh"
-                        android:background="@drawable/shap3"
+                        android:text="Data Penyaluran Zakat"
+                        android:background="@drawable/shap1"
                         android:fontFamily="sans-serif-black"
                         android:textStyle="bold"
-                        android:textSize="30dp"
+                        android:textSize="27dp"
+                        android:textColor="@color/white">
+                    </androidx.appcompat.widget.AppCompatButton>
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/datapenyaluraninfaq"
+                        android:onClick="datainfaq"
+                        android:layout_width="match_parent"
+                        android:layout_height="70dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginTop="15dp"
+                        android:layout_gravity="center"
+                        android:text="Data Penyaluran Infaq"
+                        android:background="@drawable/shap2"
+                        android:fontFamily="sans-serif-black"
+                        android:textStyle="bold"
+                        android:textSize="27dp"
                         android:textColor="@color/white">
                     </androidx.appcompat.widget.AppCompatButton>
 
