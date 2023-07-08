@@ -133,9 +133,15 @@ public class dokumen extends Fragment implements View.OnClickListener {
                 getActivity().startActivity(new Intent(getActivity(), listdata_infaq.class));
                 break;
 
+            case R.id.datapenyaluranzakat:
+                getActivity().startActivity(new Intent(getActivity(), keterangan_zakat.class));
+                break;
+
             case R.id.diagram2:
                 getActivity().startActivity(new Intent(getActivity(), jadwalsholat.class));
                 break;
+
+
 
 
 
