@@ -52,7 +52,7 @@ public class data_infaqq extends AppCompatActivity {
 
     private ProgressBar progresinfak;
 
-    private EditText jumlahinfak, tglinfak, muzakiinfak, penyaluraninfak, ketinfak;
+    private EditText namaamilinfak, jumlahinfak, tglinfak, muzakiinfak, penyaluraninfak, ketinfak;
 
     DatePickerDialog datePickerDialog;
 
@@ -62,7 +62,7 @@ public class data_infaqq extends AppCompatActivity {
 
     private Button simpan_infak, getfotoinfak, kembaliinfak;
 
-    private String getrjenisinfak, getJumlahinfak, getTglinfak, getMuzakiinfak, getPenyaluraninfak, getketeranganinfak;
+    private String getnamaamilinfak, getrjenisinfak, getJumlahinfak, getTglinfak, getMuzakiinfak, getPenyaluraninfak, getketeranganinfak;
 
     public Uri url;
     public Bitmap bitmap;
@@ -85,6 +85,7 @@ public class data_infaqq extends AppCompatActivity {
             getSupportActionBar().hide();
         }
 
+        namaamilinfak = findViewById(R.id.namaamilinfak);
         jumlahinfak = findViewById(R.id.jumlahinfak);
         tglinfak = findViewById(R.id.tglinfak);
         muzakiinfak = findViewById(R.id.muzakiinfak);
@@ -122,6 +123,7 @@ public class data_infaqq extends AppCompatActivity {
                 }else {
                     getrjenisinfak = rb.getText().toString();
                 }
+                getnamaamilinfak = namaamilinfak.getText().toString();
                 getJumlahinfak = jumlahinfak.getText().toString();
                 getTglinfak = tglinfak.getText().toString();
                 getMuzakiinfak = muzakiinfak.getText().toString();
@@ -188,7 +190,7 @@ public class data_infaqq extends AppCompatActivity {
         }
     }
     private void checkUser(){
-        if (isEmpty(getrjenisinfak) || isEmpty(getJumlahinfak) ||
+        if (isEmpty(getnamaamilinfak) || isEmpty(getrjenisinfak) || isEmpty(getJumlahinfak) ||
                 isEmpty(getTglinfak) || isEmpty(getMuzakiinfak) || isEmpty(getPenyaluraninfak) ||
                 isEmpty(getketeranganinfak) || url == null){
 
@@ -212,11 +214,12 @@ public class data_infaqq extends AppCompatActivity {
                         @Override
                         public void onSuccess(Uri uri) {
                             dbF.child("Admin").child("Infaq").push()
-                                    .setValue(new data_amilinfaqq(getrjenisinfak, getJumlahinfak, getTglinfak, getMuzakiinfak, getPenyaluraninfak, getketeranganinfak, uri.toString().trim()))
+                                    .setValue(new data_amilinfaqq(getnamaamilinfak, getrjenisinfak, getJumlahinfak, getTglinfak, getMuzakiinfak, getPenyaluraninfak, getketeranganinfak, uri.toString().trim()))
                                     .addOnCompleteListener(new OnCompleteListener<Void>() {
                                         @Override
                                         public void onComplete(@NonNull Task<Void> task) {
 
+                                            namaamilinfak.setText("");
                                             jumlahinfak.setText("");
                                             tglinfak.setText("");
                                             muzakiinfak.setText("");

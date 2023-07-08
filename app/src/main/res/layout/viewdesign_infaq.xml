@@ -32,6 +32,20 @@
 
 
         <TextView
+            android:id="@+id/namaamilinfaq_ds"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginRight="20dp"
+            android:text="Nama Amil infaq"
+            android:textColor="@color/black"
+            android:textSize="15dp"
+
+            app:layout_constraintStart_toEndOf="@+id/gambarinfaq_ds"
+            app:layout_constraintTop_toTopOf="parent">
+        </TextView>
+        <TextView
             android:id="@+id/jenisinfaq_ds"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -43,7 +57,7 @@
             android:textSize="15dp"
 
             app:layout_constraintStart_toEndOf="@+id/gambarinfaq_ds"
-            app:layout_constraintTop_toTopOf="parent">
+            app:layout_constraintTop_toBottomOf="@+id/tglinfaq_ds">
         </TextView>
 
         <TextView
@@ -69,7 +83,7 @@
             android:textColor="@color/black"
             android:textStyle="bold"
             app:layout_constraintStart_toEndOf="@+id/gambarinfaq_ds"
-            app:layout_constraintTop_toBottomOf="@+id/tglinfaq_ds">
+            app:layout_constraintTop_toBottomOf="@+id/jenisinfaq_ds">
         </TextView>
 
 
@@ -107,7 +121,7 @@
             android:layout_marginStart="180dp"
             android:textColor="@color/black"
             android:textStyle="bold"
-            android:layout_marginTop="30sp"
+            android:layout_marginTop="5sp"
             app:layout_constraintStart_toEndOf="@+id/gambarinfaq_ds"
             app:layout_constraintTop_toBottomOf="@+id/penyaluraninfaq_ds"/>
 

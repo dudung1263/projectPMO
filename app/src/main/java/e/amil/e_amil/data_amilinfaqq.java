@@ -1,6 +1,8 @@
 package e.amil.e_amil;
 
 public class data_amilinfaqq {
+
+    private String namaamilinfak;
     private String rjenisinfak;
     private String jumlahinfak;
     private String tglinfak;
@@ -14,7 +16,8 @@ public class data_amilinfaqq {
     public data_amilinfaqq() {
     }
 
-    public data_amilinfaqq(String rjenisinfak, String jumlahinfak, String tglinfak, String muzakiinfak, String penyaluraninfak, String ketinfak, String gambarinfak) {
+    public data_amilinfaqq(String namaamilinfak, String rjenisinfak, String jumlahinfak, String tglinfak, String muzakiinfak, String penyaluraninfak, String ketinfak, String gambarinfak) {
+        this.namaamilinfak = namaamilinfak;
         this.rjenisinfak = rjenisinfak;
         this.jumlahinfak = jumlahinfak;
         this.tglinfak = tglinfak;
@@ -24,6 +27,13 @@ public class data_amilinfaqq {
         this.gambarinfak = gambarinfak;
     }
 
+    public String getNamaamilinfak() {
+        return namaamilinfak;
+    }
+
+    public void setNamaamilinfak(String namaamilinfak) {
+        this.namaamilinfak = namaamilinfak;
+    }
     public String getRjenisinfak() {
         return rjenisinfak;
     }
