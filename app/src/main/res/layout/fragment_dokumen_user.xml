@@ -210,6 +210,7 @@
             android:layout_height="200sp"
             android:layout_gravity="center">
             <ImageView
+                android:layout_marginTop="10sp"
                 android:layout_width="350sp"
                 android:layout_height="200sp"
                 android:src="@drawable/dalil2"
