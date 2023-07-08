@@ -2,7 +2,9 @@ package e.amil.e_amil;
 
 import static java.lang.Integer.parseInt;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -145,5 +147,8 @@ public class keterangan_zakat extends AppCompatActivity {
     }
 
 
-
+    public void datazakat(View view) {
+        Intent intent = new Intent( keterangan_zakat.this, listdatapenyzakat_mal.class);
+        startActivity(intent);
+    }
 }

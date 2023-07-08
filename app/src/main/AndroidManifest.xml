@@ -6,7 +6,7 @@
     <uses-permission android:name="SimpleDateFormat" />
     <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
     <uses-permission android:name="java.text" />
-    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.VIBRATE" />
 
     <application
         android:allowBackup="true"
@@ -17,7 +17,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.EAmil"
         tools:targetApi="31">
-
+        <activity
+            android:name=".viewdesign_penyzakatfitrah"
+            android:exported="false" />
+        <activity
+            android:name=".listdatapenyzakat_mal"
+            android:exported="false" />
+        <activity
+            android:name=".viewdesign_penyzakatmal"
+            android:exported="false" />
         <activity
             android:name=".alaram"
             android:exported="false" />
@@ -61,7 +69,6 @@
         <activity
             android:name=".listdata_infaq"
             android:exported="false" />
-
         <activity
             android:name=".listdata_zakat"
             android:exported="false" />
@@ -105,7 +112,7 @@
             </intent-filter>
         </activity>
 
-        <receiver android:name=".MyBraodcastReceiver"/>
+        <receiver android:name=".MyBraodcastReceiver" />
     </application>
 
 </manifest>
