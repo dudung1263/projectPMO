@@ -279,6 +279,28 @@ public class login extends AppCompatActivity {
             auth.removeAuthStateListener(userAuthlistener);
         }
     }
+    public void onBackPressed(){
+
+        new AlertDialog.Builder(this)
+                .setIcon(R.drawable.ikonamil)
+                .setTitle(R.string.app_name)
+                .setMessage("Apakah Anda Yakin Keluar?")
+                .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        moveTaskToBack(true);
+                        android.os.Process.killProcess(android.os.Process.myPid());
+                        System.exit(1);
+                    }
+                })
+                .setNegativeButton("CANCEL", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.cancel();
+                    }
+                }).show();
+
+    }
 
 
 

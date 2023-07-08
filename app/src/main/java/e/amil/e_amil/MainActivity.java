@@ -59,7 +59,9 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
                 .setPositiveButton("OK", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        finish();
+                        moveTaskToBack(true);
+                        android.os.Process.killProcess(android.os.Process.myPid());
+                        System.exit(1);
                     }
                 })
                 .setNegativeButton("CANCEL", new DialogInterface.OnClickListener() {
@@ -68,6 +70,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
                         dialog.cancel();
                     }
                 }).show();
+
         }
 
     @Override
@@ -93,5 +96,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
         Intent intent = new Intent(MainActivity.this, login.class);
         auth.signOut();
         startActivity(intent);
+        finish();
+
     }
 }
