@@ -55,7 +55,7 @@
                         android:layout_gravity="center"
                         android:layout_marginStart="10dp"
                         android:layout_marginEnd="10dp"
-                        android:layout_marginTop="60dp"
+                        android:layout_marginTop="10dp"
                         android:text="Data Zakat"
                         android:padding="10dp"
                         android:paddingStart="0dp"
@@ -91,7 +91,7 @@
                     </androidx.appcompat.widget.AppCompatButton>
 
                     <androidx.appcompat.widget.AppCompatButton
-                        android:id="@+id/inputtotal_home"
+                        android:id="@+id/datasodakoh_home"
                         android:onClick="datasodakoh"
                         android:layout_width="match_parent"
                         android:layout_height="60dp"
@@ -103,7 +103,7 @@
                         android:paddingEnd="25dp"
                         android:drawableStart="@mipmap/sodaqoh"
                         android:drawablePadding="0dp"
-                        android:text="Input Total"
+                        android:text="Data Sodaqoh"
                         android:background="@drawable/shap3"
                         android:fontFamily="sans-serif-black"
                         android:textStyle="bold"

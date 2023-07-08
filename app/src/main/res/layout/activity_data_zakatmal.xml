@@ -5,33 +5,31 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".penyaluran_zakat">
+    tools:context=".data_zakatmal">
 
     <LinearLayout
-        android:id="@+id/topinputzakat"
+        android:id="@+id/topinputzakat_mal"
         android:layout_width="match_parent"
         android:layout_height="100dp"
         android:background="@drawable/img_13">
 
         <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/kembalizakat_penyaluran"
+            android:id="@+id/kembalizakat_mal"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:background="@drawable/kembalizakat"
             android:gravity="center"
             android:layout_gravity="center"
-            android:layout_marginLeft="10sp"
             >
 
         </androidx.appcompat.widget.AppCompatButton>
 
         <TextView
-            android:layout_marginLeft="8sp"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="Penyaluran Data Zakat"
-            android:gravity="center_vertical"
-            android:textSize="30dp"
+            android:text="Input Zakat Mal"
+            android:gravity="center"
+            android:textSize="35dp"
             android:textColor="@color/white"
             android:textStyle="bold">
 
@@ -40,59 +38,53 @@
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/listzakat"
+        android:id="@+id/listzakat_mal"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/topinputzakat"
-        android:layout_marginTop="7dp"
+        android:layout_below="@id/topinputzakat_mal"
+        android:layout_marginTop="10dp"
         android:background="#001AFF00"
-        android:gravity="center"
         android:orientation="vertical">
 
         <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
-                android:background="@drawable/garis_tepi_ijo"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:background="@drawable/shap1"
                 android:orientation="vertical">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="15dp"
-                    android:layout_marginRight="10dp"
-                    android:layout_marginLeft="10dp"
-                    android:gravity=""
+                    android:layout_marginRight="20dp"
+                    android:layout_marginLeft="20dp"
                     android:orientation="horizontal">
 
                     <TextView
-                        android:layout_width="wrap_content"
+                        android:layout_width="100dp"
                         android:layout_height="wrap_content"
-                        android:text="Nama Petugas"
+                        android:text="Nama Amil"
                         android:textColor="@color/black"
                         android:textSize="15dp"
-                        android:layout_marginStart="5dp"
-                        android:layout_marginEnd="5dp"
                         android:textStyle="bold">
 
                     </TextView>
 
                     <EditText
-                        android:id="@+id/namaamil_zakat_penyaluran"
+                        android:id="@+id/namaamil_zakatmal"
                         android:layout_width="240dp"
                         android:layout_height="30dp"
                         android:background="@drawable/shape3"
                         android:hint="Nama"
-                        android:textSize="17sp"
                         android:paddingLeft="5dp"
                         android:ems="10"
-                        android:textColor="@color/black"
-                        android:layout_marginLeft="20sp">
+                        android:textColor="@color/black">
 
                     </EditText>
 
@@ -102,8 +94,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
-                    android:layout_marginRight="10dp"
-                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginLeft="20dp"
                     android:orientation="horizontal">
 
                     <TextView
@@ -112,25 +104,21 @@
                         android:text="Jenis Zakat"
                         android:textColor="@color/black"
                         android:textSize="15dp"
-                        android:textStyle="bold"
-                        android:layout_marginStart="5dp"
-                        android:layout_marginEnd="5dp"/>
+                        android:textStyle="bold"/>
 
                     <RadioGroup
-                        android:id="@+id/rjeniszakat_penyaluran"
+                        android:id="@+id/rjeniszakatmal"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
 
                         <RadioButton
-                            android:id="@+id/rzakatfitrah_penyaluran"
+                            android:id="@+id/rzakatmal"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginLeft="20sp"
                             android:checked="false"
                             android:onClick="rbclick"
-                            android:text="Zakat Fitrah"
+                            android:text="Zakat Mal"
                             android:textColor="@color/black" />
-
                     </RadioGroup>
 
                 </LinearLayout>
@@ -139,8 +127,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
-                    android:layout_marginRight="10dp"
-                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginLeft="20dp"
                     android:orientation="horizontal">
 
                     <TextView
@@ -148,25 +136,21 @@
                         android:layout_height="wrap_content"
                         android:text="Jumlah Zakat"
                         android:textColor="@color/black"
-                        android:layout_marginStart="5dp"
-                        android:layout_marginEnd="5dp"
                         android:textSize="15dp"
                         android:textStyle="bold">
 
                     </TextView>
 
                     <EditText
-                        android:id="@+id/jumlahzakat_penyaluran"
+                        android:id="@+id/jumlahzakatmal"
                         android:layout_width="240dp"
                         android:layout_height="30dp"
                         android:background="@drawable/shape3"
                         android:hint="Jumlah Zakat"
-                        android:textSize="17sp"
                         android:paddingLeft="5dp"
                         android:ems="10"
                         android:inputType="number"
-                        android:textColor="@color/black"
-                        android:layout_marginLeft="20sp">
+                        android:textColor="@color/black">
 
                     </EditText>
 
@@ -176,45 +160,105 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="20dp"
-                    android:layout_marginRight="10dp"
-                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginLeft="20dp"
                     android:orientation="horizontal">
 
                     <TextView
-                        android:layout_width="wrap_content"
+                        android:layout_width="100dp"
                         android:layout_height="wrap_content"
-                        android:text="Tgl Penyaluran"
+                        android:text="Tgl Terima"
                         android:textColor="@color/black"
-                        android:layout_marginStart="5dp"
-                        android:layout_marginEnd="5dp"
                         android:textSize="15dp"
                         android:textStyle="bold">
 
                     </TextView>
 
                     <EditText
-                        android:id="@+id/tglzakat_penyaluran"
+                        android:id="@+id/tglzakatmal"
                         android:layout_width="240dp"
                         android:layout_height="30dp"
                         android:background="@drawable/shape3"
-                        android:hint="Tgl Penyaluran Zakat"
-                        android:textSize="17sp"
+                        android:hint="Tgl Terima Zakat"
                         android:paddingLeft="5dp"
                         android:ems="10"
-                        android:textColor="@color/black"
-                        android:layout_marginLeft="19sp">
+                        android:textColor="@color/black">
 
                     </EditText>
 
                 </LinearLayout>
 
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginLeft="20dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:text="Muzaki"
+                        android:textColor="@color/black"
+                        android:textSize="15dp"
+                        android:textStyle="bold">
+
+                    </TextView>
+
+                    <EditText
+                        android:id="@+id/muzakizakatmal"
+                        android:layout_width="240dp"
+                        android:layout_height="30dp"
+                        android:background="@drawable/shape3"
+                        android:hint="Pemberi Zakat"
+                        android:paddingLeft="5dp"
+                        android:ems="10"
+                        android:textColor="@color/black">
+
+                    </EditText>
+
+                </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="20dp"
-                    android:layout_marginRight="10dp"
-                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginLeft="20dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:text="Penyaluran"
+                        android:textColor="@color/black"
+                        android:textSize="15dp"
+                        android:textStyle="bold">
+
+                    </TextView>
+
+                    <EditText
+                        android:id="@+id/penyaluranzakatmal"
+                        android:layout_width="240dp"
+                        android:layout_height="30dp"
+                        android:background="@drawable/shape3"
+                        android:hint="Penyaluran Zakat"
+                        android:paddingLeft="5dp"
+                        android:inputType="textMultiLine"
+                        android:ems="10"
+                        android:textColor="@color/black">
+
+                    </EditText>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginLeft="20dp"
                     android:orientation="horizontal">
 
                     <TextView
@@ -222,25 +266,21 @@
                         android:layout_height="wrap_content"
                         android:text="Keterangan"
                         android:textColor="@color/black"
-                        android:layout_marginStart="5dp"
-                        android:layout_marginEnd="5dp"
                         android:textSize="15dp"
                         android:textStyle="bold">
 
                     </TextView>
 
                     <EditText
-                        android:id="@+id/keteranganzakat_penyaluran"
+                        android:id="@+id/keteranganzakatmal"
                         android:layout_width="240dp"
                         android:layout_height="100dp"
                         android:background="@drawable/shape3"
-                        android:textSize="17sp"
                         android:hint="Keterangan"
                         android:paddingLeft="5dp"
                         android:inputType="textMultiLine"
                         android:ems="10"
-                        android:textColor="@color/black"
-                        android:layout_marginLeft="20sp">
+                        android:textColor="@color/black">
 
                     </EditText>
 
@@ -250,9 +290,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="60dp"
                     android:layout_marginTop="15dp"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"
-                    android:layout_marginBottom="10dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginBottom="20dp"
                     android:orientation="horizontal">
 
                     <TextView
@@ -261,22 +300,20 @@
                         android:layout_gravity="center_vertical"
                         android:text="Foto"
                         android:textColor="@color/black"
-                        android:layout_marginStart="5dp"
-                        android:layout_marginEnd="5dp"
                         android:textStyle="bold"
                         android:textSize="15dp"></TextView>
 
                     <ImageView
-                        android:id="@+id/image_zakat_penyaluran"
+                        android:id="@+id/image_zakatmal"
                         android:layout_width="60dp"
                         android:layout_height="60dp"
-                        android:layout_marginLeft="70dp"
+                        android:layout_marginLeft="50dp"
                         android:src="@drawable/carigambar">
 
                     </ImageView>
 
                     <androidx.appcompat.widget.AppCompatButton
-                        android:id="@+id/getfotozakat_penyaluran"
+                        android:id="@+id/getfotozakatmal"
                         android:layout_width="160dp"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="20dp"
@@ -289,48 +326,41 @@
 
                     </androidx.appcompat.widget.AppCompatButton>
                 </LinearLayout>
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:layout_gravity="center_vertical"
-                    android:orientation="vertical">
-
-                    <androidx.appcompat.widget.AppCompatButton
-                        android:layout_marginTop="10dp"
-                        android:id="@+id/simpan_zakat_penyaluran"
-                        android:layout_width="match_parent"
-                        android:layout_height="60dp"
-                        android:layout_marginLeft="100dp"
-                        android:layout_marginRight="100dp"
-                        android:background="@drawable/img_15"
-                        android:text="Simpan"
-                        android:layout_gravity="center_vertical"
-                        android:textColor="@color/white"
-                        android:textStyle="bold"
-                        android:textSize="20dp">
-
-                    </androidx.appcompat.widget.AppCompatButton>
-
-                    <ProgressBar
-                        android:id="@+id/progresszakat_penyaluran"
-                        android:layout_marginTop="10dp"
-                        android:layout_marginBottom="10dp"
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
-                        android:layout_gravity="center">
-
-                    </ProgressBar>
-
-                </LinearLayout>
 
             </LinearLayout>
 
 
-
         </ScrollView>
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/simpan_zakatmal"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginLeft="100dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="100dp"
+                android:background="@drawable/img_15"
+                android:text="Simpan"
+                android:textColor="@color/white"
+                android:textSize="20dp"
+                android:textStyle="bold">
+
+            </androidx.appcompat.widget.AppCompatButton>
+
+            <ProgressBar
+                android:id="@+id/progresszakatmal"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center">
+
+            </ProgressBar>
+
+        </LinearLayout>
 
     </LinearLayout>
 

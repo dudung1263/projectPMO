@@ -27,7 +27,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="Input Data Zakat"
+            android:text="Input Zakat Fitrah"
             android:gravity="center"
             android:textSize="35dp"
             android:textColor="@color/white"
@@ -118,15 +118,6 @@
                             android:checked="false"
                             android:onClick="rbclick"
                             android:text="Zakat Fitrah"
-                            android:textColor="@color/black" />
-
-                        <RadioButton
-                            android:id="@+id/rzakatmal"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:checked="false"
-                            android:onClick="rbclick"
-                            android:text="Zakat Mal"
                             android:textColor="@color/black" />
                     </RadioGroup>
 

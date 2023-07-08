@@ -120,14 +120,6 @@
                 android:textStyle="italic|bold">
             </TextView>
 
-            <ProgressBar
-                android:id="@+id/progresslogin"
-                android:layout_marginTop="20dp"
-                android:progressBackgroundTint="@color/ijomuda"
-                android:layout_width="50dp"
-                android:layout_height="50dp">
-
-            </ProgressBar>
 
         </LinearLayout>
 

@@ -126,7 +126,7 @@
              </androidx.cardview.widget.CardView>
 
              <androidx.cardview.widget.CardView
-                 android:id="@+id/datasodakoh"
+                 android:id="@+id/alaram"
                  android:layout_width="80sp"
                  android:layout_height="80sp"
                  android:layout_rowWeight="1"

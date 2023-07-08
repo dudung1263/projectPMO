@@ -76,13 +76,11 @@ public class dokumen extends Fragment implements View.OnClickListener {
         view = inflater.inflate(R.layout.fragment_dokumen, container, false);
         Btndatazakat_data = view.findViewById(R.id.datazakat_dokumen);
         Btndatainfaq_data = view.findViewById(R.id.datainfaq_dokumen);
-        Btndatasodakoh_data = view.findViewById(R.id.datasodakoh_dokumen);
         Btnsholat = view.findViewById(R.id.diagram2);
 
 
 
         Btndatazakat_data.setOnClickListener(this);
-        Btndatasodakoh_data.setOnClickListener(this);
         Btndatainfaq_data.setOnClickListener(this);
         Btnsholat.setOnClickListener(this);
 
@@ -133,10 +131,6 @@ public class dokumen extends Fragment implements View.OnClickListener {
 
             case R.id.datainfaq_dokumen:
                 getActivity().startActivity(new Intent(getActivity(), listdata_infaq.class));
-                break;
-
-            case R.id.datasodakoh_dokumen:
-                getActivity().startActivity(new Intent(getActivity(), lisdata_sodakoh.class));
                 break;
 
             case R.id.diagram2:

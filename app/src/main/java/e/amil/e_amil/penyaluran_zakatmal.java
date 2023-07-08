@@ -39,25 +39,25 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.UUID;
 
-public class penyaluran_infaq extends AppCompatActivity {
+public class penyaluran_zakatmal extends AppCompatActivity {
 
     RadioGroup rg;
 
     RadioButton rb;
 
-    private ProgressBar progresinfaq_penyaluran;
+    private ProgressBar progreszakatmal_penyaluran;
 
-    private EditText namaamilinfak_pen, jumlahinfak_pen, tglinfak_pen, ketinfak_pen;
+    private EditText namaamilzakatmal_pen, jumlahzakatmal_pen, tglzakatmal_pen, ketzakatmal_pen;
 
     DatePickerDialog datePickerDialog;
 
     SimpleDateFormat simpleDateFormat;
 
-    private ImageView image_infak_pen;
+    private ImageView image_zakatmal_pen;
 
-    private Button simpan_infak_pen, getfotoinfak_pen, kembaliinfak_pen;
+    private Button simpan_zakatmal_pen, getfotozakatmal_pen, kembalizakatmal_pen;
 
-    private String getrjenisinfak_pen, getNamaamilinfak_pen, getJumlahinfak_pen, getTglinfak_pen, getKeteranganinfak_pen;
+    private String getrjeniszakatmal_pen, getNamaamilzakatmal_pen, getJumlahzakatmal_pen, getTglzakatmal_pen, getKeteranganzakatmal_pen;
 
     public Uri url;
     public Bitmap bitmap;
@@ -70,30 +70,30 @@ public class penyaluran_infaq extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_penyaluran_infaq);
+        setContentView(R.layout.activity_penyaluran_zakatmal);
 
         if (getSupportActionBar() != null) {
             getSupportActionBar().hide();
         }
 
-        namaamilinfak_pen = findViewById(R.id.namaamil_infaq_penyaluran);
-        jumlahinfak_pen = findViewById(R.id.jumlahinfaq_penyaluran);
-        tglinfak_pen = findViewById(R.id.tglinfaq_penyaluran);
-        ketinfak_pen = findViewById(R.id.keteranganinfaq_penyaluran);
+        namaamilzakatmal_pen = findViewById(R.id.namaamil_zakatmal_penyaluran);
+        jumlahzakatmal_pen = findViewById(R.id.jumlahzakatmal_penyaluran);
+        tglzakatmal_pen = findViewById(R.id.tglzakatmal_penyaluran);
+        ketzakatmal_pen = findViewById(R.id.keteranganzakatmal_penyaluran);
 
-        rg = findViewById(R.id.rjenisinfaq_penyaluran);
+        rg = findViewById(R.id.rjeniszakatmal_penyaluran);
 
-        image_infak_pen = findViewById(R.id.image_infaq_penyaluran);
+        image_zakatmal_pen = findViewById(R.id.image_zakatmal_penyaluran);
 
-        simpan_infak_pen = findViewById(R.id.simpan_infaq_penyaluran);
-        kembaliinfak_pen = findViewById(R.id.kembaliinfak_penyaluran);
-        getfotoinfak_pen = findViewById(R.id.getfotoinfaq_penyaluran);
+        simpan_zakatmal_pen = findViewById(R.id.simpan_zakatmal_penyaluran);
+        kembalizakatmal_pen= findViewById(R.id.kembalizakatmal_penyaluran);
+        getfotozakatmal_pen = findViewById(R.id.getfotozakatmal_penyaluran);
 
-        progresinfaq_penyaluran = findViewById(R.id.progressinfaq_penyaluran);
-        progresinfaq_penyaluran.setVisibility(View.GONE);
+        progreszakatmal_penyaluran = findViewById(R.id.progresszakatmal_penyaluran);
+        progreszakatmal_penyaluran.setVisibility(View.GONE);
 
         simpleDateFormat = new SimpleDateFormat("dd MM yyyy");
-        tglinfak_pen.setOnClickListener(new View.OnClickListener() {
+        tglzakatmal_pen.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 showDateDialog();
@@ -104,31 +104,31 @@ public class penyaluran_infaq extends AppCompatActivity {
 
         dbF = FirebaseDatabase.getInstance().getReference();
 
-        simpan_infak_pen.setOnClickListener(new View.OnClickListener() {
+        simpan_zakatmal_pen.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (rb == null){
-                    getrjenisinfak_pen = null;
+                    getrjeniszakatmal_pen = null;
                 } else {
-                    getrjenisinfak_pen = rb.getText().toString();
+                    getrjeniszakatmal_pen = rb.getText().toString();
                 }
-                getNamaamilinfak_pen = namaamilinfak_pen.getText().toString();
-                getJumlahinfak_pen = jumlahinfak_pen.getText().toString();
-                getTglinfak_pen = tglinfak_pen.getText().toString();
-                getKeteranganinfak_pen = ketinfak_pen.getText().toString();
+                getNamaamilzakatmal_pen = namaamilzakatmal_pen.getText().toString();
+                getJumlahzakatmal_pen = jumlahzakatmal_pen.getText().toString();
+                getTglzakatmal_pen = tglzakatmal_pen.getText().toString();
+                getKeteranganzakatmal_pen = ketzakatmal_pen.getText().toString();
 
                 checkUser();
             }
         });
 
-        kembaliinfak_pen.setOnClickListener(new View.OnClickListener() {
+        kembalizakatmal_pen.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 onBackPressed();
             }
         });
 
-        getfotoinfak_pen.setOnClickListener(new View.OnClickListener() {
+        getfotozakatmal_pen.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 getimage();
@@ -143,7 +143,7 @@ public class penyaluran_infaq extends AppCompatActivity {
             public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
                 Calendar newCalendar = Calendar.getInstance();
                 newCalendar.set(year, month, dayOfMonth);
-                tglinfak_pen.setText(simpleDateFormat.format(newCalendar.getTime()));
+                tglzakatmal_pen.setText(simpleDateFormat.format(newCalendar.getTime()));
             }
         }, calendar.get(Calendar.YEAR), calendar.get(Calendar.MONTH), calendar.get(Calendar.DAY_OF_MONTH));
         datePickerDialog.show();
@@ -161,31 +161,31 @@ public class penyaluran_infaq extends AppCompatActivity {
         switch (requestCode){
             case REQUEST_CODE_CAMERA:
                 if (resultCode == RESULT_OK){
-                    image_infak_pen.setVisibility(View.VISIBLE);
+                    image_zakatmal_pen.setVisibility(View.VISIBLE);
                     Bitmap bitmap = (Bitmap) data.getExtras().get("data");
-                    image_infak_pen.setImageBitmap(bitmap);
+                    image_zakatmal_pen.setImageBitmap(bitmap);
                 }
                 break;
 
             case REQUEST_CODE_GALLERY:
                 if (resultCode == RESULT_OK){
-                    image_infak_pen.setVisibility(View.VISIBLE);
+                    image_zakatmal_pen.setVisibility(View.VISIBLE);
                     url = data.getData();
-                    image_infak_pen.setImageURI(url);
+                    image_zakatmal_pen.setImageURI(url);
                 }
                 break;
         }
     }
     private void checkUser(){
-        if (isEmpty(getNamaamilinfak_pen) || isEmpty(getrjenisinfak_pen) || isEmpty(getJumlahinfak_pen) ||
-                isEmpty(getTglinfak_pen) || isEmpty(getKeteranganinfak_pen) || url == null){
+        if (isEmpty(getNamaamilzakatmal_pen) || isEmpty(getrjeniszakatmal_pen) || isEmpty(getJumlahzakatmal_pen) ||
+                isEmpty(getTglzakatmal_pen) || isEmpty(getKeteranganzakatmal_pen) || url == null){
 
             Toast.makeText(this, "Data Tidak Boleh Ada Yang Kosong", Toast.LENGTH_SHORT).show();
         }
         else {
-            image_infak_pen.setDrawingCacheEnabled(true);
-            image_infak_pen.buildDrawingCache();
-            Bitmap bitmap = ((BitmapDrawable) image_infak_pen.getDrawable()).getBitmap();
+            image_zakatmal_pen.setDrawingCacheEnabled(true);
+            image_zakatmal_pen.buildDrawingCache();
+            Bitmap bitmap = ((BitmapDrawable) image_zakatmal_pen.getDrawable()).getBitmap();
             ByteArrayOutputStream stream = new ByteArrayOutputStream();
 
             bitmap.compress(Bitmap.CompressFormat.JPEG, 100, stream);
@@ -200,20 +200,20 @@ public class penyaluran_infaq extends AppCompatActivity {
                     tasksnapshot.getStorage().getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
                         @Override
                         public void onSuccess(Uri uri) {
-                            dbF.child("Admin").child("Peny Infak").push()
-                                    .setValue(new datapenyaluran_infak(getNamaamilinfak_pen, getrjenisinfak_pen, getJumlahinfak_pen, getTglinfak_pen, getKeteranganinfak_pen, uri.toString().trim()))
+                            dbF.child("Admin").child("Peny Mal").push()
+                                    .setValue(new datapenyaluran_mal(getNamaamilzakatmal_pen, getrjeniszakatmal_pen, getJumlahzakatmal_pen, getTglzakatmal_pen, getKeteranganzakatmal_pen, uri.toString().trim()))
                                     .addOnCompleteListener(new OnCompleteListener<Void>() {
                                         @Override
                                         public void onComplete(@NonNull Task<Void> task) {
 
-                                            namaamilinfak_pen.setText("");
-                                            jumlahinfak_pen.setText("");
-                                            tglinfak_pen.setText("");
-                                            ketinfak_pen.setText("");
+                                            namaamilzakatmal_pen.setText("");
+                                            jumlahzakatmal_pen.setText("");
+                                            tglzakatmal_pen.setText("");
+                                            ketzakatmal_pen.setText("");
 
-                                            Toast.makeText(penyaluran_infaq.this, "Data Berhasil Disimpan", Toast.LENGTH_SHORT).show();
-                                            progresinfaq_penyaluran.setVisibility(View.GONE);
-                                            startActivity(new Intent(penyaluran_infaq.this, MainActivity.class));
+                                            Toast.makeText(penyaluran_zakatmal.this, "Data Berhasil Disimpan", Toast.LENGTH_SHORT).show();
+                                            progreszakatmal_penyaluran.setVisibility(View.GONE);
+                                            startActivity(new Intent(penyaluran_zakatmal.this, MainActivity.class));
                                             finish();
                                         }
                                     });
@@ -224,14 +224,14 @@ public class penyaluran_infaq extends AppCompatActivity {
             }).addOnFailureListener(new OnFailureListener() {
                 @Override
                 public void onFailure(@NonNull Exception e) {
-                    Toast.makeText(penyaluran_infaq.this, "Upload Gagal", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(penyaluran_zakatmal.this, "Upload Gagal", Toast.LENGTH_SHORT).show();
                 }
             }).addOnProgressListener(new OnProgressListener<UploadTask.TaskSnapshot>() {
                 @Override
                 public void onProgress(@NonNull UploadTask.TaskSnapshot snapshot) {
-                    progresinfaq_penyaluran.setVisibility(View.VISIBLE);
+                    progreszakatmal_penyaluran.setVisibility(View.VISIBLE);
                     double progress = (100.0 * snapshot.getBytesTransferred()) / snapshot.getTotalByteCount();
-                    progresinfaq_penyaluran.setProgress((int) progress);
+                    progreszakatmal_penyaluran.setProgress((int) progress);
                 }
             });
 

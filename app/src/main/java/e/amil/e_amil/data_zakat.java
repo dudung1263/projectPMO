@@ -9,7 +9,6 @@ import android.graphics.drawable.BitmapDrawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
@@ -24,11 +23,6 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.google.android.gms.ads.AdRequest;
-import com.google.android.gms.ads.LoadAdError;
-import com.google.android.gms.ads.MobileAds;
-import com.google.android.gms.ads.initialization.InitializationStatus;
-import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -44,8 +38,6 @@ import java.io.ByteArrayOutputStream;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.UUID;
-import com.google.android.gms.ads.interstitial.InterstitialAd;
-import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback;
 
 public class data_zakat extends AppCompatActivity {
 
@@ -74,39 +66,14 @@ public class data_zakat extends AppCompatActivity {
 
     private static final int REQUEST_CODE_CAMERA = 1;
     private static final int REQUEST_CODE_GALLERY = 2;
-    private InterstitialAd mInterstitialAd;
+//    private InterstitialAd mInterstitialAd;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_data_zakat);
 
-        MobileAds.initialize(this, new OnInitializationCompleteListener() {
-            @Override
-            public void onInitializationComplete(InitializationStatus initializationStatus) {}
-        });
-        AdRequest adRequest = new AdRequest.Builder().build();
 
-        InterstitialAd.load(this,"ca-app-pub-3940256099942544/1033173712", adRequest,
-                new InterstitialAdLoadCallback() {
-
-                    private String TAG;
-
-                    @Override
-                    public void onAdLoaded(@NonNull InterstitialAd interstitialAd) {
-                        // The mInterstitialAd reference will be null until
-                        // an ad is loaded.
-                        mInterstitialAd = interstitialAd;
-                        Log.i(TAG, "onAdLoaded");
-                    }
-
-                    @Override
-                    public void onAdFailedToLoad(@NonNull LoadAdError loadAdError) {
-                        // Handle the error
-                        Log.d(TAG, loadAdError.toString());
-                        mInterstitialAd = null;
-                    }
-                });
 
         if (getSupportActionBar() != null) {
             getSupportActionBar().hide();
@@ -145,9 +112,7 @@ public class data_zakat extends AppCompatActivity {
         simpan_zakat.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (mInterstitialAd != null) {
-                    mInterstitialAd.show(data_zakat.this);
-                } else if (rb == null){
+                 if (rb == null){
                     getrjeniszakat = null;
                 } else {
                     getrjeniszakat = rb.getText().toString();
@@ -243,7 +208,7 @@ public class data_zakat extends AppCompatActivity {
                     tasksnapshot.getStorage().getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
                         @Override
                         public void onSuccess(Uri uri) {
-                            dbF.child("Admin").child("Zakat").push()
+                            dbF.child("Admin").child("Zakat Fitrah").push()
                                     .setValue(new data_amil(getNamaamilzakat, getrjeniszakat, getJumlahzakat, getTglzakat, getMuzakizakat, getPenyaluran, getKeterangan, uri.toString().trim()))
                                     .addOnCompleteListener(new OnCompleteListener<Void>() {
                                         @Override

@@ -39,7 +39,7 @@ public class dokumen_user extends Fragment {
     private int currentPage = 0;
     private Timer timer;
 
-    private CardView gambarzakat, gambarinfak, jam;
+    private CardView gambarzakat, gambarinfak, jam, alaram1;
 
 
     View view;
@@ -85,6 +85,7 @@ public class dokumen_user extends Fragment {
         gambarzakat = view.findViewById(R.id.datazakat_user);
         jam = view.findViewById(R.id.jadwalsholat_dokumen);
         gambarinfak = view.findViewById(R.id.datainfaq);
+        alaram1 = view.findViewById(R.id.alaram);
 
 
         gambarzakat.setOnClickListener(new View.OnClickListener() {
@@ -107,6 +108,14 @@ public class dokumen_user extends Fragment {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(requireContext(), keterangan_infaq.class);
+                startActivity(intent);
+            }
+        });
+
+        alaram1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(requireContext(), alaram.class);
                 startActivity(intent);
             }
         });
