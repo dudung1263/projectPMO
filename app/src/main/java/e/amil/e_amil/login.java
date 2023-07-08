@@ -309,4 +309,8 @@ public class login extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void lupapasword(View view) {
+        Intent intent = new Intent(login.this, Lupa_sandi.class);
+        startActivity(intent);
+    }
 }

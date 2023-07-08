@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Lupa_sandi">
+
+
+
+
+    <TextView
+        android:paddingTop="200sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Masukan Emain Untuk Mereset Sandi?"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:textColor="@color/sodaqoh1_background"
+        android:textStyle="bold"
+        android:textSize="15sp"
+        android:layout_marginTop="25sp"
+        android:layout_marginStart="5dp"/>
+
+
+
+    <EditText
+        android:id="@+id/lupasandi"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+
+        android:background="@drawable/background"
+        android:hint="Enter your email address"
+        android:paddingStart="10dp"
+        android:drawableStart="@drawable/emailabuabu"
+        android:drawablePadding="10dp"
+        android:inputType="textEmailAddress"
+        android:layout_marginTop="10dp" />
+
+
+    <Button
+        android:id="@+id/btnlupasandi"
+        android:layout_width="300dp"
+        android:layout_height="45dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/from2"
+        android:text="Continue"/>
+
+
+</LinearLayout>

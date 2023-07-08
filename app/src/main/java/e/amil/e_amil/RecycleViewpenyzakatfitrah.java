@@ -86,7 +86,7 @@ public class RecycleViewpenyzakatfitrah extends RecyclerView.Adapter<RecycleView
         final String Jumlahzakatfitrah_pen = listzakatfitrah.get(position).getJumlahzakat_pen();
         final String Tglzakatfitrah_pen = listzakatfitrah.get(position).getTglinfakzakat_pen();
         final String Namazakatfitrah_pen = listzakatfitrah.get(position).getNamaamilzakat_pen();
-        final String Keteranganzakatfitrah_pen = listzakatfitrah.get(position).getKetinfakzakat_pen();
+        final String Keteranganzakatfitrah_pen  = listzakatfitrah.get(position).getKetinfakzakat_pen();
         final String Gambarzakatfitrah_pen = listzakatfitrah.get(position).getGambar();
         final datapenyaluran_fitrah datapenyaluran_fitrah = listzakatfitrah.get(position);
 
