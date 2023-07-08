@@ -1,5 +1,12 @@
 package e.amil.e_amil;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
+import androidx.recyclerview.widget.DividerItemDecoration;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
 import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.text.Editable;
@@ -7,13 +14,6 @@ import android.text.TextWatcher;
 import android.util.Log;
 import android.widget.EditText;
 import android.widget.Toast;
-
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.content.ContextCompat;
-import androidx.recyclerview.widget.DividerItemDecoration;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.database.DataSnapshot;
@@ -24,39 +24,39 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
-public class listdata_zakat extends AppCompatActivity {
+public class listdata_zakatmal extends AppCompatActivity {
 
     private RecyclerView recyclerView;
 
-    RecycleViewZakat adapter;
+    RecycleView_zakatmal adapter;
 
     private RecyclerView.LayoutManager layoutManager;
 
     private DatabaseReference reference;
 
-    private ArrayList<data_amil> dataAmil;
+    private ArrayList<data_amil_mal> dataAmilmal;
 
-    private FloatingActionButton adddatazakat, homezakat;
+    private FloatingActionButton adddatazakatmal, homezakatmal;
 
-    private EditText Search_liasdata_zakat;
+    private EditText Search_liasdata_zakatmal;
 
     @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_listdata_zakat);
+        setContentView(R.layout.activity_listdata_zakatmal);
 
         if(getSupportActionBar() != null){
             getSupportActionBar().hide();
         }
 
 
-        recyclerView=findViewById(R.id.datalist_zakat);
+        recyclerView=findViewById(R.id.datalist_zakatmal);
 
         GetData(" ");
 
-        Search_liasdata_zakat = findViewById(R.id.Search_listzakat);
-        Search_liasdata_zakat.addTextChangedListener(new TextWatcher() {
+        Search_liasdata_zakatmal = findViewById(R.id.Search_listzakatmal);
+        Search_liasdata_zakatmal.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
 
@@ -87,19 +87,19 @@ public class listdata_zakat extends AppCompatActivity {
     private void GetData(String data) {
 
         reference = FirebaseDatabase.getInstance().getReference();
-        reference.child("Admin").child("Zakat Fitrah")
+        reference.child("Admin").child("Zakat Mal")
                 .addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                        dataAmil = new ArrayList<data_amil>();
-                        dataAmil.clear();
+                        dataAmilmal = new ArrayList<data_amil_mal>();
+                        dataAmilmal.clear();
                         for (DataSnapshot snapshot : dataSnapshot.getChildren()){
-                            data_amil amil = snapshot.getValue(data_amil.class);
+                            data_amil_mal amil = snapshot.getValue(data_amil_mal.class);
 
                             amil.setKey(snapshot.getKey());
-                            dataAmil.add(amil);
+                            dataAmilmal.add(amil);
                         }
-                        adapter=new RecycleViewZakat(dataAmil, listdata_zakat.this);
+                        adapter=new RecycleView_zakatmal(dataAmilmal, listdata_zakatmal.this);
                         adapter.notifyDataSetChanged();
 
                         recyclerView.setAdapter(adapter);
@@ -109,7 +109,7 @@ public class listdata_zakat extends AppCompatActivity {
                     public void onCancelled(@NonNull DatabaseError error) {
 
                         Toast.makeText(getApplicationContext(), "Data Gagal Menampilkan", Toast.LENGTH_SHORT).show();
-                        Log.e("MyListDataZakatFitrah", error.getDetails()+ " "+ error.getMessage() );
+                        Log.e("MyListDataZakatMal", error.getDetails()+ " "+ error.getMessage() );
                     }
                 });
     }
@@ -124,6 +124,4 @@ public class listdata_zakat extends AppCompatActivity {
         recyclerView.addItemDecoration(ItemDecoration);
 
     }
-
-
 }

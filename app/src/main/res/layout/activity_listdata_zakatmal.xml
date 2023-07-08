@@ -5,17 +5,17 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-    tools:context=".listdata_zakat">
+    tools:context=".listdata_zakatmal">
 
     <TextView
-        android:id="@+id/zakat_listdataa"
+        android:id="@+id/zakatmal_listdataa"
         android:layout_width="match_parent"
         android:layout_height="50dp"
 
         android:layout_marginBottom="5dp"
         android:elegantTextHeight="true"
         android:gravity="center"
-        android:text="Data Zakat Fitrah"
+        android:text="Data Zakat Mal"
         android:textColor="@color/white"
         android:textSize="20dp"
         android:textStyle="bold"
@@ -34,10 +34,10 @@
 
 
     <EditText
-        android:id="@+id/Search_listzakat"
+        android:id="@+id/Search_listzakatmal"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:layout_below="@+id/zakat_listdataa"
+        android:layout_below="@+id/zakatmal_listdataa"
         android:hint="Cari.."
         android:textColor="@color/black"
         android:textSize="15dp"
@@ -47,11 +47,11 @@
     </EditText>
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/datalist_zakat"
+        android:id="@+id/datalist_zakatmal"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scrollbars="vertical"
-        android:layout_below="@id/Search_listzakat">
+        android:layout_below="@id/Search_listzakatmal">
     </androidx.recyclerview.widget.RecyclerView>
 
 

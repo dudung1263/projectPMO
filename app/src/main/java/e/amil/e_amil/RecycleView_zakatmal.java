@@ -4,7 +4,6 @@ import static android.text.TextUtils.isEmpty;
 
 import android.annotation.SuppressLint;
 import android.content.DialogInterface;
-import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -28,25 +27,24 @@ import com.google.firebase.database.FirebaseDatabase;
 import java.util.ArrayList;
 import java.util.List;
 
-public class RecycleViewZakat extends RecyclerView.Adapter<RecycleViewZakat.ViewHolder> implements Filterable {
+public class RecycleView_zakatmal extends RecyclerView.Adapter<RecycleView_zakatmal.ViewHolder> implements Filterable {
 
-    //Deklarasi Variabel
-    ArrayList<data_amil> listZakat;
-    listdata_zakat context;
-    ArrayList<data_amil> listZakatSearch;
+    ArrayList<data_amil_mal> listZakatmal;
+    listdata_zakatmal context;
+    ArrayList<data_amil_mal> listZakatmalSearch;
     DatabaseReference database = FirebaseDatabase.getInstance().getReference();
 
     //Filter Data berdasarkan nama
     Filter setSearch = new Filter() {
         @Override
         protected FilterResults performFiltering(CharSequence constraint) {
-            ArrayList<data_amil> filterZakat = new ArrayList<>();
+            ArrayList<data_amil_mal> filterZakat = new ArrayList<>();
             if (constraint == null || constraint.length() == 0){
-                filterZakat.addAll(listZakatSearch);
+                filterZakat.addAll(listZakatmalSearch);
             }else {
                 String filterPattern = constraint.toString().toLowerCase().trim();
-                for (data_amil item : listZakatSearch){
-                    if (item.getRjeniszakat().toLowerCase().contains(filterPattern)) {
+                for (data_amil_mal item : listZakatmalSearch){
+                    if (item.getRjeniszakatmal().toLowerCase().contains(filterPattern)) {
                         filterZakat.add(item);
                     }
                 }
@@ -59,8 +57,8 @@ public class RecycleViewZakat extends RecyclerView.Adapter<RecycleViewZakat.View
         @Override
         protected void publishResults(CharSequence charSequence, FilterResults results) {
 
-            listZakat.clear();
-            listZakat.addAll((List) results.values);
+            listZakatmal.clear();
+            listZakatmal.addAll((List) results.values);
             notifyDataSetChanged();
         }
     };
@@ -68,10 +66,10 @@ public class RecycleViewZakat extends RecyclerView.Adapter<RecycleViewZakat.View
 //    private int position;
 
     //Membuat konstruktor untuk menyimpan data
-    public RecycleViewZakat(ArrayList<data_amil> listZakat, listdata_zakat context){
-        this.listZakat = listZakat;
+    public RecycleView_zakatmal(ArrayList<data_amil_mal> listZakatmal, listdata_zakatmal context){
+        this.listZakatmal = listZakatmal;
         this.context = context;
-        this.listZakatSearch = listZakat;
+        this.listZakatmalSearch = listZakatmal;
     }
     @Override
     public Filter getFilter() {
@@ -81,47 +79,47 @@ public class RecycleViewZakat extends RecyclerView.Adapter<RecycleViewZakat.View
 
     @NonNull
     @Override
-    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.viewdesign_zakat, parent, false);
+    public RecycleView_zakatmal.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.viewdesign_zakatmal, parent, false);
         return new ViewHolder(v);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ViewHolder holder, @SuppressLint("RecyclerView") int position) {
+    public void onBindViewHolder(@NonNull RecycleView_zakatmal.ViewHolder holder, @SuppressLint("RecyclerView") int position) {
 //        this.holder = holder;
 //        this.position = position;
 
-        final String NamaamilZakat = listZakat.get(position).getNamaamilzakat();
-        final String JenisZakat = listZakat.get(position).getRjeniszakat();
-        final String JumlahZakat = listZakat.get(position).getJumlahzakat();
-        final String TglZakat = listZakat.get(position).getTglzakat();
-        final String MuzakiZakat = listZakat.get(position).getMuzakizakat();
-        final String PenyaluranZakat = listZakat.get(position).getPenyaluranzakat();
-        final String KeteranganZakat = listZakat.get(position).getKetzakat();
-        final String Gambar = listZakat.get(position).getGambar();
-        final data_amil dataAmil = listZakat.get(position);
+        final String NamaamilZakatmal = listZakatmal.get(position).getNamaamilzakatmal();
+        final String JenisZakatmal = listZakatmal.get(position).getRjeniszakatmal();
+        final String JumlahZakatmal = listZakatmal.get(position).getJumlahzakatmal();
+        final String TglZakatmal = listZakatmal.get(position).getTglzakatmal();
+        final String MuzakiZakatmal = listZakatmal.get(position).getMuzakizakatmal();
+        final String PenyaluranZakatmal = listZakatmal.get(position).getPenyaluranzakatmal();
+        final String KeteranganZakatmal = listZakatmal.get(position).getKetzakatmal();
+        final String Gambar = listZakatmal.get(position).getGambar();
+        final data_amil_mal dataAmilmal = listZakatmal.get(position);
 
-        holder.NamaamilZakat.setText(": "+NamaamilZakat);
-        holder.JenisZakat.setText(": "+JenisZakat);
-        holder.JumlahZakat.setText(": "+JumlahZakat);
-        holder.TglZakat.setText(": "+TglZakat);
-        holder.MuzakiZakat.setText(": "+MuzakiZakat);
-        holder.PenyaluranZakat.setText(": "+PenyaluranZakat);
-        holder.KetZakat.setText(": "+KeteranganZakat);
+        holder.NamaamilZakatmal.setText(": "+NamaamilZakatmal);
+        holder.JenisZakatmal.setText(": "+JenisZakatmal);
+        holder.JumlahZakatmal.setText(": "+JumlahZakatmal);
+        holder.TglZakatmal.setText(": "+TglZakatmal);
+        holder.MuzakiZakatmal.setText(": "+MuzakiZakatmal);
+        holder.PenyaluranZakatmal.setText(": "+PenyaluranZakatmal);
+        holder.KetZakatmal.setText(": "+KeteranganZakatmal);
 
         if (isEmpty(Gambar)){
-            holder.Gambarzakat.setImageResource(R.drawable.carigambar);
+            holder.Gambarzakatmal.setImageResource(R.drawable.carigambar);
         }else {
             Glide.with(holder.itemView.getContext())
                     .load(Gambar.trim())
-                    .into(holder.Gambarzakat);
+                    .into(holder.Gambarzakatmal);
         }
 
-        holder.ListItemZakat.setOnLongClickListener(new View.OnLongClickListener(){
+        holder.ListItemZakatmal.setOnLongClickListener(new View.OnLongClickListener(){
 
             @Override
             public boolean onLongClick(View view) {
-                final String[] action = {"Update","Delete"};
+                final String[] action = {"Delete"};
                 AlertDialog.Builder alert = new AlertDialog.Builder(view.getContext());
                 alert.setTitle("Apa yang akan anda pilih?");
                 alert.setItems(action, new DialogInterface.OnClickListener() {
@@ -136,7 +134,7 @@ public class RecycleViewZakat extends RecyclerView.Adapter<RecycleViewZakat.View
                                     @Override
                                     public void onClick(DialogInterface dialogInterface, int i) {
                                         //Menjalankan Fungsi hapus disini
-                                        database.child("Admin").child("Zakat Fitrah").child(dataAmil.getKey()).removeValue().addOnSuccessListener(new OnSuccessListener<Void>() {
+                                        database.child("Admin").child("Zakat Mal").child(dataAmilmal.getKey()).removeValue().addOnSuccessListener(new OnSuccessListener<Void>() {
                                             @Override
                                             public void onSuccess(Void unused) {
                                                 Toast.makeText(context, "Berhasil Menghapus Data", Toast.LENGTH_SHORT).show();
@@ -172,26 +170,26 @@ public class RecycleViewZakat extends RecyclerView.Adapter<RecycleViewZakat.View
     @Override
     public int getItemCount() {
 
-        return listZakat.size();
+        return listZakatmal.size();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
 
-        private TextView NamaamilZakat, JenisZakat, JumlahZakat, TglZakat, MuzakiZakat, PenyaluranZakat, KetZakat;
-        private ImageView Gambarzakat;
-        private CardView ListItemZakat;
+        private TextView NamaamilZakatmal, JenisZakatmal, JumlahZakatmal, TglZakatmal, MuzakiZakatmal, PenyaluranZakatmal, KetZakatmal;
+        private ImageView Gambarzakatmal;
+        private CardView ListItemZakatmal;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             //Menginisialisasi view view yang terpasang pada layout ini
-            NamaamilZakat = itemView.findViewById(R.id.namaamilzakat_ds);
-            JenisZakat = itemView.findViewById(R.id.jeniszakat_ds);
-            JumlahZakat = itemView.findViewById(R.id.jumlahzakat_ds);
-            TglZakat = itemView.findViewById(R.id.tglzakat_ds);
-            MuzakiZakat = itemView.findViewById(R.id.muzakizakat_ds);
-            PenyaluranZakat = itemView.findViewById(R.id.penyaluranzakat_ds);
-            KetZakat = itemView.findViewById(R.id.ketzakat_ds);
-            Gambarzakat = itemView.findViewById(R.id.gambarzakat_ds);
-            ListItemZakat = itemView.findViewById(R.id.list_item_zakat);
+            NamaamilZakatmal = itemView.findViewById(R.id.namaamilzakat_ds);
+            JenisZakatmal = itemView.findViewById(R.id.jeniszakat_ds);
+            JumlahZakatmal = itemView.findViewById(R.id.jumlahzakat_ds);
+            TglZakatmal = itemView.findViewById(R.id.tglzakat_ds);
+            MuzakiZakatmal = itemView.findViewById(R.id.muzakizakat_ds);
+            PenyaluranZakatmal = itemView.findViewById(R.id.penyaluranzakat_ds);
+            KetZakatmal = itemView.findViewById(R.id.ketzakat_ds);
+            Gambarzakatmal = itemView.findViewById(R.id.gambarzakat_ds);
+            ListItemZakatmal = itemView.findViewById(R.id.list_item_zakat);
 
         }
     }
