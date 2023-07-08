@@ -13,7 +13,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="45dp"
+            android:layout_height="50dp"
             android:layout_gravity="center_vertical"
             android:background="#46B14B">
             <TextView
@@ -25,11 +25,11 @@
                 android:textColor="@color/white"
                 android:layout_gravity="center"
                 android:gravity="center">
-
             </TextView>
         </LinearLayout>
 
         <LinearLayout
+            android:layout_marginTop="8dp"
             android:id="@+id/jumlahup"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -141,22 +141,51 @@
         </LinearLayout>
 
         <LinearLayout
+            android:layout_marginTop="10dp"
             android:layout_width="match_parent"
-            android:layout_height="25dp"
-            android:layout_gravity="center_vertical">
+            android:layout_height="35dp"
+            android:layout_gravity="center_vertical"
+            android:orientation="vertical">
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="35dp"
-                android:text="Diagram Laporan "
-                android:padding="5dp"
+                android:text="Data Laporan Penerima Manfaat "
+                android:padding="3dp"
                 android:paddingStart="10sp"
-                android:textSize="18sp"
+                android:textSize="23sp"
                 android:textStyle="bold"
                 android:textColor="@color/black"
-                android:gravity="left"
+                android:gravity="center"
                 android:layout_gravity="center_vertical">
 
             </TextView>
+        </LinearLayout>
+        <LinearLayout
+        android:layout_marginTop="15dp"
+        android:id="@+id/lindata"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center_vertical"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/datazakatinfak_dokumen"
+            android:onClick="datainfak"
+            android:layout_marginTop="3dp"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_gravity="center"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:text="Laporan Data Infaq"
+            android:padding="10dp"
+            android:background="@drawable/shap1"
+            android:fontFamily="sans-serif-black"
+            android:textStyle="bold"
+            android:textSize="26dp"
+            android:gravity="center"
+            android:textColor="@color/white">
+        </androidx.appcompat.widget.AppCompatButton>
         </LinearLayout>
 
     </LinearLayout>

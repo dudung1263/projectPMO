@@ -4,7 +4,6 @@ import static android.text.TextUtils.isEmpty;
 
 import android.annotation.SuppressLint;
 import android.content.DialogInterface;
-import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -39,19 +38,19 @@ public class RecycleViewPenyInfaq extends RecyclerView.Adapter<RecycleViewPenyIn
     Filter setSearch = new Filter() {
         @Override
         protected FilterResults performFiltering(CharSequence constraint) {
-            ArrayList<datapenyaluran_infak> filterInfaq = new ArrayList<>();
+            ArrayList<datapenyaluran_infak> filterpenyInfaq = new ArrayList<>();
             if (constraint == null || constraint.length() == 0){
-                filterInfaq.addAll(listPenyInfaqSearch);
+                filterpenyInfaq.addAll(listPenyInfaqSearch);
             }else {
                 String filterPattern = constraint.toString().toLowerCase().trim();
                 for (datapenyaluran_infak item : listPenyInfaqSearch){
                     if (item.getNamaamilinfak_pen().toLowerCase().contains(filterPattern)) {
-                        filterInfaq.add(item);
+                        filterpenyInfaq.add(item);
                     }
                 }
             }
             FilterResults results = new FilterResults();
-            results.values = filterInfaq;
+            results.values = filterpenyInfaq;
             return results;
         }
 
@@ -115,7 +114,7 @@ public class RecycleViewPenyInfaq extends RecyclerView.Adapter<RecycleViewPenyIn
 
             @Override
             public boolean onLongClick(View view) {
-                final String[] action = {"Update","Delete"};
+                final String[] action = {"Delete"};
                 AlertDialog.Builder alert = new AlertDialog.Builder(view.getContext());
                 alert.setTitle("Apa yang akan anda pilih?");
                 alert.setItems(action, new DialogInterface.OnClickListener() {
@@ -123,21 +122,6 @@ public class RecycleViewPenyInfaq extends RecyclerView.Adapter<RecycleViewPenyIn
                     public void onClick(DialogInterface dialogInterface, int i) {
                         switch (i){
                             case 0:
-                                //Berpindah activity pada halaman layout UpdateData dan mengambil data dari ListMahasiswa
-                                Bundle bundle = new Bundle();
-                                bundle.putString("dataJenisPenyInfaq",listPenyInfaq.get(position).getRjenisinfak_pen());
-                                bundle.putString("dataJumlahPenyInfaq",listPenyInfaq.get(position).getJumlahinfak_pen());
-                                bundle.putString("dataTglPenyInfaq",listPenyInfaq.get(position).getTglinfak_pen());
-                                bundle.putString("dataKetPenyInfaq",listPenyInfaq.get(position).getKetinfak_pen());
-                                bundle.putString("dataPrimaryPenyInfaq",listPenyInfaq.get(position).getKey());
-                                bundle.putString("dataGambarPenyInfaq",listPenyInfaq.get(position).getGambar());
-
-                                //Intent intent = new Intent(view.getContext(), update_zakat.class);
-                                //intent.putExtras(bundle);
-                                //context.startActivity(intent);
-                                break;
-
-                            case 1:
                                 AlertDialog.Builder alert = new AlertDialog.Builder(view.getContext());
                                 alert.setTitle("Apakah anda yakin akan menghapus Data ini?");
                                 alert.setPositiveButton("Ya", new DialogInterface.OnClickListener() {
