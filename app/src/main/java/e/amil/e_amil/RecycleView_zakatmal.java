@@ -44,7 +44,7 @@ public class RecycleView_zakatmal extends RecyclerView.Adapter<RecycleView_zakat
             }else {
                 String filterPattern = constraint.toString().toLowerCase().trim();
                 for (data_amil_mal item : listZakatmalSearch){
-                    if (item.getRjeniszakatmal().toLowerCase().contains(filterPattern)) {
+                    if (item.getNamaamilzakatmal().toLowerCase().contains(filterPattern)) {
                         filterZakat.add(item);
                     }
                 }

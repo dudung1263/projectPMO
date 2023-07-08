@@ -11,7 +11,6 @@ import android.view.ViewGroup;
 import android.widget.Filter;
 import android.widget.Filterable;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -47,7 +46,7 @@ public class RecycleViewInfaq extends RecyclerView.Adapter<RecycleViewInfaq.View
             }else {
                 String filterPattern = constraint.toString().toLowerCase().trim();
                 for (data_amilinfaqq item : listInfaqSearch){
-                    if (item.getRjenisinfak().toLowerCase().contains(filterPattern)) {
+                    if (item.getMuzakiinfak().toLowerCase().contains(filterPattern)) {
                         filterInfaq.add(item);
                     }
                 }

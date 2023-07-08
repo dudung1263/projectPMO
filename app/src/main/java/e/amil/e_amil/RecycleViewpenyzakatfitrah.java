@@ -43,7 +43,7 @@ public class RecycleViewpenyzakatfitrah extends RecyclerView.Adapter<RecycleView
             } else {
                 String filterPattern = constraint.toString().toLowerCase().trim();
                 for (datapenyaluran_fitrah item : listzakatfitrahSearch) {
-                    if (item.getRjeniszakat_pen().toLowerCase().contains(filterPattern)) {
+                    if (item.getNamaamilzakat_pen().toLowerCase().contains(filterPattern)) {
                         filterpenyzakatfitrah.add(item);
                     }
                 }

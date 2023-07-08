@@ -43,7 +43,7 @@ public class RecycleViewpenyzakatmal extends RecyclerView.Adapter<RecycleViewpen
             } else {
                 String filterPattern = constraint.toString().toLowerCase().trim();
                 for (datapenyaluran_mal item : listzakatmalSearch) {
-                    if (item.getRjeniszakatmal_pen().toLowerCase().contains(filterPattern)) {
+                    if (item.getNamaamilzakatmal_pen().toLowerCase().contains(filterPattern)) {
                         filterpenyzakatmal.add(item);
                     }
                 }
