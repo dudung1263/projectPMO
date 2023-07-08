@@ -18,6 +18,9 @@
         android:theme="@style/Theme.EAmil"
         tools:targetApi="31">
         <activity
+            android:name=".listdatapenyzakat_mal"
+            android:exported="false" />
+        <activity
             android:name=".listdata_zakatmal"
             android:exported="false" />
         <activity
