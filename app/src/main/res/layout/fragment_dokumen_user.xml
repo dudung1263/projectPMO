@@ -146,14 +146,13 @@
                          android:layout_width="60sp"
                          android:layout_height="60sp"
                          android:layout_gravity="center_horizontal"
-                         android:src="@drawable/vektorsdkh"/>
+                         android:src="@drawable/alarm"/>
 
 
                     <TextView
                         android:layout_width="match_parent"
-                        android:layout_height="20sp"
-                        android:layout_marginTop="7dp"
-                        android:text="SEDEKAH"
+                        android:layout_height="wrap_content"
+                        android:text="Alarm Sholat"
                         android:textColor="@color/white"
                         android:gravity="center"
                         android:textStyle="bold"
@@ -250,7 +249,7 @@
             android:layout_width="410sp"
             android:layout_height="30sp"
             android:textStyle="bold"
-            android:text="Eamil :"
+            android:text="E-amil :"
             android:textColor="@color/black"
             android:textSize="15sp"
             android:paddingLeft="10sp"/>
@@ -259,7 +258,7 @@
             android:layout_height="40sp"
             android:paddingLeft="10sp"
             android:textColor="@color/black"
-            android:text="Eamil di buat untuk mempermudah pendataan zakat dan ifaq, apliaksi ini di buat oleh  Trio Joli"/>
+            android:text="Eamil di buat untuk mempermudah pendataan zakat dan ifaq, apliaksi ini di buat oleh  Hamba Allah"/>
 
     </LinearLayout>
 
