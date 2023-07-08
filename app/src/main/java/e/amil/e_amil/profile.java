@@ -120,14 +120,9 @@ public class profile extends Fragment implements View.OnClickListener {
             case R.id.logout:
                 getActivity().startActivity(new Intent(getActivity(), login.class));
                 auth.signOut();
-                finish()
                 ;break;
 
         }
-    }
-
-    private void finish() {
-
     }
 
     private void getUser(){

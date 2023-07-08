@@ -159,6 +159,8 @@
                                 android:hint="Jumlah Infaq"
                                 android:paddingLeft="5dp"
                                 android:ems="10"
+                                android:inputType="number
+"
                                 android:textColor="@color/black">
 
                             </EditText>

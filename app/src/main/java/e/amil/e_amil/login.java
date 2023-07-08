@@ -196,6 +196,24 @@ public class login extends AppCompatActivity {
             }
         });
     }
+
+    private void getAdmin(String username){
+        DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference("Admin");
+        databaseReference.child(username).get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<DataSnapshot> task) {
+                if (task.isSuccessful()){
+                    if (task.getResult().exists()){
+                        DataSnapshot dataSnapshot = task.getResult();
+                        getEmail = String.valueOf(dataSnapshot.child("dataEmail").getValue());
+                        AdminLogin();
+                    }else {
+                        getUsers(Username);
+                    }
+                }
+            }
+        });
+    }
     private void AdminLogin() {
         auth.signInWithEmailAndPassword(getEmail, Password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
@@ -237,23 +255,7 @@ public class login extends AppCompatActivity {
             }
         });
     }
-    private void getAdmin(String username){
-        DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference("Admin");
-        databaseReference.child(username).get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
-            @Override
-            public void onComplete(@NonNull Task<DataSnapshot> task) {
-                if (task.isSuccessful()){
-                    if (task.getResult().exists()){
-                        DataSnapshot dataSnapshot = task.getResult();
-                        getEmail = String.valueOf(dataSnapshot.child("dataEmail").getValue());
-                        AdminLogin();
-                    }else {
-                        getUsers(Username);
-                    }
-                }
-            }
-        });
-    }
+
     @Override
     protected void onStart() {
         super.onStart();
