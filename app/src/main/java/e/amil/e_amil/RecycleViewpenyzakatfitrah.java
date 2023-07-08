@@ -92,7 +92,7 @@ public class RecycleViewpenyzakatfitrah extends RecyclerView.Adapter<RecycleView
 
 
         holder.Jeniszakatfitrah_pen.setText(" " + Jeniszakatfitrah);
-        holder.Jumlahzakatfitrah_pen.setText("Rp. " + Jumlahzakatfitrah_pen);
+        holder.Jumlahzakatfitrah_pen.setText(Jumlahzakatfitrah_pen + ".Kg");
         holder.Tglzakatfitrah_pen.setText(" " + Tglzakatfitrah_pen);
         holder.Namazakatfitrah_pen.setText(" " + Namazakatfitrah_pen);
         holder.Ketzakatfitrah_pen.setText(" " + Keteranganzakatfitrah_pen);

@@ -110,7 +110,7 @@ public class listdatapenyzakat_mal extends AppCompatActivity {
                         public void onCancelled(@NonNull DatabaseError error) {
 
                             Toast.makeText(getApplicationContext(), "Data Gagal Menampilkan", Toast.LENGTH_SHORT).show();
-                            Log.e("MyListDataInfaq", error.getDetails() + " " + error.getMessage());
+                            Log.e("MyListDataPenyMal", error.getDetails() + " " + error.getMessage());
                         }
                     });
         }
