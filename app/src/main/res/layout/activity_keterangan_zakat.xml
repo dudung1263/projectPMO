@@ -266,7 +266,7 @@
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/datazakatmal_dokumen"
-                android:onClick="datazakat"
+                android:onClick="datazakatmal"
                 android:layout_marginTop="3dp"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"

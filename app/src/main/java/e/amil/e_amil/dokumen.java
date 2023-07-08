@@ -33,7 +33,7 @@ public class dokumen extends Fragment implements View.OnClickListener {
     private String mParam2;
     private int[] imageResources = {R.drawable.img_14, R.drawable.img_16, R.drawable.img_12};
 
-    Button Btndatazakat_data,  Btndatainfaq_data, Btndatasodakoh_data, Btnsholat ;
+    Button Btndatazakat_data,  Btndatainfaq_data, Btnpenyaluranzakat, Btnpenyaluraninfaq, Btnsholat ;
 
     private ImageView imageView;
     private int currentPage = 0;
@@ -77,12 +77,16 @@ public class dokumen extends Fragment implements View.OnClickListener {
         Btndatazakat_data = view.findViewById(R.id.datazakat_dokumen);
         Btndatainfaq_data = view.findViewById(R.id.datainfaq_dokumen);
         Btnsholat = view.findViewById(R.id.diagram2);
+        Btnpenyaluranzakat = view.findViewById(R.id.datapenyaluranzakat);
+        Btnpenyaluraninfaq = view.findViewById(R.id.datapenyaluraninfaq);
 
 
 
         Btndatazakat_data.setOnClickListener(this);
         Btndatainfaq_data.setOnClickListener(this);
         Btnsholat.setOnClickListener(this);
+        Btnpenyaluranzakat.setOnClickListener(this);
+        Btnpenyaluraninfaq.setOnClickListener(this);
 
 
         imageView = view.findViewById(R.id.imageView_dokumen);
@@ -122,6 +126,7 @@ public class dokumen extends Fragment implements View.OnClickListener {
         }
     }
 
+
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
@@ -137,18 +142,18 @@ public class dokumen extends Fragment implements View.OnClickListener {
                 getActivity().startActivity(new Intent(getActivity(), keterangan_zakat.class));
                 break;
 
+            case R.id.datapenyaluraninfaq:
+                getActivity().startActivity(new Intent(getActivity(), keterangan_infaq.class));
+                break;
+
             case R.id.diagram2:
                 getActivity().startActivity(new Intent(getActivity(), jadwalsholat.class));
                 break;
 
 
-
-
-
-
-
         }
     }
+
 
 
 

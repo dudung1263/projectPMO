@@ -21,9 +21,6 @@
             android:name=".listdata_zakatmal"
             android:exported="false" />
         <activity
-            android:name=".listdata_penyinfaq"
-            android:exported="false" />
-        <activity
             android:name=".listdata_penyzakat_fitrah"
             android:exported="false" />
         <activity

@@ -147,7 +147,7 @@ public class keterangan_zakat extends AppCompatActivity {
     }
 
 
-    public void datazakat(View view) {
+    public void datazakatmal(View view) {
         Intent intent = new Intent( keterangan_zakat.this, listdatapenyzakat_mal.class);
         startActivity(intent);
     }
