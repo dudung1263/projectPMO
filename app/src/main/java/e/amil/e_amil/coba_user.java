@@ -46,6 +46,9 @@ public class coba_user extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_coba_user);
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().hide();
+        }
 
         // Inisialisasi
         progresLay = findViewById(R.id.progres_layout);
@@ -57,7 +60,6 @@ public class coba_user extends AppCompatActivity {
         etPhone = findViewById(R.id.et_phone_profil);
         etEmail = findViewById(R.id.et_email_profil);
         etAlamat = findViewById(R.id.et_alamat_profil);
-        btnChooseFoto = findViewById(R.id.btn_choose_foto);
         mAuth = FirebaseAuth.getInstance();
         mUser = mAuth.getCurrentUser();
         ID = mUser.getUid();
