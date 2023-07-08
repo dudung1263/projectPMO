@@ -47,7 +47,7 @@ public class RecycleViewInfaq extends RecyclerView.Adapter<RecycleViewInfaq.View
             }else {
                 String filterPattern = constraint.toString().toLowerCase().trim();
                 for (data_amilinfaqq item : listInfaqSearch){
-                    if (item.getRjenisinfak().toLowerCase().contains(filterPattern)) {
+                    if (item.getNamaamilinfak().toLowerCase().contains(filterPattern)) {
                         filterInfaq.add(item);
                     }
                 }
@@ -92,6 +92,7 @@ public class RecycleViewInfaq extends RecyclerView.Adapter<RecycleViewInfaq.View
 //        this.holder = holder;
 //        this.position = position;
 
+        final String NamaamilInfaq = listInfaq.get(position).getNamaamilinfak();
         final String JenisInfaq = listInfaq.get(position).getRjenisinfak();
         final String Jumlahinfaq = listInfaq.get(position).getJumlahinfak();
         final String TglInfaq = listInfaq.get(position).getTglinfak();
@@ -102,6 +103,7 @@ public class RecycleViewInfaq extends RecyclerView.Adapter<RecycleViewInfaq.View
         final data_amilinfaqq dataInfaq = listInfaq.get(position);
 
 
+        holder.NamaamilInfaq.setText(" "+NamaamilInfaq);
         holder.JenisInfaq.setText(" "+JenisInfaq);
         holder.JumlahInfaq.setText("Rp. "+Jumlahinfaq);
         holder.TglInfaq.setText(" "+TglInfaq);
@@ -131,6 +133,7 @@ public class RecycleViewInfaq extends RecyclerView.Adapter<RecycleViewInfaq.View
                             case 0:
                                 //Berpindah activity pada halaman layout UpdateData dan mengambil data dari ListMahasiswa
                                 Bundle bundle = new Bundle();
+                                bundle.putString("dataNamaamilInfaq",listInfaq.get(position).getNamaamilinfak());
                                 bundle.putString("dataJenisInfaq",listInfaq.get(position).getRjenisinfak());
                                 bundle.putString("dataJumlahInfaq",listInfaq.get(position).getJumlahinfak());
                                 bundle.putString("dataTglInfaq",listInfaq.get(position).getTglinfak());
@@ -193,12 +196,13 @@ public class RecycleViewInfaq extends RecyclerView.Adapter<RecycleViewInfaq.View
 
     public class ViewHolder extends RecyclerView.ViewHolder {
 
-        private TextView JenisInfaq, JumlahInfaq, TglInfaq, MuzakiInfaq, PenyaluranInfaq, KetInfaq;
+        private TextView NamaamilInfaq, JenisInfaq, JumlahInfaq, TglInfaq, MuzakiInfaq, PenyaluranInfaq, KetInfaq;
         private ImageView Gambarinfaq;
         private CardView ListIteminfaq;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             //Menginisialisasi view view yang terpasang pada layout ini
+            NamaamilInfaq = itemView.findViewById(R.id.namaamilinfaq_ds);
             JenisInfaq = itemView.findViewById(R.id.jenisinfaq_ds);
             JumlahInfaq = itemView.findViewById(R.id.jumlahinfaq_ds);
             TglInfaq = itemView.findViewById(R.id.tglinfaq_ds);
