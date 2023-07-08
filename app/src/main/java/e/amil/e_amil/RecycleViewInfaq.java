@@ -4,14 +4,12 @@ import static android.text.TextUtils.isEmpty;
 
 import android.annotation.SuppressLint;
 import android.content.DialogInterface;
-import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Filter;
 import android.widget.Filterable;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -123,7 +121,7 @@ public class RecycleViewInfaq extends RecyclerView.Adapter<RecycleViewInfaq.View
 
             @Override
             public boolean onLongClick(View view) {
-                final String[] action = {"Update","Delete"};
+                final String[] action = {"Delete"};
                 AlertDialog.Builder alert = new AlertDialog.Builder(view.getContext());
                 alert.setTitle("Apa yang akan anda pilih?");
                 alert.setItems(action, new DialogInterface.OnClickListener() {
@@ -131,24 +129,6 @@ public class RecycleViewInfaq extends RecyclerView.Adapter<RecycleViewInfaq.View
                     public void onClick(DialogInterface dialogInterface, int i) {
                         switch (i){
                             case 0:
-                                //Berpindah activity pada halaman layout UpdateData dan mengambil data dari ListMahasiswa
-                                Bundle bundle = new Bundle();
-                                bundle.putString("dataNamaamilInfaq",listInfaq.get(position).getNamaamilinfak());
-                                bundle.putString("dataJenisInfaq",listInfaq.get(position).getRjenisinfak());
-                                bundle.putString("dataJumlahInfaq",listInfaq.get(position).getJumlahinfak());
-                                bundle.putString("dataTglInfaq",listInfaq.get(position).getTglinfak());
-                                bundle.putString("dataMuzakiInfaq",listInfaq.get(position).getKetinfak());
-                                bundle.putString("dataPenyaluranInfaq",listInfaq.get(position).getPenyaluraninfak());
-                                bundle.putString("dataKetInfaq",listInfaq.get(position).getKetinfak());
-                                bundle.putString("dataPrimaryInfaq",listInfaq.get(position).getKey());
-                                bundle.putString("dataGambarInfaq",listInfaq.get(position).getGambarinfak());
-
-                                //Intent intent = new Intent(view.getContext(), update_zakat.class);
-                                //intent.putExtras(bundle);
-                                //context.startActivity(intent);
-                                break;
-
-                            case 1:
                                 AlertDialog.Builder alert = new AlertDialog.Builder(view.getContext());
                                 alert.setTitle("Apakah anda yakin akan menghapus Data ini?");
                                 alert.setPositiveButton("Ya", new DialogInterface.OnClickListener() {

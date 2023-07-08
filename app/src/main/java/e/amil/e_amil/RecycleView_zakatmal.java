@@ -101,7 +101,7 @@ public class RecycleView_zakatmal extends RecyclerView.Adapter<RecycleView_zakat
 
         holder.NamaamilZakatmal.setText(": "+NamaamilZakatmal);
         holder.JenisZakatmal.setText(": "+JenisZakatmal);
-        holder.JumlahZakatmal.setText(": "+JumlahZakatmal);
+        holder.JumlahZakatmal.setText("Rp. "+JumlahZakatmal);
         holder.TglZakatmal.setText(": "+TglZakatmal);
         holder.MuzakiZakatmal.setText(": "+MuzakiZakatmal);
         holder.PenyaluranZakatmal.setText(": "+PenyaluranZakatmal);

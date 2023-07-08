@@ -4,7 +4,6 @@ import static android.text.TextUtils.isEmpty;
 
 import android.annotation.SuppressLint;
 import android.content.DialogInterface;
-import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -103,7 +102,7 @@ public class RecycleViewZakat extends RecyclerView.Adapter<RecycleViewZakat.View
 
         holder.NamaamilZakat.setText(": "+NamaamilZakat);
         holder.JenisZakat.setText(": "+JenisZakat);
-        holder.JumlahZakat.setText(": "+JumlahZakat);
+        holder.JumlahZakat.setText(JumlahZakat+".Kg ");
         holder.TglZakat.setText(": "+TglZakat);
         holder.MuzakiZakat.setText(": "+MuzakiZakat);
         holder.PenyaluranZakat.setText(": "+PenyaluranZakat);
@@ -121,7 +120,7 @@ public class RecycleViewZakat extends RecyclerView.Adapter<RecycleViewZakat.View
 
             @Override
             public boolean onLongClick(View view) {
-                final String[] action = {"Update","Delete"};
+                final String[] action = {"Delete"};
                 AlertDialog.Builder alert = new AlertDialog.Builder(view.getContext());
                 alert.setTitle("Apa yang akan anda pilih?");
                 alert.setItems(action, new DialogInterface.OnClickListener() {
