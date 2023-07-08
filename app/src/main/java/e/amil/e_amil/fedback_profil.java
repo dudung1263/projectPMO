@@ -1,6 +1,7 @@
 package e.amil.e_amil;
 
 import android.os.Bundle;
+import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -14,5 +15,8 @@ public class fedback_profil extends AppCompatActivity {
             getSupportActionBar().hide();
         }
 
+    }
+
+    public void backfad(View view) {onBackPressed();
     }
 }
