@@ -1,6 +1,8 @@
 package e.amil.e_amil;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -77,5 +79,12 @@ public class keterangan_infaq extends AppCompatActivity {
         if (getSupportActionBar() != null) {
             getSupportActionBar().hide();
         }
+
     }
+
+    public void datainfak(View view) {
+        Intent intent = new Intent( keterangan_infaq.this, listdata_penyinfaq.class);
+        startActivity(intent);
+    }
+
 }

@@ -151,4 +151,8 @@ public class keterangan_zakat extends AppCompatActivity {
         Intent intent = new Intent( keterangan_zakat.this, listdatapenyzakat_mal.class);
         startActivity(intent);
     }
+    public void datazakatfitrah(View view) {
+        Intent intent = new Intent( keterangan_zakat.this, listdata_penyzakat_fitrah.class);
+        startActivity(intent);
+    }
 }

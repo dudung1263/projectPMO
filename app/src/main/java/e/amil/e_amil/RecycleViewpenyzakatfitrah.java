@@ -27,50 +27,46 @@ import com.google.firebase.database.FirebaseDatabase;
 import java.util.ArrayList;
 import java.util.List;
 
-public class RecycleViewPenyInfaq extends RecyclerView.Adapter<RecycleViewPenyInfaq.ViewHolder> implements Filterable {
-
-    ArrayList<datapenyaluran_infak> listPenyInfaq;
-    listdata_penyinfaq context;
-    ArrayList<datapenyaluran_infak> listPenyInfaqSearch;
+public class RecycleViewpenyzakatfitrah extends RecyclerView.Adapter<RecycleViewpenyzakatfitrah.ViewHolder> implements Filterable {
+    //Deklarasi Variabel
+    ArrayList<datapenyaluran_fitrah> listzakatfitrah;
+    listdata_penyzakat_fitrah context;
+    ArrayList<datapenyaluran_fitrah> listzakatfitrahSearch;
     DatabaseReference database = FirebaseDatabase.getInstance().getReference();
 
-    //Filter Data berdasarkan nama
     Filter setSearch = new Filter() {
         @Override
         protected FilterResults performFiltering(CharSequence constraint) {
-            ArrayList<datapenyaluran_infak> filterpenyInfaq = new ArrayList<>();
-            if (constraint == null || constraint.length() == 0){
-                filterpenyInfaq.addAll(listPenyInfaqSearch);
-            }else {
+            ArrayList<datapenyaluran_fitrah> filterpenyzakatfitrah = new ArrayList<>();
+            if (constraint == null || constraint.length() == 0) {
+                filterpenyzakatfitrah.addAll(listzakatfitrahSearch);
+            } else {
                 String filterPattern = constraint.toString().toLowerCase().trim();
-                for (datapenyaluran_infak item : listPenyInfaqSearch){
-                    if (item.getNamaamilinfak_pen().toLowerCase().contains(filterPattern)) {
-                        filterpenyInfaq.add(item);
+                for (datapenyaluran_fitrah item : listzakatfitrahSearch) {
+                    if (item.getRjeniszakat_pen().toLowerCase().contains(filterPattern)) {
+                        filterpenyzakatfitrah.add(item);
                     }
                 }
             }
             FilterResults results = new FilterResults();
-            results.values = filterpenyInfaq;
+            results.values = filterpenyzakatfitrah;
             return results;
         }
 
         @Override
-        protected void publishResults(CharSequence charSequence, FilterResults results) {
-
-            listPenyInfaq.clear();
-            listPenyInfaq.addAll((List) results.values);
+        protected void publishResults(CharSequence constraint, FilterResults results) {
+            listzakatfitrah.clear();
+            listzakatfitrah.addAll((List) results.values);
             notifyDataSetChanged();
         }
     };
-//    private ViewHolder holder;
-//    private int position;
 
-    //Membuat konstruktor untuk menyimpan data
-    public RecycleViewPenyInfaq(ArrayList<datapenyaluran_infak> listPenyInfaq, listdata_penyinfaq context){
-        this.listPenyInfaq = listPenyInfaq;
+    public RecycleViewpenyzakatfitrah(ArrayList<datapenyaluran_fitrah> listzakatfitrah, listdata_penyzakat_fitrah context) {
+        this.listzakatfitrah = listzakatfitrah;
         this.context = context;
-        this.listPenyInfaqSearch = listPenyInfaq;
+        this.listzakatfitrahSearch = listzakatfitrah;
     }
+
     @Override
     public Filter getFilter() {
 
@@ -79,39 +75,36 @@ public class RecycleViewPenyInfaq extends RecyclerView.Adapter<RecycleViewPenyIn
 
     @NonNull
     @Override
-    public RecycleViewPenyInfaq.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.viewdesign_penyinfaq, parent, false);
-        return new RecycleViewPenyInfaq.ViewHolder(v);
+    public RecycleViewpenyzakatfitrah.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.activity_viewdesign_penyzakatfitrah, parent, false);
+        return new RecycleViewpenyzakatfitrah.ViewHolder(v);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull RecycleViewPenyInfaq.ViewHolder holder, @SuppressLint("RecyclerView") int position) {
-//        this.holder = holder;
-//        this.position = position;
-
-        final String JenisPenyInfaq = listPenyInfaq.get(position).getRjenisinfak_pen();
-        final String JumlahPenyinfaq = listPenyInfaq.get(position).getJumlahinfak_pen();
-        final String TglPenyInfaq = listPenyInfaq.get(position).getTglinfak_pen();
-        final String KeteranganPenyinfaq = listPenyInfaq.get(position).getKetinfak_pen();
-        final String Gambar = listPenyInfaq.get(position).getGambar();
-        final datapenyaluran_infak dataPenyInfaq = listPenyInfaq.get(position);
+    public void onBindViewHolder(@NonNull RecycleViewpenyzakatfitrah.ViewHolder holder, @SuppressLint("RecyclerView") int position) {
+        final String Jeniszakatfitrah = listzakatfitrah.get(position).getRjeniszakat_pen();
+        final String Jumlahzakatfitrah_pen = listzakatfitrah.get(position).getJumlahzakat_pen();
+        final String Tglzakatfitrah_pen = listzakatfitrah.get(position).getTglinfakzakat_pen();
+        final String Namazakatfitrah_pen = listzakatfitrah.get(position).getNamaamilzakat_pen();
+        final String Keteranganzakatfitrah_pen = listzakatfitrah.get(position).getKetinfakzakat_pen();
+        final String Gambarzakatfitrah_pen = listzakatfitrah.get(position).getGambar();
+        final datapenyaluran_fitrah datapenyaluran_fitrah = listzakatfitrah.get(position);
 
 
-        holder.JenisPenyInfaq.setText(" "+JenisPenyInfaq);
-        holder.JumlahPenyInfaq.setText("Rp. "+JumlahPenyinfaq);
-        holder.TglPenyInfaq.setText(" "+TglPenyInfaq);
-        holder.KetPenyInfaq.setText(" "+KeteranganPenyinfaq);
+        holder.Jeniszakatfitrah_pen.setText(" " + Jeniszakatfitrah);
+        holder.Jumlahzakatfitrah_pen.setText("Rp. " + Jumlahzakatfitrah_pen);
+        holder.Tglzakatfitrah_pen.setText(" " + Tglzakatfitrah_pen);
+        holder.Namazakatfitrah_pen.setText(" " + Namazakatfitrah_pen);
+        holder.Ketzakatfitrah_pen.setText(" " + Keteranganzakatfitrah_pen);
 
-        if (isEmpty(Gambar)){
-            holder.GambarPenyinfaq.setImageResource(R.drawable.carigambar);
+        if (isEmpty(Gambarzakatfitrah_pen)){
+            holder.Gambarzakatfitrah_pen.setImageResource(R.drawable.carigambar);
         }else {
             Glide.with(holder.itemView.getContext())
-                    .load(Gambar.trim())
-                    .into(holder.GambarPenyinfaq);
+                    .load(Gambarzakatfitrah_pen.trim())
+                    .into(holder.Gambarzakatfitrah_pen);
         }
-
-        holder.ListItemPenyinfaq.setOnLongClickListener(new View.OnLongClickListener(){
-
+        holder.list_item_penyzakatfitrah.setOnLongClickListener(new View.OnLongClickListener(){
             @Override
             public boolean onLongClick(View view) {
                 final String[] action = {"Delete"};
@@ -128,7 +121,7 @@ public class RecycleViewPenyInfaq extends RecyclerView.Adapter<RecycleViewPenyIn
                                     @Override
                                     public void onClick(DialogInterface dialogInterface, int i) {
                                         //Menjalankan Fungsi hapus disini
-                                        database.child("Admin").child("Peny Infak").child(dataPenyInfaq.getKey()).removeValue().addOnSuccessListener(new OnSuccessListener<Void>() {
+                                        database.child("Admin").child("Peny Fitrah").child(datapenyaluran_fitrah.getKey()).removeValue().addOnSuccessListener(new OnSuccessListener<Void>() {
                                             @Override
                                             public void onSuccess(Void unused) {
                                                 Toast.makeText(context, "Berhasil Menghapus Data", Toast.LENGTH_SHORT).show();
@@ -164,23 +157,24 @@ public class RecycleViewPenyInfaq extends RecyclerView.Adapter<RecycleViewPenyIn
     @Override
     public int getItemCount() {
 
-        return listPenyInfaq.size();
+        return listzakatfitrah.size();
     }
-
     public class ViewHolder extends RecyclerView.ViewHolder {
 
-        private TextView JenisPenyInfaq, JumlahPenyInfaq, TglPenyInfaq, KetPenyInfaq;
-        private ImageView GambarPenyinfaq;
-        private CardView ListItemPenyinfaq;
-        public ViewHolder(@NonNull View itemView) {
+        private TextView Jeniszakatfitrah_pen, Jumlahzakatfitrah_pen, Tglzakatfitrah_pen, Namazakatfitrah_pen, Ketzakatfitrah_pen;
+        private ImageView Gambarzakatfitrah_pen;
+        private CardView list_item_penyzakatfitrah;
+
+        public ViewHolder (@NonNull View itemView) {
             super(itemView);
             //Menginisialisasi view view yang terpasang pada layout ini
-            JenisPenyInfaq = itemView.findViewById(R.id.jenisPenyinfaq_ds);
-            JumlahPenyInfaq = itemView.findViewById(R.id.jumlahPenyinfaq_ds);
-            TglPenyInfaq = itemView.findViewById(R.id.tglPenyinfaq_ds);
-            KetPenyInfaq = itemView.findViewById(R.id.ketPenyinfaq_ds);
-            GambarPenyinfaq = itemView.findViewById(R.id.gambarPenyinfaq_ds);
-            ListItemPenyinfaq = itemView.findViewById(R.id.list_item_Penyinfaq);
+            Jeniszakatfitrah_pen = itemView.findViewById(R.id.jenispenyzakatfitrah_ds);
+            Jumlahzakatfitrah_pen = itemView.findViewById(R.id.jumlahpenyzakatfitrah_ds);
+            Tglzakatfitrah_pen = itemView.findViewById(R.id.tglpenyzakatfitrah_ds);
+            Namazakatfitrah_pen = itemView.findViewById(R.id.namaamilzakatfitrah_ds);
+            Ketzakatfitrah_pen = itemView.findViewById(R.id.ketpenyzakatfitrah_ds);
+            Gambarzakatfitrah_pen = itemView.findViewById(R.id.gambarpenyzakatfitrah_ds);
+            list_item_penyzakatfitrah = itemView.findViewById(R.id.list_item_penyzakatfitrah);
 
         }
     }

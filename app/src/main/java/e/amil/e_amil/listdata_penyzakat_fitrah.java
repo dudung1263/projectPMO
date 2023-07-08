@@ -1,6 +1,5 @@
 package e.amil.e_amil;
 
-import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -16,7 +15,6 @@ import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -25,39 +23,37 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
-public class listdata_penyinfaq extends AppCompatActivity {
+public class listdata_penyzakat_fitrah extends AppCompatActivity {
 
     private RecyclerView recyclerView;
 
-    RecycleViewPenyInfaq adapter;
+    RecycleViewpenyzakatfitrah adapter;
 
     private RecyclerView.LayoutManager layoutManager;
 
     private DatabaseReference reference;
 
-    private ArrayList<datapenyaluran_infak> dataPenyinfaq;
+    private ArrayList<datapenyaluran_fitrah> datapenyaluranfitrah;
 
-    private FloatingActionButton adddataPenyinfaq, homePenyinfaq;
 
-    private EditText Search_liasdata_Penyinfaq;
+    private EditText Search_liasdata_penyzakatfitrah;
 
-    @SuppressLint("MissingInflatedId")
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_listdata_penyinfaq);
-
+        setContentView(R.layout.activity_listdata_penyzakat_fitrah);
         if (getSupportActionBar() != null) {
             getSupportActionBar().hide();
         }
 
 
-        recyclerView = findViewById(R.id.datalist_Penyinfaq);
+        recyclerView = findViewById(R.id.datalist_penyzakatfitrah);
 
         GetData(" ");
 
-        Search_liasdata_Penyinfaq = findViewById(R.id.Search_listPenyinfaq);
-        Search_liasdata_Penyinfaq.addTextChangedListener(new TextWatcher() {
+        Search_liasdata_penyzakatfitrah = findViewById(R.id.Search_listzakatfitrah);
+        Search_liasdata_penyzakatfitrah.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
 
@@ -88,19 +84,19 @@ public class listdata_penyinfaq extends AppCompatActivity {
     private void GetData(String data) {
 
         reference = FirebaseDatabase.getInstance().getReference();
-        reference.child("Admin").child("Peny Infak")
+        reference.child("Admin").child("Peny Fitrah")
                 .addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                        dataPenyinfaq = new ArrayList<datapenyaluran_infak>();
-                        dataPenyinfaq.clear();
+                        datapenyaluranfitrah = new ArrayList<datapenyaluran_fitrah>();
+                        datapenyaluranfitrah.clear();
                         for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
-                            datapenyaluran_infak Penyinfaq = snapshot.getValue(datapenyaluran_infak.class);
+                            datapenyaluran_fitrah fitrah = snapshot.getValue(datapenyaluran_fitrah.class);
 
-                            Penyinfaq.setKey(snapshot.getKey());
-                            dataPenyinfaq.add(Penyinfaq);
+                            fitrah.setKey(snapshot.getKey());
+                            datapenyaluranfitrah.add(fitrah);
                         }
-                        adapter = new RecycleViewPenyInfaq(dataPenyinfaq, listdata_penyinfaq.this);
+                        adapter = new RecycleViewpenyzakatfitrah(datapenyaluranfitrah, listdata_penyzakat_fitrah.this);
                         adapter.notifyDataSetChanged();
 
                         recyclerView.setAdapter(adapter);
@@ -126,6 +122,7 @@ public class listdata_penyinfaq extends AppCompatActivity {
 
     }
 
-    public void kembaliinfak(View view) {onBackPressed();
+    public void backzakatmal(View view) {
+            onBackPressed();
     }
 }
